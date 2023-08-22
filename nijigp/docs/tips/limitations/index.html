@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Limitations#The add-on has a number of limitations in different aspects, including:
+Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&rsquo;s own design, which may lead to different behaviors from common graphics software. Shape of a Stroke#The performance of the add-on may deteriorate with input strokes of certain shapes:
+Please avoid using self-overlapping strokes. Unlike common vector formats such as SVG, Blender does not define a fill rule and the rendering of the overlapping parts cannot be guaranteed.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Limitations" />
+<meta property="og:description" content="Limitations#The add-on has a number of limitations in different aspects, including:
+Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&rsquo;s own design, which may lead to different behaviors from common graphics software. Shape of a Stroke#The performance of the add-on may deteriorate with input strokes of certain shapes:
+Please avoid using self-overlapping strokes. Unlike common vector formats such as SVG, Blender does not define a fill rule and the rendering of the overlapping parts cannot be guaranteed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/tips/limitations/" /><meta property="article:section" content="docs" />
+
+
+<title>Limitations | NijiGPen Documentation</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.72aebb8b3eff137d18b9f158059218015e0473d49f08f72ee07902bdd1a61059.js" integrity="sha256-cq67iz7/E30YufFYBZIYAV4Ec9SfCPcu4HkCvdGmEFk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/limitations/" class="active">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Limitations</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#shape-of-a-stroke">Shape of a Stroke</a></li>
+    <li><a href="#holes">Holes</a></li>
+    <li><a href="#vertex-groups">Vertex Groups</a></li>
+    <li><a href="#adobe-file-format-compatibility">Adobe File Format Compatibility</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="limitations">
+  Limitations
+  <a class="anchor" href="#limitations">#</a>
+</h1>
+<p>The add-on has a number of limitations in different aspects, including:</p>
+<ul>
+<li>Unfinished features of the add-on itself, which may be improved in future releases.</li>
+<li>Limitations due to Blender&rsquo;s own design, which may lead to different behaviors from common graphics software.</li>
+</ul>
+<h2 id="shape-of-a-stroke">
+  Shape of a Stroke
+  <a class="anchor" href="#shape-of-a-stroke">#</a>
+</h2>
+<p>The performance of the add-on may deteriorate with input strokes of certain shapes:</p>
+<ul>
+<li>Please avoid using self-overlapping strokes. Unlike common vector formats such as SVG, Blender does not define a <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule">fill rule</a> and the rendering of the overlapping parts cannot be guaranteed.
+<ul>
+<li>Most operators ignore the overlapping parts automatically, but sometimes it also causes crashes. To eliminate these parts, you can use the Offset operator with a value of zero.</li>
+</ul>
+</li>
+</ul>
+<p><img src="../l1.png" alt="Image1" /></p>
+<ul>
+<li>It is also recommended not to have too few points or unevenly distributed points along the stroke, as this can lead to poor quality mesh generation or line cleanup results. The Resample button in the add-on panel can be used to quickly redistribute the stroke points.</li>
+</ul>
+<h2 id="holes">
+  Holes
+  <a class="anchor" href="#holes">#</a>
+</h2>
+<p>Both this add-on and Blender itself have limitations supporting fill shapes will holes inside.</p>
+<ul>
+<li>Blender does not allow holes in a stroke, but some add-on operators like Boolean, Offset and SVG Paste can result in holes. In such cases, the corresponding geometry will be created, but will not be transparent.</li>
+<li>To display holes in Grease Pencil, Blender provides with a <strong>Holdout</strong> property in its <a href="https://docs.blender.org/manual/en/latest/grease_pencil/materials/properties.html">material setting</a>. The add-on also has a Hole Holdout operator to automatically set this property for shapes inside other shapes.</li>
+</ul>
+<p><img src="../l2.png" alt="Image2" /></p>
+<ul>
+<li>In addition, some operators of the add-on have special behaviors when the input strokes have the holdout property.
+<ul>
+<li>The mesh generation operator (currently only for the interpolation method) can turn these strokes into real holes in the mesh.</li>
+<li>The Offset and Sweep operators have the option to inverse the operation direction for these strokes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="vertex-groups">
+  Vertex Groups
+  <a class="anchor" href="#vertex-groups">#</a>
+</h2>
+<ul>
+<li>After some operators, including Boolean, Offset, and Line Cleanup, the weights of vertex groups are not preserved. If you need them for modifiers or rigging (including the rigging functions of this add-on), it is recommended to assign weights <strong>after</strong> using these operators.</li>
+</ul>
+<h2 id="adobe-file-format-compatibility">
+  Adobe File Format Compatibility
+  <a class="anchor" href="#adobe-file-format-compatibility">#</a>
+</h2>
+<ul>
+<li>
+<p>Despite their popularity, Adobe file formats such as ABR and PSD are not designed for interchange. In addition, these formats are mostly used for raster painting and may work differently than Grease Pencil. As a result, only a limited subset of features is supported.</p>
+</li>
+<li>
+<p>For PSD rendering, the following restrictions apply:</p>
+<ul>
+<li>Layer masks are not supported, because Photoshop has different mechanisms for representing masks.</li>
+<li>Z-ordering in 3D space may not be preserved in the rendered image.</li>
+<li>Compression algorithms are not implemented yet. Rendered file size may be large.</li>
+<li>Frame animations have not been supported yet.</li>
+</ul>
+</li>
+<li>
+<p>For ABR brush import, the following restrictions apply:</p>
+<ul>
+<li>Only image textures can be extracted from the brush file. Other information like brush parameters cannot be parsed.</li>
+<li>It may take a long time to parse high resolution (e.g. 2500px) brushes due to the uncompression process.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>(All emojis designed by <a href="https://openmoji.org/">OpenMoji</a> – the open-source emoji and icon project. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/#">CC BY-SA 4.0</a>)</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#shape-of-a-stroke">Shape of a Stroke</a></li>
+    <li><a href="#holes">Holes</a></li>
+    <li><a href="#vertex-groups">Vertex Groups</a></li>
+    <li><a href="#adobe-file-format-compatibility">Adobe File Format Compatibility</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
+Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&rsquo;s functions.
+NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Basic Usage" />
+<meta property="og:description" content="Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
+Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&rsquo;s functions.
+NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/get_started/basic_usage/" /><meta property="article:section" content="docs" />
+
+
+<title>Basic Usage | NijiGPen Documentation</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.72aebb8b3eff137d18b9f158059218015e0473d49f08f72ee07902bdd1a61059.js" integrity="sha256-cq67iz7/E30YufFYBZIYAV4Ec9SfCPcu4HkCvdGmEFk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/basic_usage/" class="active">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Basic Usage</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#user-interface">User Interface</a>
+      <ul>
+        <li><a href="#sidebar-panels">Sidebar Panels</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#shortcut-buttons-optional">Shortcut Buttons (Optional)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2d-working-plane">2D Working Plane</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="basic-usage">
+  Basic Usage
+  <a class="anchor" href="#basic-usage">#</a>
+</h1>
+<h2 id="user-interface">
+  User Interface
+  <a class="anchor" href="#user-interface">#</a>
+</h2>
+<p>NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.</p>
+<h3 id="sidebar-panels">
+  Sidebar Panels
+  <a class="anchor" href="#sidebar-panels">#</a>
+</h3>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <img src="../ui_side.png" alt="Sidebar" />
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <p>A tab named <code>NijiGP</code> will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is <code>Draw</code>, <code>Edit</code> or <code>Weight Paint</code>. This is the major way of calling NijiGPen&rsquo;s functions.</p>
+<p>NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.</p>
+
+  </div>
+
+</div>
+
+<h3 id="tools">
+  Tools
+  <a class="anchor" href="#tools">#</a>
+</h3>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <p>NijiGPen adds several new tools in the Toolbar of Grease Pencil <code>Edit</code> mode. The tool icons have a &ldquo;2D&rdquo; mark on them.</p>
+<p>These tools have the same effect as the corresponding operators in the sidebar panel. However, they allow you to tune the parameters with mouse dragging instead of typing numbers.</p>
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <img src="../ui_tool.png" alt="Tools" />
+  </div>
+
+</div>
+
+<h3 id="shortcut-buttons-optional">
+  Shortcut Buttons (Optional)
+  <a class="anchor" href="#shortcut-buttons-optional">#</a>
+</h3>
+<p>NijiGPen also adds some buttons at the bottom of the 3D Viewport window. They are shortcuts of the following functions:</p>
+<ul>
+<li>Undo/redo</li>
+<li>Tilt the canvas</li>
+<li>Arrange selected strokes forward/backward</li>
+</ul>
+<p><img src="../ui_touch.png" alt="Shortcuts" /></p>
+<blockquote class="book-hint info">
+  <p>The purpose of these shortcut buttons is to enhance the user experience on touchscreens (e.g., Microsoft Surface), since painting software on tablets usually have such buttons.</p>
+<p>If you do not need them or find them conflicting with other add-ons, you can change their position or shut them off in the setting of <code>Preferences</code> panel.</p>
+
+</blockquote>
+
+<h2 id="2d-working-plane">
+  2D Working Plane
+  <a class="anchor" href="#2d-working-plane">#</a>
+</h2>
+<p>Most of the add-on operators work in a 2D plane. If you are working with Blender&rsquo;s 2D Animation template (using X-Z plane by default), there would be no problems. However, when working in the 3D space (e.g., painting on the surface of an object), the way of determining the 2D working plane should be paid attention to.</p>
+<ul>
+<li>In the default mode (&ldquo;Auto&rdquo;), the add-on first estimates the coordinates of all input stroke points to determine the vectors of two most important dimensions. Then it uses the current view to determine the front/back and up/down directions.
+<ul>
+<li>Please avoid selecting strokes belonging to more than one 2D plane as the input. In that case, the estimation can be wrong. (A warning message will show up when it happens.)</li>
+</ul>
+</li>
+<li>There are also other modes available, including using the current view, or using an orthogonal plane (X-Y, X-Z or Y-Z). It can be set in the <code>Global Setting</code> panel.</li>
+</ul>
+<blockquote class="book-hint warning">
+  Applying a rotation in a Grease Pencil layer&rsquo;s attribute may disturb the detection of the working plane. If you want to use layer rotation with NijiGPen, please make sure to check the <code>Use Transform of Active Layer</code> option and process strokes from a single layer per operation.
+</blockquote>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#user-interface">User Interface</a>
+      <ul>
+        <li><a href="#sidebar-panels">Sidebar Panels</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#shortcut-buttons-optional">Shortcut Buttons (Optional)</a></li>
+      </ul>
+    </li>
+    <li><a href="#2d-working-plane">2D Working Plane</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

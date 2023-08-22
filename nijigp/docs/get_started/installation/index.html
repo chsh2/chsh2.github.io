@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Installation#Different from most Blender add-ons, NijiGPen relies heavily on third-party Python packages. It is recommended to read the Python Packages page for more details.
+Requirements#Blender 3.3 ~ 3.6 (Currently, the add-on focuses majorly on stable verions. It is not guaranteed that all functions can work well in alpha or beta verions of Blender.)
+Installation Steps#Download the archive file from the GitHub Release page. Please avoid downloading the source code ZIP directly, since it may contain untested changes.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Installation" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/docs/get_started/installation/" />
+<title>Installation | NijiGPen Documentation</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.72aebb8b3eff137d18b9f158059218015e0473d49f08f72ee07902bdd1a61059.js" integrity="sha256-cq67iz7/E30YufFYBZIYAV4Ec9SfCPcu4HkCvdGmEFk=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="http://example.org/docs/get_started/installation/index.xml" title="NijiGPen Documentation" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/installation/" class="active">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Installation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#installation-steps">Installation Steps</a></li>
+    <li><a href="#upgrade">Upgrade</a></li>
+    <li><a href="#removal">Removal</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="installation">
+  Installation
+  <a class="anchor" href="#installation">#</a>
+</h1>
+<p>Different from most Blender add-ons, NijiGPen relies heavily on third-party Python packages. It is recommended to read the <a href="./dependency">Python Packages</a> page for more details.</p>
+<h2 id="requirements">
+  Requirements
+  <a class="anchor" href="#requirements">#</a>
+</h2>
+<ul>
+<li>Blender 3.3 ~ 3.6</li>
+</ul>
+<p>(Currently, the add-on focuses majorly on stable verions. It is not guaranteed that all functions can work well in alpha or beta verions of Blender.)</p>
+<h2 id="installation-steps">
+  Installation Steps
+  <a class="anchor" href="#installation-steps">#</a>
+</h2>
+<ol>
+<li>
+<p>Download the archive file from the <a href="https://github.com/chsh2/nijiGPen/releases">GitHub Release page</a>. Please avoid downloading the source code ZIP directly, since it may contain untested changes.</p>
+</li>
+<li>
+<p>In Blender, open <code>[Edit]-&gt;[Preferences]-&gt;[Add-ons]</code> and click the Install button to load the archive. Enable the installed add-on.</p>
+</li>
+</ol>
+<p><img src="./enable_addon.png" alt="Step2" /></p>
+<ol start="3">
+<li>Check the <a href="./dependency">dependency summary</a> to decide which Python packages are needed. Install them in the Preferences panel. Internet connection is required.</li>
+</ol>
+<p><img src="./install_button.png" alt="Step3" /></p>
+<h2 id="upgrade">
+  Upgrade
+  <a class="anchor" href="#upgrade">#</a>
+</h2>
+<ul>
+<li>
+<p><strong>Blender Upgrade</strong>: After upgrading Blender to a new version, the Installation Step 3 (Dependency Management) should be executed again.</p>
+</li>
+<li>
+<p><strong>Add-on Upgrade</strong>: If you want to replace the installed add-on with a newer version, it is recommended to remove the old version and restart Blender before installing the new version.</p>
+</li>
+</ul>
+<h2 id="removal">
+  Removal
+  <a class="anchor" href="#removal">#</a>
+</h2>
+<p>Removing the add-on will not automatically remove the Python packages it installed. Please manually remove them using the buttons in the Preferences panel <strong>before</strong> removing the add-on itself.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#installation-steps">Installation Steps</a></li>
+    <li><a href="#upgrade">Upgrade</a></li>
+    <li><a href="#removal">Removal</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
