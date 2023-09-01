@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>- Import/Export - on NijiGPen Documentation</title>
+    <link>https://chsh2.github.io/nijigp/docs/functionality/io/</link>
+    <description>Recent content in - Import/Export - on NijiGPen Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://chsh2.github.io/nijigp/docs/functionality/io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brush Import</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/brushes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/brushes/</guid>
+      <description>Brush Import#The ABR/GBR Brushes button is an operator that converts .abr and .gbr brush files, which are widely used in software including Adobe Photoshop, GIMP and Krita, into Grease Pencil materials/brushes.
+It may take a long time to parse high resolution (e.g. 2500px * 2500px) brushes, because the brush images need to be uncompressed. The time further increases if the file contains multiple brushes.
+If you want to use the high resolution brushes repeatedly, you may consider save the brushes in a .</description>
+    </item>
+    
+    <item>
+      <title>PSD Render</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</guid>
+      <description>PSD Render#The Multi-Layer PSD Render button renders each layer of the Grease Pencil object to a separate image, and then merge them together to a .psd file. The name, blend mode of each layer and the sequence of layers will be preserved. In this way, the image can be further edited in various popular image editing or painting software.
+Besides the Grease Pencil layers, there are two additional PSD layers rendered.</description>
+    </item>
+    
+    <item>
+      <title>Vectorizing Images</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</guid>
+      <description>Vectorizing Images#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
+These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current 2D working plane.</description>
+    </item>
+    
+  </channel>
+</rss>

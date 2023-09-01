@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>- Animations - on NijiGPen Documentation</title>
+    <link>https://chsh2.github.io/nijigp/docs/functionality/animation/</link>
+    <description>Recent content in - Animations - on NijiGPen Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://chsh2.github.io/nijigp/docs/functionality/animation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frame Animations</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/animation/frame_animation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/animation/frame_animation/</guid>
+      <description>Frame Animations#Multiframe Operations#Grease Pencil has a Multiframe Tool allowing users to draw or edit on multiple frames at the same time. Some of NijiGPen&amp;rsquo;s operators in the Edit mode support this feature. With the Multiframe tool enabled, they are performed on all selected frames, instead of the active frame.
+In addition, new options will appear in the multiframe mode for some operators, which are designed for making animated effects, including:</description>
+    </item>
+    
+    <item>
+      <title>Rigging Utilities</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/</guid>
+      <description>Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
+The rigging-related operations will show up in a panel when the current mode is Weight Paint.
+Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.</description>
+    </item>
+    
+  </channel>
+</rss>

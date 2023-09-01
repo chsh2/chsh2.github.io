@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.112.3">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Introduction#NijiGPen is an open-source Blender add-on that brings new features to Grease Pencil for creating 2D graphic design and illustrations. It provides with the following functions:
-2D algorithms for vector shapes and strokes Refinement and cleanup of hand-drawn 2D strokes Conversion from 2D shapes to 3D meshes Data exchange with other painting/designing tools The name of this add-on is the combination of the words &ldquo;nijigen&rdquo; (meaning &ldquo;two-dimensional&rdquo; in Japanese) and &ldquo;gpencil&rdquo;.">
+<meta name="description" content="Vectorizing Images#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
+These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current 2D working plane.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Introduction" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://chsh2.github.io/nijigp/" />
-<title>Introduction | NijiGPen Documentation</title>
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Vectorizing Images" />
+<meta property="og:description" content="Vectorizing Images#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
+These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current 2D working plane." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/" /><meta property="article:section" content="docs" />
+
+
+<title>Vectorizing Images | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.c04f98525d48673f7f5903d7ab65c9fa02697c79954507ca46e66dd47c71e36c.css" integrity="sha256-wE&#43;YUl1IZz9/WQPXq2XJ&#43;gJpfHmVRQfKRuZt1Hxx42w=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
   <script defer src="/nijigp/en.search.min.9d9ed4d7da71fc953fcf2dfd690cbbf61ba0beabedfce7b09f721264c8720b21.js" integrity="sha256-nZ7U19px/JU/zy39aQy79hugvqvt/Oewn3ISZMhyCyE=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://chsh2.github.io/nijigp/index.xml" title="NijiGPen Documentation" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -307,7 +308,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="active">Vectorizing Images</a>
   
 
         </li>
@@ -421,7 +422,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Introduction</strong>
+  <strong>Vectorizing Images</strong>
 
   <label for="toc-control">
     
@@ -437,8 +438,18 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#demo-of-features">Demo of Features</a></li>
-    <li><a href="#credits">Credits</a></li>
+    <li><a href="#sketches-extracting-the-line-art">Sketches: Extracting the Line Art</a>
+      <ul>
+        <li><a href="#median-filter">Median Filter</a></li>
+      </ul>
+    </li>
+    <li><a href="#color-images-quantization">Color Images: Quantization</a>
+      <ul>
+        <li><a href="#generate-line-colors">Generate Line Colors</a></li>
+        <li><a href="#generate-a-palette">Generate a Palette</a></li>
+        <li><a href="#min-stroke-length">Min Stroke Length</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -451,80 +462,64 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="introduction">
-  Introduction
-  <a class="anchor" href="#introduction">#</a>
+  <article class="markdown"><h1 id="vectorizing-images">
+  Vectorizing Images
+  <a class="anchor" href="#vectorizing-images">#</a>
 </h1>
-<p><a href="https://github.com/chsh2/nijiGPen">NijiGPen</a> is an open-source Blender add-on that brings new features to Grease Pencil for creating 2D graphic design and illustrations. It provides with the following functions:</p>
-<ul>
-<li>2D algorithms for vector shapes and strokes</li>
-<li>Refinement and cleanup of hand-drawn 2D strokes</li>
-<li>Conversion from 2D shapes to 3D meshes</li>
-<li>Data exchange with other painting/designing tools</li>
-</ul>
-<p>The name of this add-on is the combination of the words &ldquo;nijigen&rdquo; (meaning &ldquo;two-dimensional&rdquo; in Japanese) and &ldquo;gpencil&rdquo;.</p>
-<p>
-
-
-  
-  
-
-
-<a  href="https://github.com/chsh2/nijiGPen"   target="_blank" rel="noopener"  class="book-btn">
-  GitHub
-</a>
-
-
-
-
-  
-  
-
-
-<a  href="https://www.youtube.com/playlist?list=PLEgTVZ2uBvPMM0sGzzQTyoV0or8_PTs6t"   target="_blank" rel="noopener"  class="book-btn">
-  YouTube
-</a>
-
-
-
-
-  
-  
-
-
-<a  href="https://chsh2.gumroad.com/l/nijigp"   target="_blank" rel="noopener"  class="book-btn">
-  Gumroad
-</a>
-</p>
-<p><em>This add-on is not an AI tool. None of its algorithms is trained on other artists&rsquo; work.</em></p>
-<h2 id="demo-of-features">
-  Demo of Features
-  <a class="anchor" href="#demo-of-features">#</a>
+<p>The <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/object/trace_image.html">Trace Image to Grease Pencil</a> tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.</p>
+<p>These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current <a href="http://localhost:1313/nijigp/docs/get_started/basic_usage/#2d-working-plane">2D working plane</a>.</p>
+<p><img src="../line_art_import.png" alt="Line Art Extraction" /></p>
+<h2 id="sketches-extracting-the-line-art">
+  Sketches: Extracting the Line Art
+  <a class="anchor" href="#sketches-extracting-the-line-art">#</a>
 </h2>
-<p><a href="./docs/intro1.png"><img src="./docs/intro1.png" alt="FeatureList1" /></a>
-<a href="./docs/intro2.png"><img src="./docs/intro2.png" alt="FeatureList2" /></a></p>
-<h2 id="credits">
-  Credits
-  <a class="anchor" href="#credits">#</a>
+<p>The <code>Line Art</code> button is an operator to convert an image to <strong>line-only strokes</strong>. It is recommended to select a material without fills enabled.</p>
+<p>Compared with most SVG-based editing software, an advantage of extracting the line art in Blender is the ability to preserve the thickness and color of the strokes, stored as point attributes.</p>
+<h3 id="median-filter">
+  Median Filter
+  <a class="anchor" href="#median-filter">#</a>
+</h3>
+<p>Setting a non-zero value in the <code>Median Filter Radius</code> option will enable the median filter.</p>
+<ul>
+<li>The filter should be used when the input image has heavy noise or grain.</li>
+<li>However, a large radius may also lower the processing speed and ignore some details from the image.</li>
+</ul>
+<p><img src="../color_quantization.png" alt="Color Quantization" /></p>
+<h2 id="color-images-quantization">
+  Color Images: Quantization
+  <a class="anchor" href="#color-images-quantization">#</a>
 </h2>
-<p>The functions of this add-on are implemented with the following packages:</p>
+<p>The <code>Flat Color</code> button is an operator that reduces the number of distinct colors used in an image. Then, each color of the image is traced separately to generate Grease Pencil strokes.</p>
+<p>You can choose to either generate a new material for each color, or use a single material with multiple vertex fill colors.</p>
+<blockquote class="book-hint warning">
+  <p>This operator aims at color paintings in the flat style, rather than images with rich and gradient colors, e.g., real-world photos.</p>
+<p>Increasing the number of colors in the import option may lead to better results for the latter case, but also causes a much longer processing time, and the result may still be far from ideal.</p>
+
+</blockquote>
+
+<h3 id="generate-line-colors">
+  Generate Line Colors
+  <a class="anchor" href="#generate-line-colors">#</a>
+</h3>
+<p>This method mainly focuses on the fill color of generated strokes, while there is also an option to determine whether the same color should be assigned to the line points.</p>
+<p>The thickness and strength of the line are determined by the current brush.</p>
+<h3 id="generate-a-palette">
+  Generate a Palette
+  <a class="anchor" href="#generate-a-palette">#</a>
+</h3>
+<p>Along with the stroke generation, a palette can be generated which contains the colors extracted from the image. On the other hand, a palette can also be used as the input of the <code>Color Source</code> option, specifying which colors should be extracted. This may have the following use cases:</p>
 <ul>
-<li><a href="https://github.com/fonttools/pyclipper">Pyclipper</a> wrapper by <a href="https://sites.google.com/site/maxelsbackyard/home/pyclipper">Maxime Chalton</a> and the <a href="http://www.angusj.com/delphi/clipper.php">Clipper</a> library by <a href="http://www.angusj.com/delphi/clipper.php">Angus Johnson</a></li>
-<li><a href="https://github.com/drufat/triangle">Triangle</a> by Dzhelil Rufat and <a href="http://www.cs.berkeley.edu/~jrs">Jonathan Richard Shewchuk</a></li>
-<li><a href="https://scipy.org/">SciPy</a></li>
-<li><a href="https://scikit-image.org/">Scikit-image</a></li>
+<li>To import multiple images and guarantee their color sets are consistent.</li>
+<li>To perform the color transfer, i.e., applying the color style of one image to another image.</li>
 </ul>
-<p>Besides, although not using the codes directly or implementing the same algorithm, the functions of this add-on are largely inspired by the following works:</p>
-<ul>
-<li>Lee, In-Kwon. &ldquo;Curve reconstruction from unorganized points.&rdquo; Computer aided geometric design 17, no. 2 (2000): 161-177.</li>
-<li>Liu, Chenxi, Enrique Rosales, and Alla Sheffer. &ldquo;Strokeaggregator: Consolidating raw sketches into artist-intended curve drawings.&rdquo; ACM Transactions on Graphics (TOG) 37, no. 4 (2018): 1-15.</li>
-<li>Dvorožňák, Marek, Daniel Sýkora, Cassidy Curtis, Brian Curless, Olga Sorkine-Hornung, and David Salesin. &ldquo;Monster mash: a single-view approach to casual 3D modeling and animation.&rdquo; ACM Transactions on Graphics (TOG) 39, no. 6 (2020): 1-12.</li>
-<li>Johnston, Scott F. &ldquo;Lumo: illumination for cel animation.&rdquo; In Proceedings of the 2nd international symposium on Non-photorealistic animation and rendering, pp. 45-ff. 2002.</li>
-<li>Hudon, Matis, Sebastian Lutz, Rafael Pagés, and Aljosa Smolic. &ldquo;Augmenting hand-drawn art with global illumination effects through surface inflation.&rdquo; In Proceedings of the 16th ACM SIGGRAPH European Conference on Visual Media Production, pp. 1-9. 2019.</li>
-<li>Sýkora, Daniel, John Dingliana, and Steven Collins. &ldquo;Lazybrush: Flexible painting tool for hand‐drawn cartoons.&rdquo; In Computer Graphics Forum, vol. 28, no. 2, pp. 599-608. Oxford, UK: Blackwell Publishing Ltd, 2009.</li>
-<li>Parakkat, Amal Dev, Pooran Memari, and Marie‐Paule Cani. &ldquo;Delaunay Painting: Perceptual Image Colouring from Raster Contours with Gaps.&rdquo; In Computer Graphics Forum, vol. 41, no. 6, pp. 166-181. 2022.</li>
-</ul>
-<p>This documentation site is built with <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/alex-shpak/hugo-book">Hugo Book Theme</a>.</p>
+<h3 id="min-stroke-length">
+  Min Stroke Length
+  <a class="anchor" href="#min-stroke-length">#</a>
+</h3>
+<p>To clarify, this option actually determines whether to ignore a shape by its area. For example, with this option setting to <code>16px</code>, traced shapes with an area less than <code>256px^2</code> will not be converted to a stroke.</p>
+<p>Shapes with 0 or a very small area may lead to problems when performing polygon or mesh generation operations. This option can filter them out.</p>
+<hr>
+<p>(The example images used in this page are <em>Portrait of Olga</em> by Pablo Picasso in 1920, and <em>The Starry Night</em> by Vincent van Gogh in 1889.)</p>
 </article>
  
       
@@ -566,8 +561,18 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#demo-of-features">Demo of Features</a></li>
-    <li><a href="#credits">Credits</a></li>
+    <li><a href="#sketches-extracting-the-line-art">Sketches: Extracting the Line Art</a>
+      <ul>
+        <li><a href="#median-filter">Median Filter</a></li>
+      </ul>
+    </li>
+    <li><a href="#color-images-quantization">Color Images: Quantization</a>
+      <ul>
+        <li><a href="#generate-line-colors">Generate Line Colors</a></li>
+        <li><a href="#generate-a-palette">Generate a Palette</a></li>
+        <li><a href="#min-stroke-length">Min Stroke Length</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
-Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&rsquo;s functions.
-NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.">
+<meta name="description" content="Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
+The rigging-related operations will show up in a panel when the current mode is Weight Paint.
+Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Basic Usage" />
-<meta property="og:description" content="Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
-Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&rsquo;s functions.
-NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Rigging Utilities" />
+<meta property="og:description" content="Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
+The rigging-related operations will show up in a panel when the current mode is Weight Paint.
+Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/get_started/basic_usage/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/" /><meta property="article:section" content="docs" />
 
 
-<title>Basic Usage | NijiGPen Documentation</title>
+<title>Rigging Utilities | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.c04f98525d48673f7f5903d7ab65c9fa02697c79954507ca46e66dd47c71e36c.css" integrity="sha256-wE&#43;YUl1IZz9/WQPXq2XJ&#43;gJpfHmVRQfKRuZt1Hxx42w=" crossorigin="anonymous">
@@ -116,7 +116,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/get_started/basic_usage/" class="active">Basic Usage</a>
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
   
 
         </li>
@@ -253,7 +253,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="active">Rigging Utilities</a>
   
 
         </li>
@@ -424,7 +424,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Basic Usage</strong>
+  <strong>Rigging Utilities</strong>
 
   <label for="toc-control">
     
@@ -440,14 +440,17 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#user-interface">User Interface</a>
+    <li><a href="#transfer-weights-from-meshes">Transfer Weights from Meshes</a>
       <ul>
-        <li><a href="#sidebar-panels">Sidebar Panels</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#viewport-buttons-optional">Viewport Buttons (Optional)</a></li>
+        <li><a href="#source-objects">Source Objects</a></li>
       </ul>
     </li>
-    <li><a href="#2d-working-plane">2D Working Plane</a></li>
+    <li><a href="#use-hints-to-generate-pins">Use Hints to Generate Pins</a>
+      <ul>
+        <li><a href="#hint-strokes">Hint Strokes</a></li>
+        <li><a href="#bone-styles">Bone Styles</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -460,87 +463,58 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="basic-usage">
-  Basic Usage
-  <a class="anchor" href="#basic-usage">#</a>
+  <article class="markdown"><h1 id="rigging-utilities">
+  Rigging Utilities
+  <a class="anchor" href="#rigging-utilities">#</a>
 </h1>
-<h2 id="user-interface">
-  User Interface
-  <a class="anchor" href="#user-interface">#</a>
+<p>Although Blender can automatically <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/weight_paint/weights_menu.html">generate weights</a> rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.</p>
+<p><img src="../panel.png" alt="" /></p>
+<p>The rigging-related operations will show up in a panel when the current mode is <code>Weight Paint</code>.</p>
+<h2 id="transfer-weights-from-meshes">
+  Transfer Weights from Meshes
+  <a class="anchor" href="#transfer-weights-from-meshes">#</a>
 </h2>
-<p>NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.</p>
-<h3 id="sidebar-panels">
-  Sidebar Panels
-  <a class="anchor" href="#sidebar-panels">#</a>
+<p><img src="../transfer.png" alt="" /></p>
+<p>The <code>Weight From Meshes</code> button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.</p>
+<p>The operator requires an <strong>armature</strong> and one or more source <strong>mesh objects</strong> as the input. It sets the weights of the armature bones to stroke points according to the nearest vertex from the source mesh objects.</p>
+<p>If the source objects are not rigged, the operator can rig them first using the <a href="https://docs.blender.org/manual/en/latest/animation/armatures/skinning/parenting.html#with-automatic-weights">With Automatic Weights</a> parenting tool, and then perform the transfer, controlled by the option <code>Use Existing Weights</code>.</p>
+<h3 id="source-objects">
+  Source Objects
+  <a class="anchor" href="#source-objects">#</a>
 </h3>
-<div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <img src="../ui_side.png" alt="Sidebar" />
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <p>A tab named <code>NijiGP</code> will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is <code>Draw</code>, <code>Edit</code> or <code>Weight Paint</code>. This is the major way of calling NijiGPen&rsquo;s functions.</p>
-<p>NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.</p>
-<p>These operators do not have default shortcut keys. However, an option <code>[Assign Shortcut]</code> is available in the operator button&rsquo;s right-click menu.</p>
-
-  </div>
-
-</div>
-
-<h3 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h3>
-<div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <p>NijiGPen adds several new tools in the Toolbar of Grease Pencil <code>Edit</code> mode. The tool icons have a &ldquo;2D&rdquo; mark on them.</p>
-<p>These tools have the same effect as the corresponding operators in the sidebar panel. However, they allow you to tune the parameters with mouse dragging instead of typing numbers.</p>
-
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <img src="../ui_tool.png" alt="Tools" />
-  </div>
-
-</div>
-
-<h3 id="viewport-buttons-optional">
-  Viewport Buttons (Optional)
-  <a class="anchor" href="#viewport-buttons-optional">#</a>
-</h3>
-<p>NijiGPen also adds some buttons at the bottom of the 3D Viewport window. They are shortcuts of the following functions:</p>
+<p>For 2D animations, one recommended way is to draw a silhouette of the target that you want to animate, and convert it to a mesh object using this add-on&rsquo;s mesh generation operations. The silhouette does not need to be very precise, but in general a better-drawn silhouette may lead to a better rigging result.</p>
+<p>Besides manually drawing it, the following functions may be used to generate a silhouette:</p>
 <ul>
-<li>Undo/redo</li>
-<li>Tilt the canvas</li>
-<li>Arrange selected strokes forward/backward</li>
+<li>Blender&rsquo;s <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tools/fill.html">Fill</a> tool with the <strong>inverted</strong> direction.</li>
+<li><a href="../../line/smart_fill">Smart Fill</a> tool of this add-on.</li>
 </ul>
-<p><img src="../ui_touch.png" alt="Shortcuts" /></p>
-<p>The purpose of these shortcut buttons is to enhance the user experience on touchscreens (e.g., Microsoft Surface), inspired by popular painting/design software on tablets. They can be triggered by either the mouse or a stylus.</p>
+<p>Besides using the generated mesh, you can also assign an arbitrary mesh object, or all mesh objects from a collection as the source. For example, this option may be useful when drawing strokes on the surface of a 3D object to keep their bone animation consistent. In that case, please make sure to change to mapping option to <code>3D Nearest Vertex</code>.</p>
+<h2 id="use-hints-to-generate-pins">
+  Use Hints to Generate Pins
+  <a class="anchor" href="#use-hints-to-generate-pins">#</a>
+</h2>
+<p><img src="../pins.png" alt="" /></p>
+<p>The <code>Pins from Hints</code> button is another rigging tool that can be used for rubber hose animations of limbs. It does not require an existing armature as the input. Instead, by drawing some hint strokes, the operator will generate bones at the same position, and then rig the Grease Pencil using these bones by setting weights to nearby points.</p>
 <blockquote class="book-hint info">
-  If you do not need these buttons or find them conflicting with other add-ons, you can change their position or turn them off in the setting of <code>Preferences</code> panel.
+  It is recommended to add a <code>Smooth</code> modifier after the <code>Armature</code> modifier if the point movement looks unnatural.
 </blockquote>
 
-<h2 id="2d-working-plane">
-  2D Working Plane
-  <a class="anchor" href="#2d-working-plane">#</a>
-</h2>
-<p>Most of the add-on operators work in a 2D plane. If you are working with Blender&rsquo;s 2D Animation template (using X-Z plane by default), there would be no problems. However, when working in the 3D space (e.g., painting on the surface of an object), the way of determining the 2D working plane should be paid attention to.</p>
+<h3 id="hint-strokes">
+  Hint Strokes
+  <a class="anchor" href="#hint-strokes">#</a>
+</h3>
+<p>The hint strokes should be drawn in a separate layer. Each stroke&rsquo;s start and end position determine the placement of a bone. All other point/stroke attributes have no impact on the result.</p>
+<p>Each hint stroke should be drawn at the middle of a limb and perpendicular to it. It should intersect with the limb&rsquo;s outlines at both ends.</p>
+<h3 id="bone-styles">
+  Bone Styles
+  <a class="anchor" href="#bone-styles">#</a>
+</h3>
+<p>There are several options to transform the generated bones:</p>
 <ul>
-<li>In the default mode (&ldquo;Auto&rdquo;), the add-on first estimates the coordinates of all input stroke points to determine the vectors of two most important dimensions. Then it uses the current view to determine the front/back and up/down directions.
-<ul>
-<li>Please avoid selecting strokes belonging to more than one 2D plane as the input. In that case, the estimation can be wrong. (A warning message will show up when it happens.)</li>
+<li><code>Bone Style</code>: This determines whether the bone should start from the hint&rsquo;s center (<em>Half</em>) or start point (<em>Full</em>).</li>
+<li><code>Bone Rotation</code>: Setting it to <code>+90</code> or <code>-90</code> degrees can make the bones parallel to the limb.</li>
+<li><code>Set Bone Parent</code>: This option sets the parent relationship between bones according to the drawn sequence of hints and the relative position. Please notice that the result usually need manual adjustment.</li>
 </ul>
-</li>
-<li>There are also other modes available, including using the current view, or using an orthogonal plane (X-Y, X-Z or Y-Z). It can be set in the <code>Global Setting</code> panel.</li>
-</ul>
-<blockquote class="book-hint warning">
-  <p>Applying a rotation in a Grease Pencil layer&rsquo;s attribute may disturb the detection of the working plane. If you want to use layer rotation with NijiGPen, please make sure to check the <code>Use Transform of Active Layer</code> option and process strokes from a single layer per operation.</p>
-<p>On the other hand, applying a rotation on the object itself or its parent has no negative effect on the plane detection.</p>
-
-</blockquote>
-
 </article>
  
       
@@ -582,14 +556,17 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#user-interface">User Interface</a>
+    <li><a href="#transfer-weights-from-meshes">Transfer Weights from Meshes</a>
       <ul>
-        <li><a href="#sidebar-panels">Sidebar Panels</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#viewport-buttons-optional">Viewport Buttons (Optional)</a></li>
+        <li><a href="#source-objects">Source Objects</a></li>
       </ul>
     </li>
-    <li><a href="#2d-working-plane">2D Working Plane</a></li>
+    <li><a href="#use-hints-to-generate-pins">Use Hints to Generate Pins</a>
+      <ul>
+        <li><a href="#hint-strokes">Hint Strokes</a></li>
+        <li><a href="#bone-styles">Bone Styles</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

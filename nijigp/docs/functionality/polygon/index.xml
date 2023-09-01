@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>- Polygons - on NijiGPen Documentation</title>
+    <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/</link>
+    <description>Recent content in - Polygons - on NijiGPen Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://chsh2.github.io/nijigp/docs/functionality/polygon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Boolean</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/bool/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/bool/</guid>
+      <description>Boolean#NijiGPen provides following 2D boolean operations on the closed paths of two or more strokes:
+Union (Sum, OR) Difference (Subtract, NOT) Intersection (AND) Exclusive (XOR) These functions are realized by calling the Clipper library. Please check the link for more details.
+Edit Mode Operators#There are multiple buttons in the Edit mode panel, which are shortcuts of the same operator. This operator takes the paths of selected strokes as the input, and generate new strokes which are results of the boolean operation.</description>
+    </item>
+    
+  </channel>
+</rss>

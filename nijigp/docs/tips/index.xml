@@ -23,8 +23,7 @@ Why cannot I see any shading effect when I generate meshes from Grease Pencil?</
       
       <guid>https://chsh2.github.io/nijigp/docs/tips/limitations/</guid>
       <description>Limitations#The add-on has a number of limitations in different aspects, including:
-Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&amp;rsquo;s own design, which may lead to different behaviors from common graphics software. Shape of a Stroke#The performance of the add-on may deteriorate with input strokes of certain shapes:
-Please avoid using self-overlapping strokes. Unlike common vector formats such as SVG, Blender does not define a fill rule and the rendering of the overlapping parts cannot be guaranteed.</description>
+Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&amp;rsquo;s own design, which may lead to different behaviors from common graphics software. This page lists limitations which are general to multiple operators. Besides it, the constraints of 2D space can be found in Basic Usage. The limitation of each single operator will be recorded in their own page.</description>
     </item>
     
   </channel>
