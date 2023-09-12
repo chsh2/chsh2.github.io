@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stroke Tuning#This group of operators is designed to perform some fine adjustments on the position and/or thickness of a line art.
+Pinch#This operator closes the gaps between each pair of selected strokes if any of their tips are close together. The user can set a Transition value to determine whether to move the whole stroke or just move the tips.
+The operation does not apply for the case where 3 or more strokes have their tips in proximity.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Stroke Tuning" />
+<meta property="og:description" content="Stroke Tuning#This group of operators is designed to perform some fine adjustments on the position and/or thickness of a line art.
+Pinch#This operator closes the gaps between each pair of selected strokes if any of their tips are close together. The user can set a Transition value to determine whether to move the whole stroke or just move the tips.
+The operation does not apply for the case where 3 or more strokes have their tips in proximity." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/line/tuning/" /><meta property="article:section" content="docs" />
+
+
+<title>Stroke Tuning | NijiGPen Documentation</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/nijigp/book.min.d984b6ffea0097d4b26e4daa87fa4167406fdf2cd1fda9eeddadf6f3c5823974.css" integrity="sha256-2YS2/&#43;oAl9Sybk2qh/pBZ0Bv3yzR/anu3a3288WCOXQ=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/en.search.min.bf030bb235dffb89c15b24e00949f8a494d622bdde1a8d3d0b33918b831fd48f.js" integrity="sha256-vwMLsjXf&#43;4nBWyTgCUn4pJTWIr3eGo09CzORi4Mf1I8=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Polygons -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/bool/" class="">Boolean</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/offset/" class="">Offset</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/sweep/" class="">Sweep</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/holdout/" class="">Hole Holdout</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Lines -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/fit/" class="">Sketch Cleanup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/tuning/" class="active">Stroke Tuning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/smart_fill/" class="">Smart Fill</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Meshes -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/generation/" class="">Mesh Generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/management/" class="">Mesh Management</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Animations -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/frame_animation/" class="">Frame Animations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Import/Export -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/psd_render/" class="">PSD Render</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Stroke Tuning</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pinch">Pinch</a></li>
+    <li><a href="#taper">Taper</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="stroke-tuning">
+  Stroke Tuning
+  <a class="anchor" href="#stroke-tuning">#</a>
+</h1>
+<p>This group of operators is designed to perform some fine adjustments on the position and/or thickness of a line art.</p>
+<p><img src="../tune_panel.png" alt="" /></p>
+<h2 id="pinch">
+  Pinch
+  <a class="anchor" href="#pinch">#</a>
+</h2>
+<p>This operator closes the gaps between each pair of selected strokes if any of their tips are close together. The user can set a <code>Transition</code> value to determine whether to move the whole stroke or just move the tips.</p>
+<blockquote class="book-hint info">
+  The operation does not apply for the case where 3 or more strokes have their tips in proximity. In that case, only two of them will be merged.
+</blockquote>
+
+<p><img src="../pinch.png" alt="" /></p>
+<p>By enabling the <code>Consider Intermediate Points</code> option, this operator can also be used to process the case where a tip of one stroke is close to the middle part of another stroke. The line points in the contact region can be thickened, in order to emulate an effect of contact shadow.</p>
+<h2 id="taper">
+  Taper
+  <a class="anchor" href="#taper">#</a>
+</h2>
+<p>This operator changes the thickness of each selected stroke to make it look more natural, for example, to emulate the pressure sensitivity without having the corresponding input device.</p>
+<p><img src="../taper.png" alt="" /></p>
+<p>It changes the radius of points at:</p>
+<ul>
+<li><strong>Starting/End Points</strong>: The user can decide the impact range.</li>
+<li><strong>Turning Points</strong>: The radius will be changed according to the point curvature. By default, these points will be thickened, but the user can also choose to thin them.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pinch">Pinch</a></li>
+    <li><a href="#taper">Taper</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

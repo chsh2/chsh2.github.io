@@ -18,13 +18,14 @@ If you want to use the high resolution brushes repeatedly, you may consider save
     </item>
     
     <item>
-      <title>PSD Render</title>
-      <link>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</link>
+      <title>Clipboard Utilities</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</guid>
-      <description>PSD Render#The Multi-Layer PSD Render button renders each layer of the Grease Pencil object to a separate image, and then merge them together to a .psd file. The name, blend mode of each layer and the sequence of layers will be preserved. In this way, the image can be further edited in various popular image editing or painting software.
-Besides the Grease Pencil layers, there are two additional PSD layers rendered.</description>
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</guid>
+      <description>Clipboard Utilities#NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.
+Paste SVG Codes#It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.
+The parsing of SVG codes is in the same way as the standard import function of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent.</description>
     </item>
     
     <item>
@@ -35,6 +36,16 @@ Besides the Grease Pencil layers, there are two additional PSD layers rendered.<
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</guid>
       <description>Vectorizing Images#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
 These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current 2D working plane.</description>
+    </item>
+    
+    <item>
+      <title>PSD Render</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</guid>
+      <description>PSD Render#The Multi-Layer PSD Render button renders each layer of the Grease Pencil object to a separate image, and then merge them together to a .psd file. The name, blend mode of each layer and the sequence of layers will be preserved. In this way, the image can be further edited in various popular image editing or painting software.
+Besides the Grease Pencil layers, there are two additional PSD layers rendered.</description>
     </item>
     
   </channel>

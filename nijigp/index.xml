@@ -39,6 +39,16 @@ In addition, new options will appear in the multiframe mode for some operators, 
     </item>
     
     <item>
+      <title>Mesh Generation</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/mesh/generation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/mesh/generation/</guid>
+      <description>Mesh Generation#NijiGPen allows users to convert a Grease Pencil stroke to a mesh object (either planar or 3D). This can have multiple usages, such as:
+Adding the 3D shading effect to a 2D painting. Quick modeling from sketches. A stroke will be treated as a closed shape during mesh generation. Therefore, the line-only strokes may look different after the generation. You may either ignore them in the options or convert them to outlines first.</description>
+    </item>
+    
+    <item>
       <title>Python Packages</title>
       <link>https://chsh2.github.io/nijigp/docs/get_started/installation/dependency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -59,6 +69,16 @@ Why cannot I see any shading effect when I generate meshes from Grease Pencil?</
     </item>
     
     <item>
+      <title>Sketch Cleanup</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</guid>
+      <description>Sketch Cleanup#NijiGPen&amp;rsquo;s line operators provide functionality that helps turn raw sketches into final line art. A raw sketch usually contains repeated strokes, line splits, and line gaps that require a lot of manual effort to clean up. The Line Fit operators can speed up this process by merging multiple strokes into a single, smooth stroke.
+Fit Sketch to Single Line#The major way of using this function is from the sidebar panel in the Edit mode.</description>
+    </item>
+    
+    <item>
       <title>Basic Usage</title>
       <link>https://chsh2.github.io/nijigp/docs/get_started/basic_usage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -70,6 +90,17 @@ NijiGPen operators are categorized in several panels. Depending on the current m
     </item>
     
     <item>
+      <title>Clipboard Utilities</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</guid>
+      <description>Clipboard Utilities#NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.
+Paste SVG Codes#It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.
+The parsing of SVG codes is in the same way as the standard import function of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent.</description>
+    </item>
+    
+    <item>
       <title>Limitations</title>
       <link>https://chsh2.github.io/nijigp/docs/tips/limitations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -77,6 +108,28 @@ NijiGPen operators are categorized in several panels. Depending on the current m
       <guid>https://chsh2.github.io/nijigp/docs/tips/limitations/</guid>
       <description>Limitations#The add-on has a number of limitations in different aspects, including:
 Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&amp;rsquo;s own design, which may lead to different behaviors from common graphics software. This page lists limitations which are general to multiple operators. Besides it, the constraints of 2D space can be found in Basic Usage. The limitation of each single operator will be recorded in their own page.</description>
+    </item>
+    
+    <item>
+      <title>Mesh Management</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/mesh/management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/mesh/management/</guid>
+      <description>Mesh Management#During the mesh generation, since each stroke will be converted to a separate mesh object, it is common to have many objects generated from the same Grease Pencil painting. This page will discuss the methods and options to handle multiple generated objects.
+Multi-Object Alignment#This section exists in each mesh generation operator&amp;rsquo;s option panel, defining how multiple generated meshes are aligned in the depth dimension.</description>
+    </item>
+    
+    <item>
+      <title>Offset</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/</guid>
+      <description>Offset#The 2D Offset operation is performed on the path of a stroke to achieve inflating/deflating/beveling of the shape.
+Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&amp;rsquo;s method, this add-on will not cause the self-intersection of the output shape.
+These functions are realized by calling the Clipper library. Please check the link for more details.
+From Sidebar Panel#The Offset button in the sidebar panel will offset each selected stroke with a given length value.</description>
     </item>
     
     <item>
@@ -91,13 +144,14 @@ Transfer Weights from Meshes#The Weight From Meshes button is a tool transferr
     </item>
     
     <item>
-      <title>PSD Render</title>
-      <link>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</link>
+      <title>Stroke Tuning</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/line/tuning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</guid>
-      <description>PSD Render#The Multi-Layer PSD Render button renders each layer of the Grease Pencil object to a separate image, and then merge them together to a .psd file. The name, blend mode of each layer and the sequence of layers will be preserved. In this way, the image can be further edited in various popular image editing or painting software.
-Besides the Grease Pencil layers, there are two additional PSD layers rendered.</description>
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/line/tuning/</guid>
+      <description>Stroke Tuning#This group of operators is designed to perform some fine adjustments on the position and/or thickness of a line art.
+Pinch#This operator closes the gaps between each pair of selected strokes if any of their tips are close together. The user can set a Transition value to determine whether to move the whole stroke or just move the tips.
+The operation does not apply for the case where 3 or more strokes have their tips in proximity.</description>
     </item>
     
     <item>
@@ -111,6 +165,19 @@ It handles the gaps in the line art automatically. It is less likely to leave se
     </item>
     
     <item>
+      <title>Sweep</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/sweep/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/sweep/</guid>
+      <description>Sweep#The Sweep operation drags stroke polygons along a given vector or path to create several effects, such as the pseudo-3D extrusion and shadowing.
+The mathematical terminology behind this concept is Minkowski sum.
+From Sidebar Panel#The Sweep button in the sidebar panel performs the operation on each selected stroke by typing the lengths of a 2D vector.
+Shape Style#The following 3 styles apply:
+Extrude: It turns the shapes into a pseudo-3D look.</description>
+    </item>
+    
+    <item>
       <title>Vectorizing Images</title>
       <link>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -118,6 +185,26 @@ It handles the gaps in the line art automatically. It is less likely to leave se
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</guid>
       <description>Vectorizing Images#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
 These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current 2D working plane.</description>
+    </item>
+    
+    <item>
+      <title>Hole Holdout</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</guid>
+      <description>Hole Holdout#To display holes inside a shape&amp;rsquo;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software. Users need to manually enable a Holdout option in the material setting to make a stroke transparent.
+To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&amp;rsquo;s path is completely inside another stroke&amp;rsquo;s fill:</description>
+    </item>
+    
+    <item>
+      <title>PSD Render</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</guid>
+      <description>PSD Render#The Multi-Layer PSD Render button renders each layer of the Grease Pencil object to a separate image, and then merge them together to a .psd file. The name, blend mode of each layer and the sequence of layers will be preserved. In this way, the image can be further edited in various popular image editing or painting software.
+Besides the Grease Pencil layers, there are two additional PSD layers rendered.</description>
     </item>
     
   </channel>

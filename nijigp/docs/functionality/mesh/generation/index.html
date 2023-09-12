@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mesh Generation#NijiGPen allows users to convert a Grease Pencil stroke to a mesh object (either planar or 3D). This can have multiple usages, such as:
+Adding the 3D shading effect to a 2D painting. Quick modeling from sketches. A stroke will be treated as a closed shape during mesh generation. Therefore, the line-only strokes may look different after the generation. You may either ignore them in the options or convert them to outlines first.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Mesh Generation" />
+<meta property="og:description" content="Mesh Generation#NijiGPen allows users to convert a Grease Pencil stroke to a mesh object (either planar or 3D). This can have multiple usages, such as:
+Adding the 3D shading effect to a 2D painting. Quick modeling from sketches. A stroke will be treated as a closed shape during mesh generation. Therefore, the line-only strokes may look different after the generation. You may either ignore them in the options or convert them to outlines first." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/mesh/generation/" /><meta property="article:section" content="docs" />
+
+
+<title>Mesh Generation | NijiGPen Documentation</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/nijigp/book.min.d984b6ffea0097d4b26e4daa87fa4167406fdf2cd1fda9eeddadf6f3c5823974.css" integrity="sha256-2YS2/&#43;oAl9Sybk2qh/pBZ0Bv3yzR/anu3a3288WCOXQ=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/en.search.min.bf030bb235dffb89c15b24e00949f8a494d622bdde1a8d3d0b33918b831fd48f.js" integrity="sha256-vwMLsjXf&#43;4nBWyTgCUn4pJTWIr3eGo09CzORi4Mf1I8=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Polygons -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/bool/" class="">Boolean</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/offset/" class="">Offset</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/sweep/" class="">Sweep</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/holdout/" class="">Hole Holdout</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Lines -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/fit/" class="">Sketch Cleanup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/tuning/" class="">Stroke Tuning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/smart_fill/" class="">Smart Fill</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Meshes -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/generation/" class="active">Mesh Generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/management/" class="">Mesh Management</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Animations -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/frame_animation/" class="">Frame Animations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Import/Export -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/psd_render/" class="">PSD Render</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Mesh Generation</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pre-processing">Pre-Processing</a></li>
+    <li><a href="#offset-method-frustum">Offset Method (Frustum)</a>
+      <ul>
+        <li><a href="#shape-style">Shape Style</a></li>
+        <li><a href="#post-processing">Post-Processing</a></li>
+      </ul>
+    </li>
+    <li><a href="#normal-interpolation-method">Normal Interpolation Method</a>
+      <ul>
+        <li><a href="#mesh-style">Mesh Style</a></li>
+        <li><a href="#normalheight-calculation">Normal/Height Calculation</a></li>
+        <li><a href="#open-areas">Open Areas</a></li>
+      </ul>
+    </li>
+    <li><a href="#color-and-material">Color and Material</a>
+      <ul>
+        <li><a href="#vertex-colors">Vertex Colors</a></li>
+        <li><a href="#presets">Presets</a></li>
+        <li><a href="#custom-materials">Custom Materials</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="mesh-generation">
+  Mesh Generation
+  <a class="anchor" href="#mesh-generation">#</a>
+</h1>
+<p>NijiGPen allows users to convert a Grease Pencil stroke to a mesh object (either planar or 3D). This can have multiple usages, such as:</p>
+<ul>
+<li>Adding the 3D shading effect to a 2D painting.</li>
+<li>Quick modeling from sketches.</li>
+</ul>
+<p><img src="../mesh_gen.png" alt="" /></p>
+<blockquote class="book-hint info">
+  A stroke will be treated as a closed shape during mesh generation. Therefore, the line-only strokes may look different after the generation. You may either ignore them in the options or <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/edit/stroke_menu.html#outline">convert them to outlines</a> first.
+</blockquote>
+
+<h2 id="pre-processing">
+  Pre-Processing
+  <a class="anchor" href="#pre-processing">#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    Sampling the stroke with equal point intervals and/or smoothing the stroke may improve the quality of generated mesh. Therefore, shortcuts of some Blender native operators are placed here. Please refer to <a href="../../../tips/limitations/#shape-of-a-stroke">another page</a> for more information.
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <img src="../panel1.png" alt="" />
+  </div>
+
+</div>
+
+<h2 id="offset-method-frustum">
+  Offset Method (Frustum)
+  <a class="anchor" href="#offset-method-frustum">#</a>
+</h2>
+<p>The <code>Frustum</code> button provides a relatively simple way of converting each selected stroke to a mesh. It can be regarded as a 3D extension of the 2D <a href="../../polygon/offset">Offset</a> method.</p>
+<h3 id="shape-style">
+  Shape Style
+  <a class="anchor" href="#shape-style">#</a>
+</h3>
+<p>This method performs 2D insetting on each selected stroke for multiple times and extrudes each output path along the depth axis to make a 3D mesh. The user can determine the count and amount of 2D insetting to perform, as well as the style to generate depth.</p>
+<p><img src="../frustum.png" alt="" /></p>
+<h3 id="post-processing">
+  Post-Processing
+  <a class="anchor" href="#post-processing">#</a>
+</h3>
+<p>The 2D offset/inset operation may result in output vertices very close to each other, which may incur shading glitches. Options are provided to improve the topology of the output meshes, including vertex merging and remeshing.</p>
+<h2 id="normal-interpolation-method">
+  Normal Interpolation Method
+  <a class="anchor" href="#normal-interpolation-method">#</a>
+</h2>
+<p>The <code>Interpolation</code> button is a more advanced mesh generation operator with more options to tune the output geometry.</p>
+<h3 id="mesh-style">
+  Mesh Style
+  <a class="anchor" href="#mesh-style">#</a>
+</h3>
+<p>First, the algorithm will generate new vertices inside the stroke contour. Two styles are available:</p>
+<ul>
+<li><strong>Triangulation</strong>: This style divides the shape into triangles. Furthermore, the user can choose to use either the <code>triangle</code> library or Blender&rsquo;s native method to achieve this.
+<ul>
+<li>The <code>triangle</code> library generates better-quality mesh with each face having a similar area. However, <a href="../../../get_started/installation/dependency/#impact-of-operating-systems">it is not available for Apple silicon devices</a>.</li>
+<li>This method will generate denser vertices near the contour to make the shading looks better.</li>
+</ul>
+</li>
+<li><strong>Grid</strong>: Based on <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/knife_project.html">Knife Project</a> with a grid mesh, this style ensures each face to be a square. However, the faces close to the boundary may be 5-gons.</li>
+</ul>
+<p><img src="../mesh_style.png" alt="" /></p>
+<h3 id="normalheight-calculation">
+  Normal/Height Calculation
+  <a class="anchor" href="#normalheight-calculation">#</a>
+</h3>
+<p>Secondly, the algorithm determines the height/depth of each new vertex. By default, a <strong>normal map</strong> will be generated according to the contour shape. In this way, though the generated mesh is a 2D planar, it has a 3D shading look reacting to different light sources in the space.</p>
+<p>The user can also choose to generate a real 3D structure by changing the <code>Mesh Type</code> option. Two methods are available converting normal vectors to heights. The <code>Advanced Solver</code> option tends to generate smoother transition of heights. It may has better results than the basic method when the contour contains some sharp angles, but also requires longer processing time.</p>
+<p>The <code>Max Vertical Angle</code> and <code>Vertical Scale</code> options determine the maximum depth of the generated mesh. With a negative value of either option, a concave geometry will be generated instead of a convex one.</p>
+<h3 id="open-areas">
+  Open Areas
+  <a class="anchor" href="#open-areas">#</a>
+</h3>
+<p>By default, all boundary vertices, which are the original points of the input stroke, have zero depth. By assigning a weight group in the <code>Open Area Group</code> option, points with non-zero weights are no longer pinned to the working plane and will leave some openings on the boundary. The option <code>Fading Out</code> can make such vertices transparent.</p>
+<p><img src="../mesh_open.png" alt="" /></p>
+<p>The user can also make holes inside a mesh. Input strokes with a holdout fill material are regarded as holes. Please refer to <a href="../../../tips/limitations/#holes">the following instructions</a>.</p>
+<h2 id="color-and-material">
+  Color and Material
+  <a class="anchor" href="#color-and-material">#</a>
+</h2>
+<h3 id="vertex-colors">
+  Vertex Colors
+  <a class="anchor" href="#vertex-colors">#</a>
+</h3>
+<p>The vertex color of the generated mesh is determined by the fill color of the input stroke. Currently, only the <code>Solid</code> fill is supported. <code>Gradient</code> or <code>Texture</code> fill is not supported yet.</p>
+<p>The normal interpolation method can also use the line color instead. If line points have more than one vertex colors, the color vector will be interpolated for the inner vertices just as the normal vector.</p>
+<h3 id="presets">
+  Presets
+  <a class="anchor" href="#presets">#</a>
+</h3>
+<p>The add-on provides with some preset materials which can be selected from a list during the generation. The available options may vary depending on:</p>
+<ul>
+<li>The mesh type: planar or 3D</li>
+<li>The render engine: Eevee or Cycles</li>
+</ul>
+<p><img src="../mesh_mat.png" alt="" /></p>
+<h3 id="custom-materials">
+  Custom Materials
+  <a class="anchor" href="#custom-materials">#</a>
+</h3>
+<p>Besides the presets, the user can also assign other materials to the generated meshes. Most Blender materials are expected to be compatible. The geometry information is stored in the following <a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/input/attribute.html">attributes</a>:</p>
+<ul>
+<li><code>Color</code> for both generation methods.</li>
+<li><code>NormalMap</code>, <code>Depth</code>, <code>UVMap</code> for the normal interpolation method.</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#pre-processing">Pre-Processing</a></li>
+    <li><a href="#offset-method-frustum">Offset Method (Frustum)</a>
+      <ul>
+        <li><a href="#shape-style">Shape Style</a></li>
+        <li><a href="#post-processing">Post-Processing</a></li>
+      </ul>
+    </li>
+    <li><a href="#normal-interpolation-method">Normal Interpolation Method</a>
+      <ul>
+        <li><a href="#mesh-style">Mesh Style</a></li>
+        <li><a href="#normalheight-calculation">Normal/Height Calculation</a></li>
+        <li><a href="#open-areas">Open Areas</a></li>
+      </ul>
+    </li>
+    <li><a href="#color-and-material">Color and Material</a>
+      <ul>
+        <li><a href="#vertex-colors">Vertex Colors</a></li>
+        <li><a href="#presets">Presets</a></li>
+        <li><a href="#custom-materials">Custom Materials</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

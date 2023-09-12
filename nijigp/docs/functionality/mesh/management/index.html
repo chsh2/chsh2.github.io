@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mesh Management#During the mesh generation, since each stroke will be converted to a separate mesh object, it is common to have many objects generated from the same Grease Pencil painting. This page will discuss the methods and options to handle multiple generated objects.
+Multi-Object Alignment#This section exists in each mesh generation operator&rsquo;s option panel, defining how multiple generated meshes are aligned in the depth dimension.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Mesh Management" />
+<meta property="og:description" content="Mesh Management#During the mesh generation, since each stroke will be converted to a separate mesh object, it is common to have many objects generated from the same Grease Pencil painting. This page will discuss the methods and options to handle multiple generated objects.
+Multi-Object Alignment#This section exists in each mesh generation operator&rsquo;s option panel, defining how multiple generated meshes are aligned in the depth dimension." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/mesh/management/" /><meta property="article:section" content="docs" />
+
+
+<title>Mesh Management | NijiGPen Documentation</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/nijigp/book.min.d984b6ffea0097d4b26e4daa87fa4167406fdf2cd1fda9eeddadf6f3c5823974.css" integrity="sha256-2YS2/&#43;oAl9Sybk2qh/pBZ0Bv3yzR/anu3a3288WCOXQ=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/en.search.min.bf030bb235dffb89c15b24e00949f8a494d622bdde1a8d3d0b33918b831fd48f.js" integrity="sha256-vwMLsjXf&#43;4nBWyTgCUn4pJTWIr3eGo09CzORi4Mf1I8=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Polygons -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/bool/" class="">Boolean</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/offset/" class="">Offset</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/sweep/" class="">Sweep</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/holdout/" class="">Hole Holdout</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Lines -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/fit/" class="">Sketch Cleanup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/tuning/" class="">Stroke Tuning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/smart_fill/" class="">Smart Fill</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Meshes -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/generation/" class="">Mesh Generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/management/" class="active">Mesh Management</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Animations -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/frame_animation/" class="">Frame Animations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Import/Export -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/psd_render/" class="">PSD Render</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Mesh Management</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#multi-object-alignment">Multi-Object Alignment</a></li>
+    <li><a href="#batch-operations">Batch Operations</a></li>
+    <li><a href="#animation">Animation</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="mesh-management">
+  Mesh Management
+  <a class="anchor" href="#mesh-management">#</a>
+</h1>
+<p>During the mesh generation, since each stroke will be converted to a separate mesh object, it is common to have many objects generated from the same Grease Pencil painting. This page will discuss the methods and options to handle multiple generated objects.</p>
+<h2 id="multi-object-alignment">
+  Multi-Object Alignment
+  <a class="anchor" href="#multi-object-alignment">#</a>
+</h2>
+<p>This section exists in each mesh generation operator&rsquo;s option panel, defining how multiple generated meshes are aligned in the depth dimension.</p>
+<p>With the <code>Stack</code> option enabled, objects will be sorted according to the sequence of the input strokes. The objects generated from upward strokes will be moved forward along the depth axis, so that they will not be sheltered by the ones generated from downward strokes.</p>
+<ul>
+<li>
+<p>For planar meshes with normal maps, a constant gap in the depth axis can be set between each generated object.</p>
+</li>
+<li>
+<p>For 3D meshes, <code>Overlap Tolerance</code> determines the maximum portion of vertices which may be overlapped by downward objects. <code>O%</code> means no overlapping is allowed, just as the planar mesh case. <code>100%</code> means allowing all overlapping which leads to no depth movement at all.</p>
+</li>
+</ul>
+<h2 id="batch-operations">
+  Batch Operations
+  <a class="anchor" href="#batch-operations">#</a>
+</h2>
+<p><img src="../panel2.png" alt="" /></p>
+<p>In the sidebar panel, there are buttons to perform batch operations on all generated meshes of the active Grease Pencil object. The user can hide, show or delete all mesh objects at once.</p>
+<h2 id="animation">
+  Animation
+  <a class="anchor" href="#animation">#</a>
+</h2>
+<p><a href="../../animation/frame_animation">Multiframe operations</a> may also generate multiple mesh objects, since the strokes in each different frame are regarded independent. To avoid the objects from different keyframes interfering with each other, the <code>Stop-Motion Animation</code> option can attach a predefined Geometry Nodes group to the generated object, which automatically hides the object outside its keyframe range.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#multi-object-alignment">Multi-Object Alignment</a></li>
+    <li><a href="#batch-operations">Batch Operations</a></li>
+    <li><a href="#animation">Animation</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

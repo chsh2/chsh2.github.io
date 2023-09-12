@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Offset#The 2D Offset operation is performed on the path of a stroke to achieve inflating/deflating/beveling of the shape.
+Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&rsquo;s method, this add-on will not cause the self-intersection of the output shape.
+These functions are realized by calling the Clipper library. Please check the link for more details.
+From Sidebar Panel#The Offset button in the sidebar panel will offset each selected stroke with a given length value.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Offset" />
+<meta property="og:description" content="Offset#The 2D Offset operation is performed on the path of a stroke to achieve inflating/deflating/beveling of the shape.
+Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&rsquo;s method, this add-on will not cause the self-intersection of the output shape.
+These functions are realized by calling the Clipper library. Please check the link for more details.
+From Sidebar Panel#The Offset button in the sidebar panel will offset each selected stroke with a given length value." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/" /><meta property="article:section" content="docs" />
+
+
+<title>Offset | NijiGPen Documentation</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/nijigp/book.min.d984b6ffea0097d4b26e4daa87fa4167406fdf2cd1fda9eeddadf6f3c5823974.css" integrity="sha256-2YS2/&#43;oAl9Sybk2qh/pBZ0Bv3yzR/anu3a3288WCOXQ=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/en.search.min.bf030bb235dffb89c15b24e00949f8a494d622bdde1a8d3d0b33918b831fd48f.js" integrity="sha256-vwMLsjXf&#43;4nBWyTgCUn4pJTWIr3eGo09CzORi4Mf1I8=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Polygons -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/bool/" class="">Boolean</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/offset/" class="active">Offset</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/sweep/" class="">Sweep</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/holdout/" class="">Hole Holdout</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Lines -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/fit/" class="">Sketch Cleanup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/tuning/" class="">Stroke Tuning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/smart_fill/" class="">Smart Fill</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Meshes -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/generation/" class="">Mesh Generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/management/" class="">Mesh Management</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Animations -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/frame_animation/" class="">Frame Animations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Import/Export -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/psd_render/" class="">PSD Render</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes (TODO)</span>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Offset</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#from-sidebar-panel">From Sidebar Panel</a>
+      <ul>
+        <li><a href="#shape-style">Shape Style</a></li>
+        <li><a href="#color-tint">Color Tint</a></li>
+      </ul>
+    </li>
+    <li><a href="#from-toolbar">From Toolbar</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="offset">
+  Offset
+  <a class="anchor" href="#offset">#</a>
+</h1>
+<p>The 2D Offset operation is performed on the path of a stroke to achieve inflating/deflating/beveling of the shape.</p>
+<p>Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&rsquo;s method, this add-on will not cause the self-intersection of the output shape.</p>
+<p><img src="../offset.png" alt="" /></p>
+<p>These functions are realized by calling the <a href="http://www.angusj.com/delphi/clipper/documentation/Docs/Units/ClipperLib/Classes/ClipperOffset/_Body.htm">Clipper</a> library. Please check the link for more details.</p>
+<h2 id="from-sidebar-panel">
+  From Sidebar Panel
+  <a class="anchor" href="#from-sidebar-panel">#</a>
+</h2>
+<p>The <code>Offset</code> button in the sidebar panel will offset each selected stroke with a given length value. A negative length value indicates insetting.</p>
+<h3 id="shape-style">
+  Shape Style
+  <a class="anchor" href="#shape-style">#</a>
+</h3>
+<p>There are 3 offset modes to select from:</p>
+<ul>
+<li><strong>Fill Mode</strong>: Inflat or deflat the shape towards the normal direction of each line segment.</li>
+<li><strong>Line Mode</strong>: Inflat the outline of the stroke. Please notice that:
+<ul>
+<li>A negative offset amount is meaningless in this mode.</li>
+<li>From Blender 3.4, there is an official operator <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/edit/stroke_menu.html#outline">Outline</a> achieving a similar effect.</li>
+</ul>
+</li>
+<li><strong>Corner Mode</strong>: This mode is a combination of two <em>Fill Mode</em> offset operations in the opposite direction (e.g., an offset followed by an inset immediately). As a result, most points in the stroke are unchanged, but the corners will be &ldquo;eroded&rdquo;. This can achieve an effect of bevel.</li>
+</ul>
+<p>The corners of the output shape can also have different styles, including <em>Rounded</em>, <em>Flat</em> and <em>Miter</em>.</p>
+<h3 id="color-tint">
+  Color Tint
+  <a class="anchor" href="#color-tint">#</a>
+</h3>
+<p>A new vertex color can be assigned to the output strokes. With a tint color and the <code>Keep Original</code> option on, repeating the operator for multiple times can create a gradient coloring effect.</p>
+<h2 id="from-toolbar">
+  From Toolbar
+  <a class="anchor" href="#from-toolbar">#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <p>Offset operations can also be performed from the toolbar as a tool named <code>2D Offset</code>. Instead of typing a length value, the offset amount is controlled by mouse dragging.</p>
+<p>The offset mode can be switched by holding different keys:</p>
+<ul>
+<li><strong>Default</strong>: <em>Fill Mode</em></li>
+<li><strong>Ctrl</strong>: <em>Corner Mode (Bevel)</em></li>
+<li><strong>Shift</strong>: <em>Line Mode</em></li>
+</ul>
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <img src="../../../get_started/ui_tool.png" alt="Tools" />
+  </div>
+
+</div>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#from-sidebar-panel">From Sidebar Panel</a>
+      <ul>
+        <li><a href="#shape-style">Shape Style</a></li>
+        <li><a href="#color-tint">Color Tint</a></li>
+      </ul>
+    </li>
+    <li><a href="#from-toolbar">From Toolbar</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,6 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://chsh2.github.io/nijigp/docs/functionality/line/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Sketch Cleanup</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</guid>
+      <description>Sketch Cleanup#NijiGPen&amp;rsquo;s line operators provide functionality that helps turn raw sketches into final line art. A raw sketch usually contains repeated strokes, line splits, and line gaps that require a lot of manual effort to clean up. The Line Fit operators can speed up this process by merging multiple strokes into a single, smooth stroke.
+Fit Sketch to Single Line#The major way of using this function is from the sidebar panel in the Edit mode.</description>
+    </item>
+    
+    <item>
+      <title>Stroke Tuning</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/line/tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/line/tuning/</guid>
+      <description>Stroke Tuning#This group of operators is designed to perform some fine adjustments on the position and/or thickness of a line art.
+Pinch#This operator closes the gaps between each pair of selected strokes if any of their tips are close together. The user can set a Transition value to determine whether to move the whole stroke or just move the tips.
+The operation does not apply for the case where 3 or more strokes have their tips in proximity.</description>
+    </item>
+    
+    <item>
       <title>Smart Fill</title>
       <link>https://chsh2.github.io/nijigp/docs/functionality/line/smart_fill/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
