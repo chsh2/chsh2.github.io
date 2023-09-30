@@ -140,7 +140,7 @@ From Sidebar Panel#The Offset button in the sidebar panel will offset each sel
       <guid>https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/</guid>
       <description>Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
 The rigging-related operations will show up in a panel when the current mode is Weight Paint.
-Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.</description>
+It is recommended to add a Smooth modifier after the Armature modifier if the point movement looks unnatural.Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.</description>
     </item>
     
     <item>

@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
 The rigging-related operations will show up in a panel when the current mode is Weight Paint.
-Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.">
+It is recommended to add a Smooth modifier after the Armature modifier if the point movement looks unnatural.Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Rigging Utilities" />
 <meta property="og:description" content="Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
 The rigging-related operations will show up in a panel when the current mode is Weight Paint.
-Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object." />
+It is recommended to add a Smooth modifier after the Armature modifier if the point movement looks unnatural.Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/" /><meta property="article:section" content="docs" />
 
@@ -20,7 +20,7 @@ Transfer Weights from Meshes#The Weight From Meshes button is a tool transferr
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.d984b6ffea0097d4b26e4daa87fa4167406fdf2cd1fda9eeddadf6f3c5823974.css" integrity="sha256-2YS2/&#43;oAl9Sybk2qh/pBZ0Bv3yzR/anu3a3288WCOXQ=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.bf030bb235dffb89c15b24e00949f8a494d622bdde1a8d3d0b33918b831fd48f.js" integrity="sha256-vwMLsjXf&#43;4nBWyTgCUn4pJTWIr3eGo09CzORi4Mf1I8=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.8cc5c313498b79dd0d8e2d706127b129f5cee24d5b2d93a60f9e79d2a62f2499.js" integrity="sha256-jMXDE0mLed0Nji1wYSexKfXO4k1bLZOmD5550qYvJJk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -553,6 +553,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#hint-strokes">Hint Strokes</a></li>
         <li><a href="#bone-styles">Bone Styles</a></li>
+        <li><a href="#other-options">Other Options</a></li>
       </ul>
     </li>
   </ul>
@@ -574,6 +575,10 @@ https://github.com/alex-shpak/hugo-book
 <p>Although Blender can automatically <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/weight_paint/weights_menu.html">generate weights</a> rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.</p>
 <p><img src="../panel.png" alt="" /></p>
 <p>The rigging-related operations will show up in a panel when the current mode is <code>Weight Paint</code>.</p>
+<blockquote class="book-hint info">
+  It is recommended to add a <code>Smooth</code> modifier after the <code>Armature</code> modifier if the point movement looks unnatural.
+</blockquote>
+
 <h2 id="transfer-weights-from-meshes">
   Transfer Weights from Meshes
   <a class="anchor" href="#transfer-weights-from-meshes">#</a>
@@ -586,11 +591,15 @@ https://github.com/alex-shpak/hugo-book
   Source Objects
   <a class="anchor" href="#source-objects">#</a>
 </h3>
-<p>For 2D animations, one recommended way is to draw a silhouette of the target that you want to animate, and convert it to a mesh object using this add-on&rsquo;s mesh generation operations. The silhouette does not need to be very precise, but in general a better-drawn silhouette may lead to a better rigging result.</p>
-<p>Besides manually drawing it, the following functions may be used to generate a silhouette:</p>
+<p>For 2D animations, one recommended way is to use the other operators this add-on provides, <a href="../../line/smart_fill">Smart Fill</a> followed by <a href="../../mesh/generation">Mesh Generation</a>. The option <code>Quick New Mesh Using Smart Fill</code> does it automatically, using the bones as filling hints.</p>
+<blockquote class="book-hint warning">
+  Meshes generated by this option are relatively simple, taking only the <strong>active frame</strong> of the <strong>active layer</strong> into account. For more complex cases, it may be better to finish these operations manually.
+</blockquote>
+
+<p>Besides the method above, the following ways may also be used to generate a silhouette:</p>
 <ul>
 <li>Blender&rsquo;s <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tools/fill.html">Fill</a> tool with the <strong>inverted</strong> direction.</li>
-<li><a href="../../line/smart_fill">Smart Fill</a> tool of this add-on.</li>
+<li>A hand-drawn contour is also likely to work, which does not need to be very precise.</li>
 </ul>
 <p>Besides using the generated mesh, you can also assign an arbitrary mesh object, or all mesh objects from a collection as the source. For example, this option may be useful when drawing strokes on the surface of a 3D object to keep their bone animation consistent. In that case, please make sure to change to mapping option to <code>3D Nearest Vertex</code>.</p>
 <h2 id="use-hints-to-generate-pins">
@@ -599,25 +608,42 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p><img src="../pins.png" alt="" /></p>
 <p>The <code>Pins from Hints</code> button is another rigging tool that can be used for rubber hose animations of limbs. It does not require an existing armature as the input. Instead, by drawing some hint strokes, the operator will generate bones at the same position, and then rig the Grease Pencil using these bones by setting weights to nearby points.</p>
-<blockquote class="book-hint info">
-  It is recommended to add a <code>Smooth</code> modifier after the <code>Armature</code> modifier if the point movement looks unnatural.
-</blockquote>
-
 <h3 id="hint-strokes">
   Hint Strokes
   <a class="anchor" href="#hint-strokes">#</a>
 </h3>
-<p>The hint strokes should be drawn in a separate layer. Each stroke&rsquo;s start and end position determine the placement of a bone. All other point/stroke attributes have no impact on the result.</p>
-<p>Each hint stroke should be drawn at the middle of a limb and perpendicular to it. It should intersect with the limb&rsquo;s outlines at both ends.</p>
+<p><img src="../pin_shapes.png" alt="" /></p>
+<p>The hint strokes should be drawn in a separate layer. Currently, two types of hints are available:</p>
+<ul>
+<li><strong>Stick Shape</strong>: Each hint should be a straight line, drawn at the middle of a limb and perpendicular to it. It should intersect with the limb&rsquo;s outlines at both ends.
+<ul>
+<li>The hint&rsquo;s start and end position determine the placement of a bone. All other point/stroke attributes have no impact on the result.</li>
+</ul>
+</li>
+<li><strong>Lasso Shape</strong>: This mode allows the user to precisely select which points to assign weights, by drawing a lasso surrounding them.
+<ul>
+<li>The generated bone starts from the lasso&rsquo;s center, pointing to its start position.</li>
+</ul>
+</li>
+</ul>
 <h3 id="bone-styles">
   Bone Styles
   <a class="anchor" href="#bone-styles">#</a>
 </h3>
 <p>There are several options to transform the generated bones:</p>
 <ul>
-<li><code>Bone Style</code>: This determines whether the bone should start from the hint&rsquo;s center (<em>Half</em>) or start point (<em>Full</em>).</li>
+<li><code>Bone Style</code>: This determines whether the bone should start from the hint&rsquo;s center (<em>Half</em>) or cross the whole hint shape (<em>Full</em>).</li>
 <li><code>Bone Rotation</code>: Setting it to <code>+90</code> or <code>-90</code> degrees can make the bones parallel to the limb.</li>
-<li><code>Set Bone Parent</code>: This option sets the parent relationship between bones according to the drawn sequence of hints and the relative position. Please notice that the result usually need manual adjustment.</li>
+<li><code>Set Bone Parent</code>: This option sets the parent relationship between bones according to the drawn sequence of hints and the relative position. Please notice that the result sometimes needs manual adjustment.</li>
+</ul>
+<h3 id="other-options">
+  Other Options
+  <a class="anchor" href="#other-options">#</a>
+</h3>
+<p>There are some other options which may impact the result:</p>
+<ul>
+<li><code>Ensure Non-Zero Weights</code>: Enabling this option will make sure that every stroke point gets at least one bone weight, no matter how far it is from the hints. Otherwise, only points close to a hint will be assigned weights.</li>
+<li><code>Bind Single Bone to Stroke</code>: In this mode, each stroke will be assigned to at most one bone. This prevents strokes from being distorted.</li>
 </ul>
 </article>
  
@@ -669,6 +695,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#hint-strokes">Hint Strokes</a></li>
         <li><a href="#bone-styles">Bone Styles</a></li>
+        <li><a href="#other-options">Other Options</a></li>
       </ul>
     </li>
   </ul>
