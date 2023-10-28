@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://chsh2.github.io/nijigp/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Algorithm Design</title>
+      <link>https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/</guid>
+      <description>This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.</description>
+    </item>
+    
+    <item>
       <title>Boolean</title>
       <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/bool/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -98,6 +108,16 @@ NijiGPen operators are categorized in several panels. Depending on the current m
       <description>Clipboard Utilities#NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.
 Paste SVG Codes#It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.
 The parsing of SVG codes is in the same way as the standard import function of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent.</description>
+    </item>
+    
+    <item>
+      <title>Data Structures</title>
+      <link>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</guid>
+      <description>Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&amp;rsquo;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator.</description>
     </item>
     
     <item>

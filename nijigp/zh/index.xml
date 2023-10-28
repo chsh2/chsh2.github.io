@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>概述 on NijiGPen使用说明</title>
+    <link>https://chsh2.github.io/nijigp/zh/</link>
+    <description>Recent content in 概述 on NijiGPen使用说明</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language><atom:link href="https://chsh2.github.io/nijigp/zh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python依赖项</title>
+      <link>https://chsh2.github.io/nijigp/zh/docs/get_started/installation/dependency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/zh/docs/get_started/installation/dependency/</guid>
+      <description>Python依赖项#NijiGPen的功能依赖于第三方的Python软件包，必须要单独地下载与安装它们。如果您没有使用过有类似需求的Blender插件，强烈建议首先阅读此页面。
+软件包依赖总结#下面的表格总结了插件的每一类功能所需要的软件包，您可据此判断要安装哪些软件包。（例如，如果您仅想使用插件来导入Photoshop笔刷和渲染PSD文件，它们都不需要软件包，那么就不用采取任何额外措施，可以忽略本页面的剩余部分。）
+插件功能 PyClipper Scipy &amp;amp; SkImage Triangle 多边形运算 必要 线稿清理 必要 线条塑形 智能填充 必要 必要 3D网格生成 [注] 必要 可选 可选 基于网格的绑骨 基于提示的绑骨 [注] 可选 必要 导入笔刷 导入线稿图片 必要 导入彩色图片 必要 必要 剪贴板增强 渲染多图层PSD 3D网格生成: 唯一必要的包只有pyclipper，但安装其它包可以为法线插值生成网格的方法激活一些额外选项：
+scipy可以激活计算顶点高度的高级求解器。 triangle可以激活一种网格三角化的布线选项，它比Blender的自带方法有更高的布线质量。 基于提示的绑骨: 使用套索形状的提示线条需要安装pyclipper包，直线形状的提示线条则不需要。
+操作系统的影响#本插件经测试在Windows/Linux/MacOS下均可使用，但有以下注意事项：
+Windows根据Blender的安装来源，可能会需要采取额外步骤：
+便携版压缩包或Steam安装: 无需额外步骤。 官方安装程序: 如果Blender安装在系统文件夹，例如C:\Program Files\Blender Foundation\，推荐在安装Python软件包前以管理员身份运行Blender。 Microsoft Store: 所有Python软件包都会被安装到Blender以外的目录中，通常这个目录会在安装过程中被自动检测到。如果出现问题，请参阅备选方法1：自定义目录。 MacOSPython包triangle不适用于M1/M2芯片设备，请跳过它的安装。（插件功能仅会受到轻微影响）。软件包安装#最直接的安装Python软件包的方法是使用设置面板中的依赖项管理器：
+点击&amp;quot;Check&amp;quot;按钮来确认某一Python包是否已被安装，如果未被安装，请点击&amp;quot;Install&amp;quot;（需要联网）。
+面板下方的日志区域会显示安装过程与结果。 &amp;ldquo;Remove&amp;quot;按钮可以删除已安装的Python包，但需要重启Blender才能反映出变化。
+若安装失败，请在日志中查找原因或阅读下文的备选方法与疑难解答。
+备选方法1：自定义目录#通常，Python软件包会与Blender被安装在相同目录，但也可以通过Custom Package Path选项来指定Blender读取软件包的目录。这个选项有如下作用：</description>
+    </item>
+    
+    <item>
+      <title>基本操作</title>
+      <link>https://chsh2.github.io/nijigp/zh/docs/get_started/basic_usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/zh/docs/get_started/basic_usage/</guid>
+      <description>基本操作#操作界面#NijiGPen会在Blender的以下几个页面中添加新的面板与按钮：
+侧边栏#在Grease Pencil的绘制/权重绘制/编辑模式下，名为“NijiGP”的新标签会被添加到3D视图的侧边栏中，其中的功能按钮取决于不同的模式，这是最主要的使用插件功能的方法。
+默认状态下，插件的功能没有快捷键，但可以右键点击功能按钮来自定义快捷键。
+工具栏#NijiGPen在Grease Pencil的编辑模式中添加了一些新的工具，它们的图标上标有“2D”字样作为区分。它们与侧边栏对应按钮的功能基本相同，但是可以用鼠标移动来直观地调整参数。3D视图快捷按钮（可选）#另外，3D视图的下方有一组快捷按钮，提供以下功能：
+撤销/重做 旋转画布 排列图形：置顶/置底/上移/下移 这一组按钮用于改善触摸屏设备（例如Microsoft Surface）上的操作，参考了流行的平板设备中的绘画/设计软件。它们既可以用鼠标、也可以用触控笔触发。
+如果不需要这些按钮，或者它们与其它插件发生冲突，可以在偏好设置面板中调节它们的位置或者直接关闭此功能。2D工作平面的概念#本插件的绝大多数功能都作用于一个二维平面，因此正确选择这一平面很重要。Blender的“二维动画”模板默认使用X-Z平面进行Grease Pencil的绘制，不需要手动设置；但如果您不使用该模板，而是在三维空间中绘画（例如某个三维物体的表面上），则需要注意侧边栏顶端的Working Plane选项：
+默认选项（自动）会根据所有输入顶点的坐标计算出最重要的两个维度，然后再根据当前视图来决定上下与前后。 请注意不要在同一个操作中选择属于多个平面的顶点，以免自动估计出错。这种情况会引起一条警报信息。 其它选项包括使用当前视图，或任一正交平面（X-Y、X-Z或Y-Z）。 插件对图层变换的支持有限，如果您对不同的Grease Pencil图层设置了不同的旋转角度，请将每个插件操作限制在同一图层中，并确保勾选了Use Transform of Active Layer选项。
+另一方面，直接旋转Grease Pencil物体不会影响插件功能，不需要手动操作。</description>
+    </item>
+    
+  </channel>
+</rss>

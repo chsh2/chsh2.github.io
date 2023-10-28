@@ -1,71 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/bool/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/brushes/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/animation/frame_animation/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/get_started/installation/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/mesh/generation/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/get_started/installation/dependency/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/tips/scene_setup/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/line/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/get_started/basic_usage/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/get_started/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/tips/limitations/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/mesh/management/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/line/tuning/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/mesh/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/line/smart_fill/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/sweep/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/tips/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/animation/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/developer_notes/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/categories/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/</loc>
-  </url><url>
-    <loc>https://chsh2.github.io/nijigp/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://chsh2.github.io/nijigp/en/sitemap.xml</loc>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://chsh2.github.io/nijigp/zh/sitemap.xml</loc>
+    
+  </sitemap>
+  
+</sitemapindex>

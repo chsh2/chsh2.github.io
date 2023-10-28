@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&rsquo;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Data Structures" />
+<meta property="og:description" content="Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&rsquo;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/" /><meta property="article:section" content="docs" />
+
+
+<title>Data Structures | NijiGPen Documentation</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/nijigp/book.min.0119ed30d04e49c6e57ded743ce4ad5ef0d197a4e0ab3fd28d38cc3659b556e6.css" integrity="sha256-ARntMNBOScblfe10POStXvDRl6Tgqz/SjTjMNlm1VuY=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/en.search.min.6cf3086a997bf1a34a5a27bd403253c6bd63bc173dc90667fea99b94a672c903.js" integrity="sha256-bPMIapl78aNKWie9QDJTxr1jvBc9yQZn/qmblKZyyQM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/nijigp/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://chsh2.github.io/nijigp/zh/">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Polygons -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/bool/" class="">Boolean</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/offset/" class="">Offset</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/sweep/" class="">Sweep</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/holdout/" class="">Hole Holdout</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Lines -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/fit/" class="">Sketch Cleanup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/tuning/" class="">Stroke Tuning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/smart_fill/" class="">Smart Fill</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Meshes -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/generation/" class="">Mesh Generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/management/" class="">Mesh Management</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Animations -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/frame_animation/" class="">Frame Animations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Import/Export -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/psd_render/" class="">PSD Render</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/developer_notes/algorithms/" class="">Algorithm Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/developer_notes/data_structures/" class="active">Data Structures</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Data Structures</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#add-on-registering">Add-On Registering</a></li>
+    <li><a href="#custom-properties">Custom Properties</a>
+      <ul>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#objects">Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#mesh-attributes">Mesh Attributes</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="data-structures">
+  Data Structures
+  <a class="anchor" href="#data-structures">#</a>
+</h1>
+<p>Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&rsquo;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.</p>
+<h2 id="add-on-registering">
+  Add-On Registering
+  <a class="anchor" href="#add-on-registering">#</a>
+</h2>
+<p>All add-on operators are registered under <code>bpy.ops.gpencil</code> with the name prefix <code>nijigp_</code>. The add-on chooses <code>gpencil</code> as the category instead of creating a new one, because this allows users to assign shortcut to each operator.</p>
+<p>The add-on stores global setting options by defining properties with the name prefix <code>nijigp_</code> in <code>bpy.types.Scene</code>.</p>
+<h2 id="custom-properties">
+  Custom Properties
+  <a class="anchor" href="#custom-properties">#</a>
+</h2>
+<h3 id="materials">
+  Materials
+  <a class="anchor" href="#materials">#</a>
+</h3>
+<ul>
+<li><code>original_material_index</code>: Operators such as <a href="../../functionality/polygon/holdout">Hole Holdout</a> may generate new materials from existing ones. The new material uses this property to mark the material slot number of the original material.</li>
+</ul>
+<h3 id="objects">
+  Objects
+  <a class="anchor" href="#objects">#</a>
+</h3>
+<p>Mesh objects generated by this add-on from Grease Pencil strokes have following properties defined:</p>
+<ul>
+<li>
+<p><code>nijigp_mesh</code>: The type of the mesh. Currently, it can be either <code>planar</code> or <code>3d</code>.</p>
+</li>
+<li>
+<p><code>nijigp_parent</code>: A pointer to the Grease Pencil object that generates this mesh.</p>
+<ul>
+<li>The parentship needs to be stored in this way persistently, because <a href="../../functionality/animation/rigging">Rigging Operators</a> may change the parentship of involved objects.</li>
+</ul>
+</li>
+</ul>
+<h2 id="mesh-attributes">
+  Mesh Attributes
+  <a class="anchor" href="#mesh-attributes">#</a>
+</h2>
+<p>Meshes generated by this add-on use attributes for shaders and Geometry Nodes. Besides the regular attributes like <code>Color</code> and <code>UVMap</code>, there are also new ones defined:</p>
+<ul>
+<li>
+<p><code>NormalMap</code>: The normal vector calculated by the <a href="../../functionality/mesh/generation/#normal-interpolation-method">Normal Interpolation</a> operator.</p>
+</li>
+<li>
+<p><code>Depth</code>: A Float representing the height/depth of each vertex, normalized to 0~1 range.</p>
+<ul>
+<li>This value is deduced from the normal vector, which may not be the same with actual vertex coordinate.</li>
+<li>Currently, none of the default shaders uses this attribute. However, the user can create their own shaders with it.</li>
+</ul>
+</li>
+<li>
+<p><code>start_frame</code>, <code>end_frame</code>: Integers marking the frame range of the stroke generating this mesh. The <code>Stop-Motion Animation</code> option will insert a Geometry Nodes group to show/hide the mesh according to these values.</p>
+</li>
+</ul>
+<p>All of these new attributes are vertex attributes.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#add-on-registering">Add-On Registering</a></li>
+    <li><a href="#custom-properties">Custom Properties</a>
+      <ul>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#objects">Objects</a></li>
+      </ul>
+    </li>
+    <li><a href="#mesh-attributes">Mesh Attributes</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

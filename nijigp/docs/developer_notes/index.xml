@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Developer Notes (TODO) on NijiGPen Documentation</title>
+    <title>Developer Notes on NijiGPen Documentation</title>
     <link>https://chsh2.github.io/nijigp/docs/developer_notes/</link>
-    <description>Recent content in Developer Notes (TODO) on NijiGPen Documentation</description>
+    <description>Recent content in Developer Notes on NijiGPen Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://chsh2.github.io/nijigp/docs/developer_notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm Design</title>
+      <link>https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/</guid>
+      <description>This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.</description>
+    </item>
+    
+    <item>
+      <title>Data Structures</title>
+      <link>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</guid>
+      <description>Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&amp;rsquo;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator.</description>
+    </item>
+    
   </channel>
 </rss>

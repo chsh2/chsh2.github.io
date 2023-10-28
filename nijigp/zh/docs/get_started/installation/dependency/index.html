@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python依赖项#NijiGPen的功能依赖于第三方的Python软件包，必须要单独地下载与安装它们。如果您没有使用过有类似需求的Blender插件，强烈建议首先阅读此页面。
+软件包依赖总结#下面的表格总结了插件的每一类功能所需要的软件包，您可据此判断要安装哪些软件包。（例如，如果您仅想使用插件来导入Photoshop笔刷和渲染PSD文件，它们都不需要软件包，那么就不用采取任何额外措施，可以忽略本页面的剩余部分。）
+插件功能 PyClipper Scipy &amp; SkImage Triangle 多边形运算 必要 线稿清理 必要 线条塑形 智能填充 必要 必要 3D网格生成 [注] 必要 可选 可选 基于网格的绑骨 基于提示的绑骨 [注] 可选 必要 导入笔刷 导入线稿图片 必要 导入彩色图片 必要 必要 剪贴板增强 渲染多图层PSD 3D网格生成: 唯一必要的包只有pyclipper，但安装其它包可以为法线插值生成网格的方法激活一些额外选项：
+scipy可以激活计算顶点高度的高级求解器。 triangle可以激活一种网格三角化的布线选项，它比Blender的自带方法有更高的布线质量。 基于提示的绑骨: 使用套索形状的提示线条需要安装pyclipper包，直线形状的提示线条则不需要。
+操作系统的影响#本插件经测试在Windows/Linux/MacOS下均可使用，但有以下注意事项：
+Windows根据Blender的安装来源，可能会需要采取额外步骤：
+便携版压缩包或Steam安装: 无需额外步骤。 官方安装程序: 如果Blender安装在系统文件夹，例如C:\Program Files\Blender Foundation\，推荐在安装Python软件包前以管理员身份运行Blender。 Microsoft Store: 所有Python软件包都会被安装到Blender以外的目录中，通常这个目录会在安装过程中被自动检测到。如果出现问题，请参阅备选方法1：自定义目录。 MacOSPython包triangle不适用于M1/M2芯片设备，请跳过它的安装。（插件功能仅会受到轻微影响）。软件包安装#最直接的安装Python软件包的方法是使用设置面板中的依赖项管理器：
+点击&quot;Check&quot;按钮来确认某一Python包是否已被安装，如果未被安装，请点击&quot;Install&quot;（需要联网）。
+面板下方的日志区域会显示安装过程与结果。 &ldquo;Remove&quot;按钮可以删除已安装的Python包，但需要重启Blender才能反映出变化。
+若安装失败，请在日志中查找原因或阅读下文的备选方法与疑难解答。
+备选方法1：自定义目录#通常，Python软件包会与Blender被安装在相同目录，但也可以通过Custom Package Path选项来指定Blender读取软件包的目录。这个选项有如下作用：">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Python依赖项" />
+<meta property="og:description" content="Python依赖项#NijiGPen的功能依赖于第三方的Python软件包，必须要单独地下载与安装它们。如果您没有使用过有类似需求的Blender插件，强烈建议首先阅读此页面。
+软件包依赖总结#下面的表格总结了插件的每一类功能所需要的软件包，您可据此判断要安装哪些软件包。（例如，如果您仅想使用插件来导入Photoshop笔刷和渲染PSD文件，它们都不需要软件包，那么就不用采取任何额外措施，可以忽略本页面的剩余部分。）
+插件功能 PyClipper Scipy &amp; SkImage Triangle 多边形运算 必要 线稿清理 必要 线条塑形 智能填充 必要 必要 3D网格生成 [注] 必要 可选 可选 基于网格的绑骨 基于提示的绑骨 [注] 可选 必要 导入笔刷 导入线稿图片 必要 导入彩色图片 必要 必要 剪贴板增强 渲染多图层PSD 3D网格生成: 唯一必要的包只有pyclipper，但安装其它包可以为法线插值生成网格的方法激活一些额外选项：
+scipy可以激活计算顶点高度的高级求解器。 triangle可以激活一种网格三角化的布线选项，它比Blender的自带方法有更高的布线质量。 基于提示的绑骨: 使用套索形状的提示线条需要安装pyclipper包，直线形状的提示线条则不需要。
+操作系统的影响#本插件经测试在Windows/Linux/MacOS下均可使用，但有以下注意事项：
+Windows根据Blender的安装来源，可能会需要采取额外步骤：
+便携版压缩包或Steam安装: 无需额外步骤。 官方安装程序: 如果Blender安装在系统文件夹，例如C:\Program Files\Blender Foundation\，推荐在安装Python软件包前以管理员身份运行Blender。 Microsoft Store: 所有Python软件包都会被安装到Blender以外的目录中，通常这个目录会在安装过程中被自动检测到。如果出现问题，请参阅备选方法1：自定义目录。 MacOSPython包triangle不适用于M1/M2芯片设备，请跳过它的安装。（插件功能仅会受到轻微影响）。软件包安装#最直接的安装Python软件包的方法是使用设置面板中的依赖项管理器：
+点击&quot;Check&quot;按钮来确认某一Python包是否已被安装，如果未被安装，请点击&quot;Install&quot;（需要联网）。
+面板下方的日志区域会显示安装过程与结果。 &ldquo;Remove&quot;按钮可以删除已安装的Python包，但需要重启Blender才能反映出变化。
+若安装失败，请在日志中查找原因或阅读下文的备选方法与疑难解答。
+备选方法1：自定义目录#通常，Python软件包会与Blender被安装在相同目录，但也可以通过Custom Package Path选项来指定Blender读取软件包的目录。这个选项有如下作用：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/zh/docs/get_started/installation/dependency/" /><meta property="article:section" content="docs" />
+
+
+<title>Python依赖项 | NijiGPen使用说明</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+  <link rel="alternate" hreflang="en-us" href="https://chsh2.github.io/nijigp/docs/get_started/installation/dependency/" title="Python Packages">
+<link rel="stylesheet" href="/nijigp/book.min.0119ed30d04e49c6e57ded743ce4ad5ef0d197a4e0ab3fd28d38cc3659b556e6.css" integrity="sha256-ARntMNBOScblfe10POStXvDRl6Tgqz/SjTjMNlm1VuY=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/zh.search.min.a6f1f6eee24a8b77bd17a594a5573f39f0ec4216b3ac52b7e6028e0090e383f1.js" integrity="sha256-pvH27uJKi3e9F6WUpVc/OfDsQhazrFK35gKOAJDjg/E=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/zh/"><span>NijiGPen使用说明</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/nijigp/svg/translate.svg" class="book-icon" alt="Languages" />
+        中文
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://chsh2.github.io/nijigp/docs/get_started/installation/dependency/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>入门</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/zh/docs/get_started/installation/" class="">安装</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/zh/docs/get_started/installation/dependency/" class="active">Python依赖项</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/zh/docs/get_started/basic_usage/" class="">基本操作</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Python依赖项</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#软件包依赖总结">软件包依赖总结</a></li>
+    <li><a href="#操作系统的影响">操作系统的影响</a></li>
+    <li><a href="#软件包安装">软件包安装</a>
+      <ul>
+        <li><a href="#备选方法1自定义目录">备选方法1：自定义目录</a></li>
+        <li><a href="#备选方法2手动安装">备选方法2：手动安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#疑难解答">疑难解答</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="python依赖项">
+  Python依赖项
+  <a class="anchor" href="#python%e4%be%9d%e8%b5%96%e9%a1%b9">#</a>
+</h1>
+<p>NijiGPen的功能依赖于第三方的Python软件包，必须要单独地下载与安装它们。如果您没有使用过有类似需求的Blender插件，强烈建议首先阅读此页面。</p>
+<h2 id="软件包依赖总结">
+  软件包依赖总结
+  <a class="anchor" href="#%e8%bd%af%e4%bb%b6%e5%8c%85%e4%be%9d%e8%b5%96%e6%80%bb%e7%bb%93">#</a>
+</h2>
+<p>下面的表格总结了插件的每一类功能所需要的软件包，您可据此判断要安装哪些软件包。（例如，如果您仅想使用插件来导入Photoshop笔刷和渲染PSD文件，它们都不需要软件包，那么就不用采取任何额外措施，可以忽略本页面的剩余部分。）</p>
+<table>
+<thead>
+<tr>
+<th>插件功能</th>
+<th>PyClipper</th>
+<th>Scipy &amp; SkImage</th>
+<th>Triangle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>多边形运算</td>
+<td>必要</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>线稿清理</td>
+<td></td>
+<td>必要</td>
+<td></td>
+</tr>
+<tr>
+<td>线条塑形</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>智能填充</td>
+<td>必要</td>
+<td>必要</td>
+<td></td>
+</tr>
+<tr>
+<td>3D网格生成 <sup class="citation-ref">[注]</sup></td>
+<td>必要</td>
+<td>可选</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>基于网格的绑骨</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>基于提示的绑骨 <sup class="citation-ref">[注]</sup></td>
+<td>可选</td>
+<td>必要</td>
+<td></td>
+</tr>
+<tr>
+<td>导入笔刷</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>导入线稿图片</td>
+<td></td>
+<td>必要</td>
+<td></td>
+</tr>
+<tr>
+<td>导入彩色图片</td>
+<td>必要</td>
+<td>必要</td>
+<td></td>
+</tr>
+<tr>
+<td>剪贴板增强</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>渲染多图层PSD</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="book-hint info">
+  <p><strong>3D网格生成</strong>: 唯一必要的包只有<code>pyclipper</code>，但安装其它包可以为法线插值生成网格的方法激活一些额外选项：</p>
+<ul>
+<li><code>scipy</code>可以激活计算顶点高度的高级求解器。</li>
+<li><code>triangle</code>可以激活一种网格三角化的布线选项，它比Blender的自带方法有更高的布线质量。</li>
+</ul>
+<p><strong>基于提示的绑骨</strong>: 使用套索形状的提示线条需要安装<code>pyclipper</code>包，直线形状的提示线条则不需要。</p>
+
+</blockquote>
+
+<h2 id="操作系统的影响">
+  操作系统的影响
+  <a class="anchor" href="#%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%bd%b1%e5%93%8d">#</a>
+</h2>
+<p>本插件经测试在Windows/Linux/MacOS下均可使用，但有以下注意事项：</p>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-uniqueid" id="tabs-uniqueid-0" checked="checked" />
+  <label for="tabs-uniqueid-0">Windows</label>
+  <div class="book-tabs-content markdown-inner"><p>根据Blender的安装来源，可能会需要采取额外步骤：</p>
+<ul>
+<li><strong>便携版压缩包或Steam安装</strong>: 无需额外步骤。</li>
+<li><strong>官方安装程序</strong>: 如果Blender安装在系统文件夹，例如<code>C:\Program Files\Blender Foundation\</code>，推荐在安装Python软件包前以管理员身份运行Blender。</li>
+<li><strong>Microsoft Store</strong>: 所有Python软件包都会被安装到Blender以外的目录中，通常这个目录会在安装过程中被自动检测到。如果出现问题，请参阅<a href="./#%e5%a4%87%e9%80%89%e6%96%b9%e6%b3%951%e8%87%aa%e5%ae%9a%e4%b9%89%e7%9b%ae%e5%bd%95">备选方法1：自定义目录</a>。</li>
+</ul>
+</div><input type="radio" class="toggle" name="tabs-uniqueid" id="tabs-uniqueid-1"  />
+  <label for="tabs-uniqueid-1">MacOS</label>
+  <div class="book-tabs-content markdown-inner">Python包<code>triangle</code>不适用于M1/M2芯片设备，请跳过它的安装。（插件功能仅会受到轻微影响）。</div></div>
+
+<h2 id="软件包安装">
+  软件包安装
+  <a class="anchor" href="#%e8%bd%af%e4%bb%b6%e5%8c%85%e5%ae%89%e8%a3%85">#</a>
+</h2>
+<p><img src="../dependency_management.png" alt="Panel" /></p>
+<p>最直接的安装Python软件包的方法是使用设置面板中的依赖项管理器：</p>
+<ul>
+<li>
+<p>点击&quot;Check&quot;按钮来确认某一Python包是否已被安装，如果未被安装，请点击&quot;Install&quot;（需要联网）。</p>
+<ul>
+<li>面板下方的日志区域会显示安装过程与结果。</li>
+</ul>
+</li>
+<li>
+<p>&ldquo;Remove&quot;按钮可以删除已安装的Python包，但需要重启Blender才能反映出变化。</p>
+</li>
+</ul>
+<p>若安装失败，请在日志中查找原因或阅读下文的备选方法与疑难解答。</p>
+<h3 id="备选方法1自定义目录">
+  备选方法1：自定义目录
+  <a class="anchor" href="#%e5%a4%87%e9%80%89%e6%96%b9%e6%b3%951%e8%87%aa%e5%ae%9a%e4%b9%89%e7%9b%ae%e5%bd%95">#</a>
+</h3>
+<p>通常，Python软件包会与Blender被安装在相同目录，但也可以通过<code>Custom Package Path</code>选项来指定Blender读取软件包的目录。这个选项有如下作用：</p>
+<ul>
+<li>在同时安装了多个Blender或Python版本的情况下，不需要重复下载Python包。</li>
+<li>在没有Blender目录写入权限的情况下（例如Blender的Microsoft Store版本），仍可使用本插件。</li>
+</ul>
+<blockquote class="book-hint info">
+  <p>在第二种情况下，本插件在安装过程中会自动更改安装目录并填入<code>Custom Package Path</code>选项。如果没有成功自动填入，则需要手动寻找Python包被安装在哪里。下面是一些常见的安装目录：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#e6db74">&#34;[Your Blender Directory]/3.x/python/lib/site-packages&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>Windows<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;%USERPROFILE%\AppData\Roaming\Python\Python310\site-packages&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>Linux<span style="color:#f92672">)</span> <span style="color:#e6db74">&#34;~/.local/lib/python3.10/site-packages&#34;</span>
+</span></span></code></pre></div>
+</blockquote>
+
+<h3 id="备选方法2手动安装">
+  备选方法2：手动安装
+  <a class="anchor" href="#%e5%a4%87%e9%80%89%e6%96%b9%e6%b3%952%e6%89%8b%e5%8a%a8%e5%ae%89%e8%a3%85">#</a>
+</h3>
+<p>Python软件包是使用<code>pip</code>进行安装的。如果您有Python编程经验且熟悉<code>pip</code>，可以选择在命令行中手动为Blender安装Python软件包：</p>
+<ol>
+<li>在命令行中进入Blender目录，对此可参考<a href="https://docs.blender.org/manual/en/latest/advanced/command_line/index.html">官方文档</a>。</li>
+<li>启用<code>pip</code>模块： <code>./python -m ensurepip --upgrade</code></li>
+<li>安装软件包： <code>./python -m pip install pyclipper triangle scikit-image</code></li>
+</ol>
+<blockquote class="book-hint info">
+  一些可能会用到的<code>pip</code>选项: <code>--no-cache-dir</code>、 <code>--force-reinstall</code>、 <code>--only-binary</code>。
+</blockquote>
+
+<h2 id="疑难解答">
+  疑难解答
+  <a class="anchor" href="#%e7%96%91%e9%9a%be%e8%a7%a3%e7%ad%94">#</a>
+</h2>
+<details ><summary>Blender提示软件包安装成功，但设置面板中仍然显示&quot;Not Installed&quot;。</summary>
+  <div class="markdown-inner">
+    原因有可能是缺少将文件写入Blender目录的权限，在这种情况下，软件包有可能被安装到其它目录。您可以在安装日志中找到这一目录（通常包含<code>site-packages</code>字样），并复制该路径填入<a href="./#%e5%a4%87%e9%80%89%e6%96%b9%e6%b3%951%e8%87%aa%e5%ae%9a%e4%b9%89%e7%9b%ae%e5%bd%95">自定义目录</a>选项。
+  </div>
+</details>
+
+<details ><summary>按下安装按钮后，Blender停止响应。</summary>
+  <div class="markdown-inner">
+    <p>安装过程需要联网，并且需要一定时间来完成下载。然而如果Blender停止响应太久，有可能是网络出现问题，请检查VPN设置，或使用<a href="#%e5%a4%87%e9%80%89%e6%96%b9%e6%b3%952%e6%89%8b%e5%8a%a8%e5%ae%89%e8%a3%85">手动安装</a>方法并选择合适的<code>pip</code>源。</p>
+<p>设置面板可能会随Blender一起停止响应，导致无法查看日志。如果想要确保日志实时显示，可提前打开<code>[窗口]-[切换系统控制台]</code>。</p>
+
+  </div>
+</details>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#软件包依赖总结">软件包依赖总结</a></li>
+    <li><a href="#操作系统的影响">操作系统的影响</a></li>
+    <li><a href="#软件包安装">软件包安装</a>
+      <ul>
+        <li><a href="#备选方法1自定义目录">备选方法1：自定义目录</a></li>
+        <li><a href="#备选方法2手动安装">备选方法2：手动安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#疑难解答">疑难解答</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

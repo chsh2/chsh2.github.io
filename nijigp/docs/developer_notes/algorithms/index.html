@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Algorithm Design" />
+<meta property="og:description" content="This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/" /><meta property="article:section" content="docs" />
+
+
+<title>Algorithm Design | NijiGPen Documentation</title>
+<link rel="manifest" href="/nijigp/manifest.json">
+<link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/nijigp/book.min.0119ed30d04e49c6e57ded743ce4ad5ef0d197a4e0ab3fd28d38cc3659b556e6.css" integrity="sha256-ARntMNBOScblfe10POStXvDRl6Tgqz/SjTjMNlm1VuY=" crossorigin="anonymous">
+  <script defer src="/nijigp/flexsearch.min.js"></script>
+  <script defer src="/nijigp/en.search.min.6cf3086a997bf1a34a5a27bd403253c6bd63bc173dc90667fea99b94a672c903.js" integrity="sha256-bPMIapl78aNKWie9QDJTxr1jvBc9yQZn/qmblKZyyQM=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/nijigp/"><span>NijiGPen Documentation</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/nijigp/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://chsh2.github.io/nijigp/zh/">
+          中文
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Get Started</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/" class="">Installation</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/installation/dependency/" class="">Python Packages</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Functionality</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Polygons -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/bool/" class="">Boolean</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/offset/" class="">Offset</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/sweep/" class="">Sweep</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/holdout/" class="">Hole Holdout</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Lines -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/fit/" class="">Sketch Cleanup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/tuning/" class="">Stroke Tuning</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/line/smart_fill/" class="">Smart Fill</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Meshes -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/generation/" class="">Mesh Generation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/mesh/management/" class="">Mesh Management</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Animations -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/frame_animation/" class="">Frame Animations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>- Import/Export -</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/psd_render/" class="">PSD Render</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Tips</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/scene_setup/" class="">Scene Setup</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/tips/limitations/" class="">Limitations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Developer Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/developer_notes/algorithms/" class="active">Algorithm Design</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/developer_notes/data_structures/" class="">Data Structures</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Algorithm Design</strong>
+
+  <label for="toc-control">
+    
+    <img src="/nijigp/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#polygon-operations">Polygon Operations</a></li>
+    <li><a href="#sketch-cleanup">Sketch Cleanup</a></li>
+    <li><a href="#smart-fill">Smart Fill</a></li>
+    <li><a href="#mesh-generation">Mesh Generation</a>
+      <ul>
+        <li><a href="#normal-vector-interpolation">Normal Vector Interpolation</a></li>
+        <li><a href="#heightdepth-calculation">Height/Depth Calculation</a></li>
+      </ul>
+    </li>
+    <li><a href="#image-vectorization">Image Vectorization</a>
+      <ul>
+        <li><a href="#line-art-extraction">Line Art Extraction</a></li>
+        <li><a href="#color-quantization">Color Quantization</a></li>
+      </ul>
+    </li>
+    <li><a href="#file-format-support">File Format Support</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote class="book-hint warning">
+  This page is still under construction. The information maybe incomplete.
+</blockquote>
+
+<h1 id="algorithm-design">
+  Algorithm Design
+  <a class="anchor" href="#algorithm-design">#</a>
+</h1>
+<p>This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.</p>
+<p>It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.</p>
+<p>The add-on’s functions fall into two categories:</p>
+<ul>
+<li>The first category comprises classical algorithms and I simply deploy third-party Python packages to perform them. For these functions, this page lists the names of the packages and the main algorithms for reference.</li>
+<li>The second category consists of methods developed by myself learning mainly from academic projects. The documentation describes the main steps of each method and the research papers I used as inspiration.</li>
+</ul>
+<h2 id="polygon-operations">
+  Polygon Operations
+  <a class="anchor" href="#polygon-operations">#</a>
+</h2>
+<p>The polygon operations (boolean, offset and sweep) are performed by directly adopting the <a href="https://www.angusj.com/clipper2/Docs/Overview.htm">Clipper</a> library without my own design. Several classic algorithms are implemented in Clipper:</p>
+<ul>
+<li>Boolean operations are achieved by the Vatti clipping algorithm<sup class="citation-ref">[1]</sup>.</li>
+<li>Hole detection and offset are achieved by computing winding numbers<sup class="citation-ref">[2]</sup>.</li>
+<li>Sweep operation is achieved by using Minkowski addition<sup class="citation-ref">[3]</sup>.</li>
+</ul>
+<blockquote class="citation-quote"><ol>
+<li>Vatti, Bala R. &ldquo;A generic solution to polygon clipping.&rdquo; Communications of the ACM 35, no. 7 (1992): 56-63.</li>
+<li>Chen, Xiaorui, and Sara McMains. &ldquo;Polygon offsetting by computing winding numbers.&rdquo; In International Design Engineering Technical Conferences and Computers and Information in Engineering Conference, vol. 4739, pp. 565-575. 2005.</li>
+<li><a href="https://en.wikipedia.org/wiki/Minkowski_addition">https://en.wikipedia.org/wiki/Minkowski_addition</a></li>
+</ol>
+</blockquote>
+<h2 id="sketch-cleanup">
+  Sketch Cleanup
+  <a class="anchor" href="#sketch-cleanup">#</a>
+</h2>
+<p>TODO: To add more details soon.</p>
+<blockquote class="citation-quote"><ol>
+<li>Lee, In-Kwon. &ldquo;Curve reconstruction from unorganized points.&rdquo; Computer aided geometric design 17, no. 2 (2000): 161-177.</li>
+<li>Liu, Chenxi, Enrique Rosales, and Alla Sheffer. &ldquo;Strokeaggregator: Consolidating raw sketches into artist-intended curve drawings.&rdquo; ACM Transactions on Graphics (TOG) 37, no. 4 (2018): 1-15.</li>
+</ol>
+</blockquote>
+<h2 id="smart-fill">
+  Smart Fill
+  <a class="anchor" href="#smart-fill">#</a>
+</h2>
+<p>TODO: To add more details soon.</p>
+<blockquote class="citation-quote"><ol>
+<li>Sýkora, Daniel, John Dingliana, and Steven Collins. &ldquo;Lazybrush: Flexible painting tool for hand‐drawn cartoons.&rdquo; In Computer Graphics Forum, vol. 28, no. 2, pp. 599-608. Oxford, UK: Blackwell Publishing Ltd, 2009.</li>
+<li>Parakkat, Amal Dev, Pooran Memari, and Marie‐Paule Cani. &ldquo;Delaunay Painting: Perceptual Image Colouring from Raster Contours with Gaps.&rdquo; In Computer Graphics Forum, vol. 41, no. 6, pp. 166-181. 2022.</li>
+</ol>
+</blockquote>
+<h2 id="mesh-generation">
+  Mesh Generation
+  <a class="anchor" href="#mesh-generation">#</a>
+</h2>
+<p>Among different mesh generation operators, the Offset/Frustum method uses the same algorithm as the polygon offset, while the normal interpolation method is based on a different principle.</p>
+<h3 id="normal-vector-interpolation">
+  Normal Vector Interpolation
+  <a class="anchor" href="#normal-vector-interpolation">#</a>
+</h3>
+<p>TODO: To add more details soon.</p>
+<h3 id="heightdepth-calculation">
+  Height/Depth Calculation
+  <a class="anchor" href="#heightdepth-calculation">#</a>
+</h3>
+<p>TODO: To add more details soon.</p>
+<p>Although not using its algorithm directly, the mesh generation module is also largely inspired by Monster Mash<sup class="citation-ref">[3]</sup>.</p>
+<blockquote class="citation-quote"><ol>
+<li>Johnston, Scott F. &ldquo;Lumo: illumination for cel animation.&rdquo; In Proceedings of the 2nd international symposium on Non-photorealistic animation and rendering, pp. 45-ff. 2002.</li>
+<li>Hudon, Matis, Sebastian Lutz, Rafael Pagés, and Aljosa Smolic. &ldquo;Augmenting hand-drawn art with global illumination effects through surface inflation.&rdquo; In Proceedings of the 16th ACM SIGGRAPH European Conference on Visual Media Production, pp. 1-9. 2019.</li>
+<li>Dvorožňák, Marek, Daniel Sýkora, Cassidy Curtis, Brian Curless, Olga Sorkine-Hornung, and David Salesin. &ldquo;Monster mash: a single-view approach to casual 3D modeling and animation.&rdquo; ACM Transactions on Graphics (TOG) 39, no. 6 (2020): 1-12.</li>
+</ol>
+</blockquote>
+<h2 id="image-vectorization">
+  Image Vectorization
+  <a class="anchor" href="#image-vectorization">#</a>
+</h2>
+<p>The image vectorization operators (including line art extraction and color quantization) are mostly performed by directly calling functions of <a href="https://scipy.org/">SciPy</a> and <a href="https://scikit-image.org/">Scikit-Image</a> modules.</p>
+<h3 id="line-art-extraction">
+  Line Art Extraction
+  <a class="anchor" href="#line-art-extraction">#</a>
+</h3>
+<p>The algorithm used for extracting lines from raster image pixels belongs to skeletonization or thinning. There have been several famous methods<sup class="citation-ref">[1,2]</sup> developed for this purpose. This add-on chooses <code>medial_axis</code> implemented in <a href="https://scikit-image.org/docs/stable/api/skimage.morphology.html#skimage.morphology.medial_axis">skimage.morphology</a>, since it calculates the distance from a pixel to the extracted skeleton, which is later converted to the radius of Grease Pencil stroke points.</p>
+<h3 id="color-quantization">
+  Color Quantization
+  <a class="anchor" href="#color-quantization">#</a>
+</h3>
+<p>To vectorize a color image, the add-on uses the clustering algorithm to reduce the number of colors of the original image, so that pixels of each color can be treated one by one, just like a black-and-white image. The clustering algorithm in use is a very common one, K-means<sup class="citation-ref">[3]</sup>, treating each pixel&rsquo;s <code>rgb</code> values as a 3D vector.</p>
+<p>After color reduction, the add-on converts each connected pixel regions to a contour by calling the function <code>find_contours</code> in <a href="https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.find_contours">skimage.measure</a>, which uses the marching squares algorithm<sup class="citation-ref">[4]</sup>.</p>
+<blockquote class="citation-quote"><ol>
+<li>Skimage Skeletonize, <a href="https://scikit-image.org/docs/stable/auto_examples/edges/plot_skeleton.html">https://scikit-image.org/docs/stable/auto_examples/edges/plot_skeleton.html</a></li>
+<li>Zhang, Tongjie Y., and Ching Y. Suen. &ldquo;A fast parallel algorithm for thinning digital patterns.&rdquo; Communications of the ACM 27, no. 3 (1984): 236-239.</li>
+<li>K-means Clustering, <a href="https://en.wikipedia.org/wiki/K-means_clustering">https://en.wikipedia.org/wiki/K-means_clustering</a></li>
+<li>Lorensen, William E., and Harvey E. Cline. &ldquo;Marching cubes: A high resolution 3D surface construction algorithm.&rdquo; In Seminal graphics: pioneering efforts that shaped the field, pp. 347-353. 1998.</li>
+</ol>
+</blockquote>
+<h2 id="file-format-support">
+  File Format Support
+  <a class="anchor" href="#file-format-support">#</a>
+</h2>
+<p>The support of Adobe formats (writing <code>.psd</code> and reading <code>.abr</code>) follows the official specification<sup class="citation-ref">[1]</sup>. In addition, the parsing of brush files also refers to the description from <em>Just Solve the File Format Problem</em><sup class="citation-ref">[2]</sup> Wiki page and GIMP&rsquo;s source code<sup class="citation-ref">[3]</sup>.</p>
+<p>The support of GIMP <code>.gbr</code> brushes follows the developer documentation<sup class="citation-ref">[4]</sup>.</p>
+<blockquote class="citation-quote"><ol>
+<li>Adobe Photoshop File Format Specification, <a href="https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/">https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/</a></li>
+<li>Just Solve the File Format Problem, <a href="http://fileformats.archiveteam.org/wiki/Photoshop_brush">http://fileformats.archiveteam.org/wiki/Photoshop_brush</a></li>
+<li><a href="https://github.com/GNOME/gimp/blob/master/app/core/gimpbrush-load.c">https://github.com/GNOME/gimp/blob/master/app/core/gimpbrush-load.c</a></li>
+<li>The GIMP Paintbrush File Format, <a href="https://github.com/GNOME/gimp/blob/gimp-2-10/devel-docs/gbr.txt">https://github.com/GNOME/gimp/blob/gimp-2-10/devel-docs/gbr.txt</a></li>
+</ol>
+</blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#polygon-operations">Polygon Operations</a></li>
+    <li><a href="#sketch-cleanup">Sketch Cleanup</a></li>
+    <li><a href="#smart-fill">Smart Fill</a></li>
+    <li><a href="#mesh-generation">Mesh Generation</a>
+      <ul>
+        <li><a href="#normal-vector-interpolation">Normal Vector Interpolation</a></li>
+        <li><a href="#heightdepth-calculation">Height/Depth Calculation</a></li>
+      </ul>
+    </li>
+    <li><a href="#image-vectorization">Image Vectorization</a>
+      <ul>
+        <li><a href="#line-art-extraction">Line Art Extraction</a></li>
+        <li><a href="#color-quantization">Color Quantization</a></li>
+      </ul>
+    </li>
+    <li><a href="#file-format-support">File Format Support</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
