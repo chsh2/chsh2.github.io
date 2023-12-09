@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Brush Import#The ABR/GBR Brushes button is an operator that converts .abr and .gbr brush files, which are widely used in software including Adobe Photoshop, GIMP and Krita, into Grease Pencil materials/brushes.
-It may take a long time to parse high resolution (e.g. 2500px * 2500px) brushes, because the brush images need to be uncompressed. The time further increases if the file contains multiple brushes.
-If you want to use the high resolution brushes repeatedly, you may consider save the brushes in a .">
+<meta name="description" content="Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&rsquo;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
+.abr brushes that are commonly used in Adobe Photoshop, GIMP and Krita. .gbr brushes of GIMP. .brush or .brushset files exported from Procreate. It may take a long time to parse high resolution (e.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Brush Import" />
-<meta property="og:description" content="Brush Import#The ABR/GBR Brushes button is an operator that converts .abr and .gbr brush files, which are widely used in software including Adobe Photoshop, GIMP and Krita, into Grease Pencil materials/brushes.
-It may take a long time to parse high resolution (e.g. 2500px * 2500px) brushes, because the brush images need to be uncompressed. The time further increases if the file contains multiple brushes.
-If you want to use the high resolution brushes repeatedly, you may consider save the brushes in a ." />
+<meta property="og:description" content="Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&rsquo;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
+.abr brushes that are commonly used in Adobe Photoshop, GIMP and Krita. .gbr brushes of GIMP. .brush or .brushset files exported from Procreate. It may take a long time to parse high resolution (e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/io/brushes/" /><meta property="article:section" content="docs" />
 
@@ -18,9 +16,9 @@ If you want to use the high resolution brushes repeatedly, you may consider save
 <title>Brush Import | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/nijigp/book.min.0119ed30d04e49c6e57ded743ce4ad5ef0d197a4e0ab3fd28d38cc3659b556e6.css" integrity="sha256-ARntMNBOScblfe10POStXvDRl6Tgqz/SjTjMNlm1VuY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.6cf3086a997bf1a34a5a27bd403253c6bd63bc173dc90667fea99b94a672c903.js" integrity="sha256-bPMIapl78aNKWie9QDJTxr1jvBc9yQZn/qmblKZyyQM=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.cd9a27122225edb345685e0d8357d935e4eca5be242e7338349900a1b7d9a594.js" integrity="sha256-zZonEiIl7bNFaF4Ng1fZNeTspb4kLnM4NJkAobfZpZQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -238,6 +236,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/hatch/" class="">Hatch Fill</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -409,6 +420,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/nijigp/docs/functionality/io/brushes/" class="active">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/colors/" class="">Palette Import</a>
   
 
         </li>
@@ -603,9 +627,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#template-brush">Template Brush</a></li>
+    <li><a href="#brush-parameters">Brush Parameters</a></li>
     <li><a href="#color-modes">Color Modes</a></li>
     <li><a href="#save-brush-icons">Save Brush Icons</a></li>
+    <li><a href="#additional-notes">Additional Notes</a>
+      <ul>
+        <li><a href="#gimp-brushes">GIMP Brushes</a></li>
+        <li><a href="#procreate-brushes">Procreate Brushes</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -622,7 +652,12 @@ https://github.com/alex-shpak/hugo-book
   Brush Import
   <a class="anchor" href="#brush-import">#</a>
 </h1>
-<p>The <code>ABR/GBR Brushes</code> button is an operator that converts <code>.abr</code> and <code>.gbr</code> brush files, which are widely used in software including Adobe Photoshop, GIMP and Krita, into Grease Pencil materials/brushes.</p>
+<p>Through the <code>Import/Export</code> sidebar panel, the user can load brushes of some other painting software&rsquo;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:</p>
+<ul>
+<li><code>.abr</code> brushes that are commonly used in Adobe Photoshop, GIMP and Krita.</li>
+<li><code>.gbr</code> brushes of GIMP.</li>
+<li><code>.brush</code> or <code>.brushset</code> files exported from Procreate.</li>
+</ul>
 <p><img src="../demo_brushes.png" alt="Demo of Brushes" /></p>
 <blockquote class="book-hint warning">
   <p>It may take a long time to parse high resolution (e.g. <code>2500px * 2500px</code>) brushes, because the brush images need to be uncompressed. The time further increases if the file contains multiple brushes.</p>
@@ -630,24 +665,40 @@ https://github.com/alex-shpak/hugo-book
 
 </blockquote>
 
-<h2 id="template-brush">
-  Template Brush
-  <a class="anchor" href="#template-brush">#</a>
+<h2 id="brush-parameters">
+  Brush Parameters
+  <a class="anchor" href="#brush-parameters">#</a>
 </h2>
-<p>Since the <code>.abr</code> and <code>.gbr</code> brushes are designed for raster graphics and work in a different way from Grease Pencil, this add-on in fact only extracts the images from the brush file and use them as textures of new materials/brushes. All the original brush parameters will not be preserved.</p>
-<p>You can select an existing Grease Pencil brush as a template in the import options. All newly generated brushes will use the parameters of this brush.</p>
+<p>Since all these brush formats are designed for raster graphics and work in a different way from Grease Pencil, this add-on in fact only extracts the images from the brush file and use them as textures of new materials/brushes. All the original brush parameters will not be preserved.</p>
+<p>You can select an existing Grease Pencil brush as a template in the import options. All newly generated brushes will use the parameters of this template brush.</p>
 <h2 id="color-modes">
   Color Modes
   <a class="anchor" href="#color-modes">#</a>
 </h2>
-<p>Except some RGB <code>.gbr</code> brushes (which are not very common), a brush usually has only a single color channel as the texture. You can choose to use this channel as either alpha/transparency or the grayscale color in the import options.</p>
+<p>Except some RGB <code>.gbr</code> brushes (which are not very common), A brush usually has only a single color channel as the texture. You can choose to use this channel as either alpha/transparency or the grayscale color in the import options.</p>
 <p>When using the channel as alpha, you can specify black or white as the texture color.</p>
 <h2 id="save-brush-icons">
   Save Brush Icons
   <a class="anchor" href="#save-brush-icons">#</a>
 </h2>
 <p>Despite the brush textures saved in the <code>.blend</code> file, the brush thumbnails shown in the <code>Tool</code> panel are separate image files, and have to be saved outside the <code>.blend</code> file.</p>
-<p>There is an option specifying where to save these files. Deleting them will stop the brush from showing its thumbnail. However, the brush itself will not be impacted.</p>
+<p>There is an option specifying where to save these files. Deleting them will stop the brush from showing its thumbnail. Nevertheless, the brush itself will not be impacted.</p>
+<h2 id="additional-notes">
+  Additional Notes
+  <a class="anchor" href="#additional-notes">#</a>
+</h2>
+<h3 id="gimp-brushes">
+  GIMP Brushes
+  <a class="anchor" href="#gimp-brushes">#</a>
+</h3>
+<p>Though not very common, some <code>.gbr</code> brushes are polychrome with 3 channels. Their textures can be parsed as RGB images into Blender.</p>
+<h3 id="procreate-brushes">
+  Procreate Brushes
+  <a class="anchor" href="#procreate-brushes">#</a>
+</h3>
+<p>Please note that only third-party brushes can be imported into Blender. When Procreate exports a default brush, the file contains only brush parameters, but not textures, which cannot be used by software other than Procreate itself.</p>
+<p>A Procreate brush can use an additional texture called <em>Grain</em>. Since a Grease Pencil material cannot use multiple textures in this way, this grain texture will be separately imported as a material with a <strong>fill</strong> texture.</p>
+<p>The add-on can read some parameters from Procreate brushes and convert them to Blender brush parameters. However, it is not guaranteed that the display and user experience can be perfectly reproduced.</p>
 <hr>
 <p>(The example brushes shown in this page is from the SeerStuff set created by SeerLight.)</p>
 </article>
@@ -691,9 +742,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#template-brush">Template Brush</a></li>
+    <li><a href="#brush-parameters">Brush Parameters</a></li>
     <li><a href="#color-modes">Color Modes</a></li>
     <li><a href="#save-brush-icons">Save Brush Icons</a></li>
+    <li><a href="#additional-notes">Additional Notes</a>
+      <ul>
+        <li><a href="#gimp-brushes">GIMP Brushes</a></li>
+        <li><a href="#procreate-brushes">Procreate Brushes</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

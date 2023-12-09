@@ -52,5 +52,16 @@ Extrude: It turns the shapes into a pseudo-3D look.</description>
 To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&amp;rsquo;s path is completely inside another stroke&amp;rsquo;s fill:</description>
     </item>
     
+    <item>
+      <title>Hatch Fill</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/hatch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/hatch/</guid>
+      <description>Hatch Fill#This is an Edit mode operator to generate doodle or hatch patterns inside the selected stroke shapes. Various types of stylized shading or coloring effects can be achieved with different combinations of options.
+Line Styles#The operator will generate a grid of points inside each selected shape, while there are multiple ways to connect these points as new strokes:
+Single-Line Doodle: In this mode, all points will be connected together to ensure that each input stroke generates only one output stroke.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -56,8 +56,6 @@
                 href="https://chsh2.github.io/nijigp/docs/get_started/basic_usage/"
                 />
   </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</loc>
-  </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/get_started/</loc>
@@ -78,11 +76,15 @@
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/</loc>
   </url><url>
+    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/colors/</loc>
+  </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/line/tuning/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/mesh/</loc>
+  </url><url>
+    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/</loc>
   </url><url>
@@ -92,17 +94,19 @@
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/tips/</loc>
   </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</loc>
-  </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/animation/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/developer_notes/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</loc>
   </url><url>
-    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</loc>
+    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/docs/functionality/io/</loc>
+  </url><url>
+    <loc>https://chsh2.github.io/nijigp/docs/functionality/polygon/hatch/</loc>
+  </url><url>
+    <loc>https://chsh2.github.io/nijigp/docs/functionality/io/psd_render/</loc>
   </url><url>
     <loc>https://chsh2.github.io/nijigp/categories/</loc>
     <xhtml:link

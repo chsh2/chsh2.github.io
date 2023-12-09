@@ -16,9 +16,9 @@ It is less recommended to read the source code directly, since the code details 
 <title>Algorithm Design | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/nijigp/book.min.0119ed30d04e49c6e57ded743ce4ad5ef0d197a4e0ab3fd28d38cc3659b556e6.css" integrity="sha256-ARntMNBOScblfe10POStXvDRl6Tgqz/SjTjMNlm1VuY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.6cf3086a997bf1a34a5a27bd403253c6bd63bc173dc90667fea99b94a672c903.js" integrity="sha256-bPMIapl78aNKWie9QDJTxr1jvBc9yQZn/qmblKZyyQM=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.cd9a27122225edb345685e0d8357d935e4eca5be242e7338349900a1b7d9a594.js" integrity="sha256-zZonEiIl7bNFaF4Ng1fZNeTspb4kLnM4NJkAobfZpZQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -236,6 +236,19 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/hatch/" class="">Hatch Fill</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -407,6 +420,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/nijigp/docs/functionality/io/brushes/" class="">Brush Import</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/io/colors/" class="">Palette Import</a>
   
 
         </li>
@@ -644,6 +670,10 @@ https://github.com/alex-shpak/hugo-book
 <li>The first category comprises classical algorithms and I simply deploy third-party Python packages to perform them. For these functions, this page lists the names of the packages and the main algorithms for reference.</li>
 <li>The second category consists of methods developed by myself learning mainly from academic projects. The documentation describes the main steps of each method and the research papers I used as inspiration.</li>
 </ul>
+<blockquote class="book-hint info">
+  Since this is not a formal academic article, for some well-known concepts I will cite Wikipedia pages as the source.
+</blockquote>
+
 <h2 id="polygon-operations">
   Polygon Operations
   <a class="anchor" href="#polygon-operations">#</a>
@@ -689,12 +719,108 @@ https://github.com/alex-shpak/hugo-book
   Normal Vector Interpolation
   <a class="anchor" href="#normal-vector-interpolation">#</a>
 </h3>
-<p>TODO: To add more details soon.</p>
+<p>This method aims at generating continuous normal vectors on a 2D surface to create an effect of depth and 2D lighting. Research projects such as Lumo<sup class="citation-ref">[1]</sup> have proposed to adopt this method to create shading for hand-drawn animation.</p>
+<p>The algorithm starts with a Grease Pencil stroke, which can be seen as the contour of a 2D shape. Supposing the contour contains 
+<link rel="stylesheet" href="/nijigp/katex/katex.min.css" />
+<script defer src="/nijigp/katex/katex.min.js"></script>
+<script defer src="/nijigp/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(C\)
+</span>
+ points, <span>
+  \(\{(x_1, y_1), (x_2, y_2), ..., (x_C, y_C)\}\)
+</span>
+, it is easy to get their 2D normal vectors <span>
+  \( \{(n_{1x}, n_{1y}), (n_{2x}, n_{2y}), ..., (n_{Cx}, n_{Cy})\} \)
+</span>
+. We then normalize them to the unit length and treat them as 3D vectors, assuming that the third dimension has zero value, i.e., assuming the vector is parallel to the 2D work plane.</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+.swiper {
+    max-width: 540px;
+}
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: var(--doc-alt-color);
+}
+</style><div class="swiper normal-interpolation">
+    <div class="swiper-wrapper">
+      
+    <div class="swiper-slide"><figure>
+        <figcaption>Calculated 2D normal vectors from stroke points.</figcaption>
+        <img src="../alg_normal_1.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Add new vertices inside the stroke shape.</figcaption>
+        <img src="../alg_normal_2.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Each new vertex's normal vector is a weighted average of all contour normal vectors.</figcaption>
+        <img src="../alg_normal_3.png">  
+    </figure></div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+<script>
+    var swiper = new Swiper(".normal-interpolation", {
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+        },
+    });
+</script>
+<p>Then we create new vertices inside the shape. To calculate the normal vector of such an inside vertex, we take the weighted average of the normal vectors of all the contour points. The weight is the <strong>reciprocal squared distance</strong> from this new vertex to a contour point.</p>
+<span>
+  \[
+n_x = \frac{ \sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1} n_{cx}}{\sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1}}\]
+</span>
+
+<span>
+  \[
+n_y = \frac{ \sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1} n_{cy}}{\sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1}}\]
+</span>
+
+<p>The equations above give us the first two components of the normal vector. By assuming the unit length, we can get the third component:</p>
+<span>
+  \[
+n_z = \sqrt{1 - {n_x}^2 - {n_y}^2}\]
+</span>
+
+<p>This distance-based weighting and averaging can result in a smooth appearance. For example, a 2D circle will be shaded like a sphere.</p>
 <h3 id="heightdepth-calculation">
   Height/Depth Calculation
   <a class="anchor" href="#heightdepth-calculation">#</a>
 </h3>
-<p>TODO: To add more details soon.</p>
+<p>A normal map can be converted to height/depth values to get an actual 3D mesh. This add-on implements an <strong>inflation method</strong> by modifying a pixel-based algorithm<sup class="citation-ref">[2]</sup> to a vector-based one.</p>
+<p>The method is based on the fact that the normal vector should always be perpendicular to the tangent vector. The tangent vector of a vertex <span>
+  \(a\)
+</span>
+ can be calculated by subtracting its coordinates from those of another vertex <span>
+  \(b \in \Gamma_{a}\)
+</span>
+ that shares an edge with it. In this way, an energy function can be defined by summing up the squared production of each pair of normal and tangent vectors, taking each edge in the mesh into account:</p>
+<span>
+  \[
+E(z_1, z_2, ..., z_N) = \sum_{a=1}^N \sum_{b\in \Gamma_{a}} (\begin{bmatrix} n_{ax} &amp; n_{ay} &amp; n_{az} \end{bmatrix} \begin{bmatrix} x_a - x_b \\ y_a - y_b \\ z_a - z_b \end{bmatrix})^2 \]
+</span>
+
+<p>The closer this energy is to zero, the more realistic the depth values are. Since the derivative of energy is linear, there is a wide range of optimizers available for this problem. The add-on adopts the L-BFGS-B algorithm provided by <a href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html">SciPy</a>.</p>
 <p>Although not using its algorithm directly, the mesh generation module is also largely inspired by Monster Mash<sup class="citation-ref">[3]</sup>.</p>
 <blockquote class="citation-quote"><ol>
 <li>Johnston, Scott F. &ldquo;Lumo: illumination for cel animation.&rdquo; In Proceedings of the 2nd international symposium on Non-photorealistic animation and rendering, pp. 45-ff. 2002.</li>
@@ -711,7 +837,7 @@ https://github.com/alex-shpak/hugo-book
   Line Art Extraction
   <a class="anchor" href="#line-art-extraction">#</a>
 </h3>
-<p>The algorithm used for extracting lines from raster image pixels belongs to skeletonization or thinning. There have been several famous methods<sup class="citation-ref">[1,2]</sup> developed for this purpose. This add-on chooses <code>medial_axis</code> implemented in <a href="https://scikit-image.org/docs/stable/api/skimage.morphology.html#skimage.morphology.medial_axis">skimage.morphology</a>, since it calculates the distance from a pixel to the extracted skeleton, which is later converted to the radius of Grease Pencil stroke points.</p>
+<p>The algorithm used for extracting lines from raster image pixels belongs to <strong>skeletonization</strong> or <strong>thinning</strong>. There have been several famous methods<sup class="citation-ref">[1,2]</sup> developed for this purpose. This add-on chooses <code>medial_axis</code> implemented in <a href="https://scikit-image.org/docs/stable/api/skimage.morphology.html#skimage.morphology.medial_axis">skimage.morphology</a>, since it calculates the distance from a pixel to the extracted skeleton, which is later converted to the radius of Grease Pencil stroke points.</p>
 <h3 id="color-quantization">
   Color Quantization
   <a class="anchor" href="#color-quantization">#</a>

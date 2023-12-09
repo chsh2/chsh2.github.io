@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
-Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&rsquo;s functions.
-NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.">
+<meta name="description" content="Palette Import#Through the Import/Export sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:
+.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. In addition, color codes can also be directly pasted to Blender. Please refer to the clipboard utilities for more information.Recolor with a Palette#The add-on also provides with a utility to quickly color the drawing using the imported palette.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Basic Usage" />
-<meta property="og:description" content="Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
-Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&rsquo;s functions.
-NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Palette Import" />
+<meta property="og:description" content="Palette Import#Through the Import/Export sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:
+.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. In addition, color codes can also be directly pasted to Blender. Please refer to the clipboard utilities for more information.Recolor with a Palette#The add-on also provides with a utility to quickly color the drawing using the imported palette." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/get_started/basic_usage/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/io/colors/" /><meta property="article:section" content="docs" />
 
 
-<title>Basic Usage | NijiGPen Documentation</title>
+<title>Palette Import | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
-  <link rel="alternate" hreflang="zh" href="https://chsh2.github.io/nijigp/zh/docs/get_started/basic_usage/" title="基本操作">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
   <script defer src="/nijigp/en.search.min.cd9a27122225edb345685e0d8357d935e4eca5be242e7338349900a1b7d9a594.js" integrity="sha256-zZonEiIl7bNFaF4Ng1fZNeTspb4kLnM4NJkAobfZpZQ=" crossorigin="anonymous"></script>
@@ -59,8 +56,6 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  
-
 
 <ul class="book-languages">
   <li>
@@ -75,7 +70,7 @@ https://github.com/alex-shpak/hugo-book
     <ul>
       
       <li>
-        <a href="https://chsh2.github.io/nijigp/zh/docs/get_started/basic_usage/">
+        <a href="https://chsh2.github.io/nijigp/zh/">
           中文
         </a>
       </li>
@@ -152,7 +147,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/get_started/basic_usage/" class="active">Basic Usage</a>
+    <a href="/nijigp/docs/get_started/basic_usage/" class="">Basic Usage</a>
   
 
         </li>
@@ -437,7 +432,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/colors/" class="">Palette Import</a>
+    <a href="/nijigp/docs/functionality/io/colors/" class="active">Palette Import</a>
   
 
         </li>
@@ -616,7 +611,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Basic Usage</strong>
+  <strong>Palette Import</strong>
 
   <label for="toc-control">
     
@@ -632,14 +627,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#user-interface">User Interface</a>
-      <ul>
-        <li><a href="#sidebar-panels">Sidebar Panels</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#viewport-buttons-optional">Viewport Buttons (Optional)</a></li>
-      </ul>
-    </li>
-    <li><a href="#2d-working-plane">2D Working Plane</a></li>
+    <li><a href="#recolor-with-a-palette">Recolor with a Palette</a></li>
   </ul>
 </nav>
 
@@ -652,87 +640,30 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="basic-usage">
-  Basic Usage
-  <a class="anchor" href="#basic-usage">#</a>
+  <article class="markdown"><h1 id="palette-import">
+  Palette Import
+  <a class="anchor" href="#palette-import">#</a>
 </h1>
-<h2 id="user-interface">
-  User Interface
-  <a class="anchor" href="#user-interface">#</a>
-</h2>
-<p>NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.</p>
-<h3 id="sidebar-panels">
-  Sidebar Panels
-  <a class="anchor" href="#sidebar-panels">#</a>
-</h3>
-<div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <img src="../ui_side.png" alt="Sidebar" />
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <p>A tab named <code>NijiGP</code> will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is <code>Draw</code>, <code>Edit</code> or <code>Weight Paint</code>. This is the major way of calling NijiGPen&rsquo;s functions.</p>
-<p>NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.</p>
-<p>These operators do not have default shortcut keys. However, an option <code>[Assign Shortcut]</code> is available in the operator button&rsquo;s right-click menu.</p>
-
-  </div>
-
-</div>
-
-<h3 id="tools">
-  Tools
-  <a class="anchor" href="#tools">#</a>
-</h3>
-<div class="book-columns flex flex-wrap">
-
-  <div class="flex-even markdown-inner">
-    <p>NijiGPen adds several new tools in the Toolbar of Grease Pencil <code>Edit</code> mode. The tool icons have a &ldquo;2D&rdquo; mark on them.</p>
-<p>These tools have the same effect as the corresponding operators in the sidebar panel. However, they allow you to tune the parameters with mouse dragging instead of typing numbers.</p>
-
-  </div>
-
-  <div class="flex-even markdown-inner">
-    <img src="../ui_tool.png" alt="Tools" />
-  </div>
-
-</div>
-
-<h3 id="viewport-buttons-optional">
-  Viewport Buttons (Optional)
-  <a class="anchor" href="#viewport-buttons-optional">#</a>
-</h3>
-<p>NijiGPen also adds some buttons at the bottom of the 3D Viewport window. They are shortcuts of the following functions:</p>
+<p>Through the <code>Import/Export</code> sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:</p>
 <ul>
-<li>Undo/redo</li>
-<li>Tilt the canvas</li>
-<li>Arrange selected strokes forward/backward</li>
+<li><code>.aco</code> files used by Adobe Photoshop and Clip Studio Paint.</li>
+<li><code>.swatches</code> files used by Procreate.</li>
 </ul>
-<p><img src="../ui_touch.png" alt="Shortcuts" /></p>
-<p>The purpose of these shortcut buttons is to enhance the user experience on touchscreens (e.g., Microsoft Surface), inspired by popular painting/design software on tablets. They can be triggered by either the mouse or a stylus.</p>
 <blockquote class="book-hint info">
-  If you do not need these buttons or find them conflicting with other add-ons, you can change their position or turn them off in the setting of <code>Preferences</code> panel.
+  In addition, color codes can also be directly pasted to Blender. Please refer to the <a href="../clipboard/#paste-palettes">clipboard utilities</a> for more information.
 </blockquote>
 
-<h2 id="2d-working-plane">
-  2D Working Plane
-  <a class="anchor" href="#2d-working-plane">#</a>
+<h2 id="recolor-with-a-palette">
+  Recolor with a Palette
+  <a class="anchor" href="#recolor-with-a-palette">#</a>
 </h2>
-<p>Most of the add-on operators work in a 2D plane. If you are working with Blender&rsquo;s 2D Animation template (using X-Z plane by default), there would be no problems. However, when working in the 3D space (e.g., painting on the surface of an object), the way of determining the 2D working plane should be paid attention to.</p>
+<p>The add-on also provides with a utility to quickly color the drawing using the imported palette. By clicking the <code>Recolor</code> button in the sidebar panel and selecting a palette, vertex colors of the selected strokes/points will be replaced with the palette colors, according to either RGB or HSV similarity.</p>
+<p><img src="../recolor.png" alt="" /></p>
+<p>Additional notes for some options:</p>
 <ul>
-<li>In the default mode (&ldquo;Auto&rdquo;), the add-on first estimates the coordinates of all input stroke points to determine the vectors of two most important dimensions. Then it uses the current view to determine the front/back and up/down directions.
-<ul>
-<li>Please avoid selecting strokes belonging to more than one 2D plane as the input. In that case, the estimation can be wrong. (A warning message will show up when it happens.)</li>
+<li><strong>Normalize</strong>: Without normalization, each selected point will be recolored independently. On the contrary, this option enables taking the overall balance of all input points into account.</li>
+<li><strong>Preserve Saturation/Brightness</strong>: These options allow the user to keep some color attributes unchanged when applying the new color to a stroke/point.</li>
 </ul>
-</li>
-<li>There are also other modes available, including using the current view, or using an orthogonal plane (X-Y, X-Z or Y-Z). It can be set in the <code>Global Setting</code> panel.</li>
-</ul>
-<blockquote class="book-hint warning">
-  <p>Applying a rotation in a Grease Pencil layer&rsquo;s attribute may disturb the detection of the working plane. If you want to use layer rotation with NijiGPen, please make sure to check the <code>Use Transform of Active Layer</code> option and process strokes from a single layer per operation.</p>
-<p>On the other hand, applying a rotation on the object itself or its parent has no negative effect on the plane detection.</p>
-
-</blockquote>
-
 </article>
  
       
@@ -774,14 +705,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#user-interface">User Interface</a>
-      <ul>
-        <li><a href="#sidebar-panels">Sidebar Panels</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#viewport-buttons-optional">Viewport Buttons (Optional)</a></li>
-      </ul>
-    </li>
-    <li><a href="#2d-working-plane">2D Working Plane</a></li>
+    <li><a href="#recolor-with-a-palette">Recolor with a Palette</a></li>
   </ul>
 </nav>
 

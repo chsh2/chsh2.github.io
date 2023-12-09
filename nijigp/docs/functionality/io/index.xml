@@ -12,9 +12,18 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/brushes/</guid>
-      <description>Brush Import#The ABR/GBR Brushes button is an operator that converts .abr and .gbr brush files, which are widely used in software including Adobe Photoshop, GIMP and Krita, into Grease Pencil materials/brushes.
-It may take a long time to parse high resolution (e.g. 2500px * 2500px) brushes, because the brush images need to be uncompressed. The time further increases if the file contains multiple brushes.
-If you want to use the high resolution brushes repeatedly, you may consider save the brushes in a .</description>
+      <description>Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&amp;rsquo;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
+.abr brushes that are commonly used in Adobe Photoshop, GIMP and Krita. .gbr brushes of GIMP. .brush or .brushset files exported from Procreate. It may take a long time to parse high resolution (e.</description>
+    </item>
+    
+    <item>
+      <title>Palette Import</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/colors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/colors/</guid>
+      <description>Palette Import#Through the Import/Export sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:
+.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. In addition, color codes can also be directly pasted to Blender. Please refer to the clipboard utilities for more information.Recolor with a Palette#The add-on also provides with a utility to quickly color the drawing using the imported palette.</description>
     </item>
     
     <item>
