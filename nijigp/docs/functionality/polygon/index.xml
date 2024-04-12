@@ -24,7 +24,7 @@ Edit Mode Operators#There are multiple buttons in the Edit mode panel, which a
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/</guid>
       <description>Offset#The 2D Offset operation is performed on the path of a stroke to achieve inflating/deflating/beveling of the shape.
-Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&amp;rsquo;s method, this add-on will not cause the self-intersection of the output shape.
+Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&#39;s method, this add-on will not cause the self-intersection of the output shape.
 These functions are realized by calling the Clipper library. Please check the link for more details.
 From Sidebar Panel#The Offset button in the sidebar panel will offset each selected stroke with a given length value.</description>
     </item>
@@ -48,8 +48,8 @@ Extrude: It turns the shapes into a pseudo-3D look.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</guid>
-      <description>Hole Holdout#To display holes inside a shape&amp;rsquo;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software. Users need to manually enable a Holdout option in the material setting to make a stroke transparent.
-To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&amp;rsquo;s path is completely inside another stroke&amp;rsquo;s fill:</description>
+      <description>Hole Holdout#To display holes inside a shape&#39;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software. Users need to manually enable a Holdout option in the material setting to make a stroke transparent.
+To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&#39;s path is completely inside another stroke&#39;s fill:</description>
     </item>
     
     <item>

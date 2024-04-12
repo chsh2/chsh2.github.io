@@ -23,7 +23,7 @@ Adding the 3D shading effect to a 2D painting. Quick modeling from sketches. A s
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/mesh/management/</guid>
       <description>Mesh Management#During the mesh generation, since each stroke will be converted to a separate mesh object, it is common to have many objects generated from the same Grease Pencil painting. This page will discuss the methods and options to handle multiple generated objects.
-Multi-Object Alignment#This section exists in each mesh generation operator&amp;rsquo;s option panel, defining how multiple generated meshes are aligned in the depth dimension.</description>
+Multi-Object Alignment#This section exists in each mesh generation operator&#39;s option panel, defining how multiple generated meshes are aligned in the depth dimension.</description>
     </item>
     
   </channel>

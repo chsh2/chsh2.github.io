@@ -20,7 +20,7 @@ It is recommended to add a Smooth modifier after the Armature modifier if the po
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.98f97391a0f932053b3a8d7d5869b2755b454094e1a5a8b1996ce5c7d4c309e8.js" integrity="sha256-mPlzkaD5MgU7Oo19WGmydVtFQJThpaixmWzlx9TDCeg=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.f85c4f24bbfbad3dd5add8585120e6b155a64e0ba5b2ea784b2c5d7e1e8500a9.js" integrity="sha256-&#43;FxPJLv7rT3VrdhYUSDmsVWmTgulsup4Syxdfh6FAKk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -683,7 +683,7 @@ https://github.com/alex-shpak/hugo-book
 
 <p>Besides the method above, the following ways may also be used to generate a silhouette:</p>
 <ul>
-<li>Blender&rsquo;s <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tools/fill.html">Fill</a> tool with the <strong>inverted</strong> direction.</li>
+<li>Blender's <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tools/fill.html">Fill</a> tool with the <strong>inverted</strong> direction.</li>
 <li>A hand-drawn contour is also likely to work, which does not need to be very precise.</li>
 </ul>
 <p>Besides using the generated mesh, you can also assign an arbitrary mesh object, or all mesh objects from a collection as the source. For example, this option may be useful when drawing strokes on the surface of a 3D object to keep their bone animation consistent. In that case, please make sure to change to mapping option to <code>3D Nearest Vertex</code>.</p>
@@ -700,14 +700,14 @@ https://github.com/alex-shpak/hugo-book
 <p><img src="../pin_shapes.png" alt="" /></p>
 <p>The hint strokes should be drawn in a separate layer. Currently, two types of hints are available:</p>
 <ul>
-<li><strong>Stick Shape</strong>: Each hint should be a straight line, drawn at the middle of a limb and perpendicular to it. It should intersect with the limb&rsquo;s outlines at both ends.
+<li><strong>Stick Shape</strong>: Each hint should be a straight line, drawn at the middle of a limb and perpendicular to it. It should intersect with the limb's outlines at both ends.
 <ul>
-<li>The hint&rsquo;s start and end position determine the placement of a bone. All other point/stroke attributes have no impact on the result.</li>
+<li>The hint's start and end position determine the placement of a bone. All other point/stroke attributes have no impact on the result.</li>
 </ul>
 </li>
 <li><strong>Lasso Shape</strong>: This mode allows the user to precisely select which points to assign weights, by drawing a lasso surrounding them.
 <ul>
-<li>The generated bone starts from the lasso&rsquo;s center, pointing to its start position.</li>
+<li>The generated bone starts from the lasso's center, pointing to its start position.</li>
 </ul>
 </li>
 </ul>
@@ -717,7 +717,7 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>There are several options to transform the generated bones:</p>
 <ul>
-<li><code>Bone Style</code>: This determines whether the bone should start from the hint&rsquo;s center (<em>Half</em>) or cross the whole hint shape (<em>Full</em>).</li>
+<li><code>Bone Style</code>: This determines whether the bone should start from the hint's center (<em>Half</em>) or cross the whole hint shape (<em>Full</em>).</li>
 <li><code>Bone Rotation</code>: Setting it to <code>+90</code> or <code>-90</code> degrees can make the bones parallel to the limb.</li>
 <li><code>Set Bone Parent</code>: This option sets the parent relationship between bones according to the drawn sequence of hints and the relative position. Please notice that the result sometimes needs manual adjustment.</li>
 </ul>

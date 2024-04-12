@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/brushes/</guid>
-      <description>Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&amp;rsquo;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
+      <description>Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&#39;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
 .abr brushes that are commonly used in Adobe Photoshop, GIMP and Krita. .gbr brushes of GIMP. .brush or .brushset files exported from Procreate. .sut brushes exported from Clip Studio Paint. Please be sure to follow the license and terms of service of the original brush, especially for those acquired from an asset store, which usually prohibits some behaviors such as redistribution.</description>
     </item>
     

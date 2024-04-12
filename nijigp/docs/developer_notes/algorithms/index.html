@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
-It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.">
+<meta name="description" content="Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.
+The add-on’s functions fall into two categories:">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Algorithm Design" />
-<meta property="og:description" content="This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
-It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature." />
+<meta property="og:description" content="Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.
+The add-on’s functions fall into two categories:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/" /><meta property="article:section" content="docs" />
 
@@ -18,7 +20,7 @@ It is less recommended to read the source code directly, since the code details 
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.98f97391a0f932053b3a8d7d5869b2755b454094e1a5a8b1996ce5c7d4c309e8.js" integrity="sha256-mPlzkaD5MgU7Oo19WGmydVtFQJThpaixmWzlx9TDCeg=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.f85c4f24bbfbad3dd5add8585120e6b155a64e0ba5b2ea784b2c5d7e1e8500a9.js" integrity="sha256-&#43;FxPJLv7rT3VrdhYUSDmsVWmTgulsup4Syxdfh6FAKk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -655,11 +657,7 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><blockquote class="book-hint warning">
-  This page is still under construction. The information maybe incomplete.
-</blockquote>
-
-<h1 id="algorithm-design">
+  <article class="markdown"><h1 id="algorithm-design">
   Algorithm Design
   <a class="anchor" href="#algorithm-design">#</a>
 </h1>
@@ -685,8 +683,8 @@ https://github.com/alex-shpak/hugo-book
 <li>Sweep operation is achieved by using Minkowski addition<sup class="citation-ref">[3]</sup>.</li>
 </ul>
 <blockquote class="citation-quote"><ol>
-<li>Vatti, Bala R. &ldquo;A generic solution to polygon clipping.&rdquo; Communications of the ACM 35, no. 7 (1992): 56-63.</li>
-<li>Chen, Xiaorui, and Sara McMains. &ldquo;Polygon offsetting by computing winding numbers.&rdquo; In International Design Engineering Technical Conferences and Computers and Information in Engineering Conference, vol. 4739, pp. 565-575. 2005.</li>
+<li>Vatti, Bala R. &quot;A generic solution to polygon clipping.&quot; Communications of the ACM 35, no. 7 (1992): 56-63.</li>
+<li>Chen, Xiaorui, and Sara McMains. &quot;Polygon offsetting by computing winding numbers.&quot; In International Design Engineering Technical Conferences and Computers and Information in Engineering Conference, vol. 4739, pp. 565-575. 2005.</li>
 <li><a href="https://en.wikipedia.org/wiki/Minkowski_addition">https://en.wikipedia.org/wiki/Minkowski_addition</a></li>
 </ol>
 </blockquote>
@@ -694,45 +692,37 @@ https://github.com/alex-shpak/hugo-book
   Sketch Cleanup
   <a class="anchor" href="#sketch-cleanup">#</a>
 </h2>
-<p>TODO: To add more details soon.</p>
-<blockquote class="citation-quote"><ol>
-<li>Lee, In-Kwon. &ldquo;Curve reconstruction from unorganized points.&rdquo; Computer aided geometric design 17, no. 2 (2000): 161-177.</li>
-<li>Liu, Chenxi, Enrique Rosales, and Alla Sheffer. &ldquo;Strokeaggregator: Consolidating raw sketches into artist-intended curve drawings.&rdquo; ACM Transactions on Graphics (TOG) 37, no. 4 (2018): 1-15.</li>
-</ol>
-</blockquote>
-<h2 id="smart-fill">
-  Smart Fill
-  <a class="anchor" href="#smart-fill">#</a>
-</h2>
-<p>TODO: To add more details soon.</p>
-<blockquote class="citation-quote"><ol>
-<li>Sýkora, Daniel, John Dingliana, and Steven Collins. &ldquo;Lazybrush: Flexible painting tool for hand‐drawn cartoons.&rdquo; In Computer Graphics Forum, vol. 28, no. 2, pp. 599-608. Oxford, UK: Blackwell Publishing Ltd, 2009.</li>
-<li>Parakkat, Amal Dev, Pooran Memari, and Marie‐Paule Cani. &ldquo;Delaunay Painting: Perceptual Image Colouring from Raster Contours with Gaps.&rdquo; In Computer Graphics Forum, vol. 41, no. 6, pp. 166-181. 2022.</li>
-</ol>
-</blockquote>
-<h2 id="mesh-generation">
-  Mesh Generation
-  <a class="anchor" href="#mesh-generation">#</a>
-</h2>
-<p>Among different mesh generation operators, the Offset/Frustum method uses the same algorithm as the polygon offset, while the normal interpolation method is based on a different principle.</p>
-<h3 id="normal-vector-interpolation">
-  Normal Vector Interpolation
-  <a class="anchor" href="#normal-vector-interpolation">#</a>
-</h3>
-<p>This method aims at generating continuous normal vectors on a 2D surface to create an effect of depth and 2D lighting. Research projects such as Lumo<sup class="citation-ref">[1]</sup> have proposed to adopt this method to create shading for hand-drawn animation.</p>
-<p>The algorithm starts with a Grease Pencil stroke, which can be seen as the contour of a 2D shape. Supposing the contour contains 
+<p>The purpose of sketch cleanup is to merge multiple 2D strokes with the similar shape into a single, smooth one. It looks like a curve fitting problem, but it is not trivial to solve:</p>
+<ul>
+<li>It is common that the input strokes cannot be represented by a function 
 <link rel="stylesheet" href="/nijigp/katex/katex.min.css" />
 <script defer src="/nijigp/katex/katex.min.js"></script>
 <script defer src="/nijigp/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(C\)
+  \(y=f(x)\)
 </span>
- points, <span>
-  \(\{(x_1, y_1), (x_2, y_2), ..., (x_C, y_C)\}\)
+ since a single <span>
+  \(x\)
 </span>
-, it is easy to get their 2D normal vectors <span>
-  \( \{(n_{1x}, n_{1y}), (n_{2x}, n_{2y}), ..., (n_{Cx}, n_{Cy})\} \)
+ may correspond to multiple <span>
+  \(y\)
 </span>
-. We then normalize them to the unit length and treat them as 3D vectors, assuming that the third dimension has zero value, i.e., assuming the vector is parallel to the 2D work plane.</p>
+ values.</li>
+<li>Modeling input strokes as <img src="../eq_param_model.svg" alt="\left{\begin{matrix} y=f(t) \ x=g(t) \end{matrix}\right." /> is also problematic, because it is hard to determine the parameter <span>
+  \(t\)
+</span>
+ (i.e., the order of input points) among multiple input strokes.</li>
+</ul>
+<p>The method adopted here is to treat the input strokes as a set of unordered 2D points and then construct a curve from them. I refer to two research papers<sup class="citation-ref">[1][2]</sup> which share several common steps:</p>
+<ol>
+<li>Perform Delaunay triangulation<sup class="citation-ref">[3]</sup> on all input points and treat the result as a graph.</li>
+<li>Calculate the minimum spanning tree (MST)<sup class="citation-ref">[4]</sup> of this graph.</li>
+<li>Find the longest path between any two nodes in MST.</li>
+</ol>
+<p>These steps lead to a 2D path which is the output stroke, but it is usually not smooth enough. The two research papers have different ways further processing the stroke. Considering the time complexity, however, a distinct method is developed for this add-on:</p>
+<ol start="4">
+<li>For each point in the calculated longest path, find other input points (that do not belong to the path) in the neighborhood given a radius value. Average their coordinate of the normal direction.</li>
+<li>Perform a B-spline fitting using <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.splprep.html">SciPy</a> to get the final result.</li>
+</ol>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <style>
@@ -753,7 +743,139 @@ https://github.com/alex-shpak/hugo-book
     color: #fff;
     background: var(--doc-alt-color);
 }
-</style><div class="swiper normal-interpolation">
+</style><div class="swiper sketch-cleanup-fig">
+    <div class="swiper-wrapper">
+      
+    <div class="swiper-slide"><figure>
+        <figcaption>Multiple input strokes to fit.</figcaption>
+        <img src="../alg_fit_1.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Triangulation from the input point set.</figcaption>
+        <img src="../alg_fit_2.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Get MST from the triangles.</figcaption>
+        <img src="../alg_fit_3.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Get the longest path from MST.</figcaption>
+        <img src="../alg_fit_4.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Smooth the longest path to get the final result.</figcaption>
+        <img src="../alg_fit_5.png">  
+    </figure></div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+<script>
+    var swiper = new Swiper(".sketch-cleanup-fig", {
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+        },
+    });
+</script>
+<blockquote class="citation-quote"><ol>
+<li>Lee, In-Kwon. &quot;Curve reconstruction from unorganized points.&quot; Computer aided geometric design 17, no. 2 (2000): 161-177.</li>
+<li>Liu, Chenxi, Enrique Rosales, and Alla Sheffer. &quot;Strokeaggregator: Consolidating raw sketches into artist-intended curve drawings.&quot; ACM Transactions on Graphics (TOG) 37, no. 4 (2018): 1-15.</li>
+<li><a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">https://en.wikipedia.org/wiki/Delaunay_triangulation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">https://en.wikipedia.org/wiki/Minimum_spanning_tree</a></li>
+</ol>
+</blockquote>
+<h2 id="smart-fill">
+  Smart Fill
+  <a class="anchor" href="#smart-fill">#</a>
+</h2>
+<p>LazyBrush<sup class="citation-ref">[1]</sup> is a tool that allows users to fill a line art based on some hint colors drawn on it. It is originally designed to process pixels of a raster image. This add-on adopts the concept of LazyBrush, but modifies the algorithm to make it work for vector arts.</p>
+<p>The key idea is the max-flow min-cut theorem<sup class="citation-ref">[2]</sup>. The min-cut partitions a graph into two disjoint subsets. We use it to partition the points of the line art, and assign a color to each output subset, which is how the line art is filled.</p>
+<p>The way of constructing a node graph from the vector line art is inspired by the research paper Delaunay Painting<sup class="citation-ref">[3]</sup>. The add-on performs Delaunay triangulation on the line art stroke points, and builds a graph with triangles as graph nodes. For each pair of adjacent triangles (sharing an edge):</p>
+<ul>
+<li>If the edge belongs to the line art, do not create a link between the two graph nodes.</li>
+<li>Otherwise, create a weighted link. The weight is the length of the edge.</li>
+</ul>
+<p>The max-flow min-cut method requires source and sink nodes, which are triangles with two different hint colors. With the min-cut disconnecting source nodes from sink nodes, the graph is partitioned into two, which are the filling areas of these two colors. If there are <span>
+  \(N&gt;2\)
+</span>
+ hint colors, just repeat this process for <span>
+  \(N-1\)
+</span>
+ times.</p>
+<p>The description above may be obscure since many details of the graph theory have to be involved. The figures below aim at providing an intuitive example about how this method works.</p>
+<div class="swiper smart-fill-fig">
+    <div class="swiper-wrapper">
+      
+    <div class="swiper-slide"><figure>
+        <figcaption>Input line art and hint strokes.</figcaption>
+        <img src="../smart_fill_alg_1.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Divide the line art into triangles.</figcaption>
+        <img src="../smart_fill_alg_2.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Convert triangles to a node graph.</figcaption>
+        <img src="../smart_fill_alg_3.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Partition the graph into two parts.</figcaption>
+        <img src="../smart_fill_alg_4.png">  
+    </figure></div>
+    <div class="swiper-slide"><figure>
+        <figcaption>Fill each subgraph with one color.</figcaption>
+        <img src="../smart_fill_alg_5.png">  
+    </figure></div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+<script>
+    var swiper = new Swiper(".smart-fill-fig", {
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+        },
+    });
+</script>
+<blockquote class="citation-quote"><ol>
+<li>Sýkora, Daniel, John Dingliana, and Steven Collins. &quot;Lazybrush: Flexible painting tool for hand‐drawn cartoons.&quot; In Computer Graphics Forum, vol. 28, no. 2, pp. 599-608. Oxford, UK: Blackwell Publishing Ltd, 2009.</li>
+<li><a href="https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem">https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem</a></li>
+<li>Parakkat, Amal Dev, Pooran Memari, and Marie‐Paule Cani. &quot;Delaunay Painting: Perceptual Image Colouring from Raster Contours with Gaps.&quot; In Computer Graphics Forum, vol. 41, no. 6, pp. 166-181. 2022.</li>
+</ol>
+</blockquote>
+<h2 id="mesh-generation">
+  Mesh Generation
+  <a class="anchor" href="#mesh-generation">#</a>
+</h2>
+<p>Among different mesh generation operators, the Offset/Frustum method uses the same algorithm as the polygon offset, while the normal interpolation method is based on a different principle.</p>
+<h3 id="normal-vector-interpolation">
+  Normal Vector Interpolation
+  <a class="anchor" href="#normal-vector-interpolation">#</a>
+</h3>
+<p>This method aims at generating continuous normal vectors on a 2D surface to create an effect of depth and 2D lighting. Research projects such as Lumo<sup class="citation-ref">[1]</sup> have proposed to adopt this method to create shading for hand-drawn animation.</p>
+<p>The algorithm starts with a Grease Pencil stroke, which can be seen as the contour of a 2D shape. Supposing the contour contains <span>
+  \(C\)
+</span>
+ points, <span>
+  \(\{(x_1, y_1), (x_2, y_2), ..., (x_C, y_C)\}\)
+</span>
+, it is easy to get their 2D normal vectors <span>
+  \( \{(n_{1x}, n_{1y}), (n_{2x}, n_{2y}), ..., (n_{Cx}, n_{Cy})\} \)
+</span>
+. We then normalize them to the unit length and treat them as 3D vectors, assuming that the third dimension has zero value, i.e., assuming the vector is parallel to the 2D work plane.</p>
+<div class="swiper normal-interpolation-fig">
     <div class="swiper-wrapper">
       
     <div class="swiper-slide"><figure>
@@ -775,7 +897,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 <script>
-    var swiper = new Swiper(".normal-interpolation", {
+    var swiper = new Swiper(".normal-interpolation-fig", {
         pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -786,22 +908,10 @@ https://github.com/alex-shpak/hugo-book
     });
 </script>
 <p>Then we create new vertices inside the shape. To calculate the normal vector of such an inside vertex, we take the weighted average of the normal vectors of all the contour points. The weight is the <strong>reciprocal squared distance</strong> from this new vertex to a contour point.</p>
-<span>
-  \[
-n_x = \frac{ \sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1} n_{cx}}{\sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1}}\]
-</span>
-
-<span>
-  \[
-n_y = \frac{ \sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1} n_{cy}}{\sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1}}\]
-</span>
-
+<p><img src="../eq_normal_x.svg" alt="n_x = \frac{ \sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1} n_{cx}}{\sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1}}" /></p>
+<p><img src="../eq_normal_y.svg" alt="n_y = \frac{ \sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1} n_{cy}}{\sum_{c=1}^{C} [(x-x_c)^2 &#43; (y-y_c)^2]^{-1}}" /></p>
 <p>The equations above give us the first two components of the normal vector. By assuming the unit length, we can get the third component:</p>
-<span>
-  \[
-n_z = \sqrt{1 - {n_x}^2 - {n_y}^2}\]
-</span>
-
+<p><img src="../eq_normal_z.svg" alt="n_z = \sqrt{1 - {n_x}^2 - {n_y}^2}" /></p>
 <p>This distance-based weighting and averaging can result in a smooth appearance. For example, a 2D circle will be shaded like a sphere.</p>
 <h3 id="heightdepth-calculation">
   Height/Depth Calculation
@@ -815,17 +925,13 @@ n_z = \sqrt{1 - {n_x}^2 - {n_y}^2}\]
   \(b \in \Gamma_{a}\)
 </span>
  that shares an edge with it. In this way, an energy function can be defined by summing up the squared production of each pair of normal and tangent vectors, taking each edge in the mesh into account:</p>
-<span>
-  \[
-E(z_1, z_2, ..., z_N) = \sum_{a=1}^N \sum_{b\in \Gamma_{a}} (\begin{bmatrix} n_{ax} &amp; n_{ay} &amp; n_{az} \end{bmatrix} \begin{bmatrix} x_a - x_b \\ y_a - y_b \\ z_a - z_b \end{bmatrix})^2 \]
-</span>
-
+<p><img src="../eq_depth_min_energy.svg" alt="E(z_1, z_2, ..., z_N) = \sum_{a=1}^N \sum_{b\in \Gamma_{a}} (\begin{bmatrix} n_{ax} &amp;amp; n_{ay} &amp;amp; n_{az} \end{bmatrix} \begin{bmatrix} x_a - x_b \ y_a - y_b \ z_a - z_b \end{bmatrix})^2 " /></p>
 <p>The closer this energy is to zero, the more realistic the depth values are. Since the derivative of energy is linear, there is a wide range of optimizers available for this problem. The add-on adopts the L-BFGS-B algorithm provided by <a href="https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html">SciPy</a>.</p>
 <p>Although not using its algorithm directly, the mesh generation module is also largely inspired by Monster Mash<sup class="citation-ref">[3]</sup>.</p>
 <blockquote class="citation-quote"><ol>
-<li>Johnston, Scott F. &ldquo;Lumo: illumination for cel animation.&rdquo; In Proceedings of the 2nd international symposium on Non-photorealistic animation and rendering, pp. 45-ff. 2002.</li>
-<li>Hudon, Matis, Sebastian Lutz, Rafael Pagés, and Aljosa Smolic. &ldquo;Augmenting hand-drawn art with global illumination effects through surface inflation.&rdquo; In Proceedings of the 16th ACM SIGGRAPH European Conference on Visual Media Production, pp. 1-9. 2019.</li>
-<li>Dvorožňák, Marek, Daniel Sýkora, Cassidy Curtis, Brian Curless, Olga Sorkine-Hornung, and David Salesin. &ldquo;Monster mash: a single-view approach to casual 3D modeling and animation.&rdquo; ACM Transactions on Graphics (TOG) 39, no. 6 (2020): 1-12.</li>
+<li>Johnston, Scott F. &quot;Lumo: illumination for cel animation.&quot; In Proceedings of the 2nd international symposium on Non-photorealistic animation and rendering, pp. 45-ff. 2002.</li>
+<li>Hudon, Matis, Sebastian Lutz, Rafael Pagés, and Aljosa Smolic. &quot;Augmenting hand-drawn art with global illumination effects through surface inflation.&quot; In Proceedings of the 16th ACM SIGGRAPH European Conference on Visual Media Production, pp. 1-9. 2019.</li>
+<li>Dvorožňák, Marek, Daniel Sýkora, Cassidy Curtis, Brian Curless, Olga Sorkine-Hornung, and David Salesin. &quot;Monster mash: a single-view approach to casual 3D modeling and animation.&quot; ACM Transactions on Graphics (TOG) 39, no. 6 (2020): 1-12.</li>
 </ol>
 </blockquote>
 <h2 id="image-vectorization">
@@ -842,21 +948,22 @@ E(z_1, z_2, ..., z_N) = \sum_{a=1}^N \sum_{b\in \Gamma_{a}} (\begin{bmatrix} n_{
   Color Quantization
   <a class="anchor" href="#color-quantization">#</a>
 </h3>
-<p>To vectorize a color image, the add-on uses the clustering algorithm to reduce the number of colors of the original image, so that pixels of each color can be treated one by one, just like a black-and-white image. The clustering algorithm in use is a very common one, K-means<sup class="citation-ref">[3]</sup>, treating each pixel&rsquo;s <code>rgb</code> values as a 3D vector.</p>
+<p>To vectorize a color image, the add-on uses the clustering algorithm to reduce the number of colors of the original image, so that pixels of each color can be treated one by one, just like a black-and-white image. The clustering algorithm in use is a very common one, K-means<sup class="citation-ref">[3]</sup>, treating each pixel's <code>rgb</code> values as a 3D vector.</p>
 <p>After color reduction, the add-on converts each connected pixel regions to a contour by calling the function <code>find_contours</code> in <a href="https://scikit-image.org/docs/stable/api/skimage.measure.html#skimage.measure.find_contours">skimage.measure</a>, which uses the marching squares algorithm<sup class="citation-ref">[4]</sup>.</p>
 <blockquote class="citation-quote"><ol>
 <li>Skimage Skeletonize, <a href="https://scikit-image.org/docs/stable/auto_examples/edges/plot_skeleton.html">https://scikit-image.org/docs/stable/auto_examples/edges/plot_skeleton.html</a></li>
-<li>Zhang, Tongjie Y., and Ching Y. Suen. &ldquo;A fast parallel algorithm for thinning digital patterns.&rdquo; Communications of the ACM 27, no. 3 (1984): 236-239.</li>
+<li>Zhang, Tongjie Y., and Ching Y. Suen. &quot;A fast parallel algorithm for thinning digital patterns.&quot; Communications of the ACM 27, no. 3 (1984): 236-239.</li>
 <li>K-means Clustering, <a href="https://en.wikipedia.org/wiki/K-means_clustering">https://en.wikipedia.org/wiki/K-means_clustering</a></li>
-<li>Lorensen, William E., and Harvey E. Cline. &ldquo;Marching cubes: A high resolution 3D surface construction algorithm.&rdquo; In Seminal graphics: pioneering efforts that shaped the field, pp. 347-353. 1998.</li>
+<li>Lorensen, William E., and Harvey E. Cline. &quot;Marching cubes: A high resolution 3D surface construction algorithm.&quot; In Seminal graphics: pioneering efforts that shaped the field, pp. 347-353. 1998.</li>
 </ol>
 </blockquote>
 <h2 id="file-format-support">
   File Format Support
   <a class="anchor" href="#file-format-support">#</a>
 </h2>
-<p>The support of Adobe formats (writing <code>.psd</code> and reading <code>.abr</code>) follows the official specification<sup class="citation-ref">[1]</sup>. In addition, the parsing of brush files also refers to the description from <em>Just Solve the File Format Problem</em><sup class="citation-ref">[2]</sup> Wiki page and GIMP&rsquo;s source code<sup class="citation-ref">[3]</sup>.</p>
+<p>The support of Adobe formats (writing <code>.psd</code> and reading <code>.abr</code>) follows the official specification<sup class="citation-ref">[1]</sup>. In addition, the parsing of brush files also refers to the description from <em>Just Solve the File Format Problem</em><sup class="citation-ref">[2]</sup> Wiki page and GIMP's source code<sup class="citation-ref">[3]</sup>.</p>
 <p>The support of GIMP <code>.gbr</code> brushes follows the developer documentation<sup class="citation-ref">[4]</sup>.</p>
+<p>A Procreate brush is an archive with image files and PLIST configurations. A Clip Studio Paint <code>.sut</code> brush is an SQLite database. Both formats can be parsed by the Python Standard Library.</p>
 <blockquote class="citation-quote"><ol>
 <li>Adobe Photoshop File Format Specification, <a href="https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/">https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/</a></li>
 <li>Just Solve the File Format Problem, <a href="http://fileformats.archiveteam.org/wiki/Photoshop_brush">http://fileformats.archiveteam.org/wiki/Photoshop_brush</a></li>

@@ -20,7 +20,7 @@ scipy可以激活计算顶点高度的高级求解器。 triangle可以激活一
 Windows根据Blender的安装来源，可能会需要采取额外步骤：
 便携版压缩包或Steam安装: 无需额外步骤。 官方安装程序: 如果Blender安装在系统文件夹，例如C:\Program Files\Blender Foundation\，推荐在安装Python软件包前以管理员身份运行Blender。 Microsoft Store: 所有Python软件包都会被安装到Blender以外的目录中，通常这个目录会在安装过程中被自动检测到。如果出现问题，请参阅备选方法1：自定义目录。 MacOSPython包triangle未在使用M1/M2/M3芯片的设备中充分测试，有可能无法安装，如果出现这种情况，将其忽略即可。（插件功能仅会受到轻微影响）。软件包安装#最直接的安装Python软件包的方法是使用设置面板中的依赖项管理器：
 点击&amp;quot;Check&amp;quot;按钮来确认某一Python包是否已被安装，如果未被安装，请点击&amp;quot;Install&amp;quot;（需要联网）。
-面板下方的日志区域会显示安装过程与结果。 &amp;ldquo;Remove&amp;quot;按钮可以删除已安装的Python包，但需要重启Blender才能反映出变化。
+面板下方的日志区域会显示安装过程与结果。 &amp;quot;Remove&amp;quot;按钮可以删除已安装的Python包，但需要重启Blender才能反映出变化。
 若安装失败，请在日志中查找原因或阅读下文的备选方法与疑难解答。
 备选方法1：自定义目录#通常，Python软件包会与Blender被安装在相同目录，但也可以通过Custom Package Path选项来指定Blender读取软件包的目录。这个选项有如下作用：</description>
     </item>

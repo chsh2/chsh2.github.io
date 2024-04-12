@@ -13,7 +13,7 @@
       
       <guid>https://chsh2.github.io/nijigp/docs/get_started/basic_usage/</guid>
       <description>Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
-Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&amp;rsquo;s functions.
+Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&#39;s functions.
 NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.</description>
     </item>
     

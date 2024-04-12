@@ -12,8 +12,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/developer_notes/algorithms/</guid>
-      <description>This page is still under construction. The information maybe incomplete.Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
-It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.</description>
+      <description>Algorithm Design#This page provides an in-depth exploration of the algorithms utilized by this add-on, both for developers interested in vector graphics processing and for users wondering about the core principles underlying the add-on’s functionality.
+It is less recommended to read the source code directly, since the code details are not excellent and still need refinement. Instead, this article focuses more on the mathematics behind each feature.
+The add-on’s functions fall into two categories:</description>
     </item>
     
     <item>
@@ -33,7 +34,7 @@ Edit Mode Operators#There are multiple buttons in the Edit mode panel, which a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/brushes/</guid>
-      <description>Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&amp;rsquo;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
+      <description>Brush Import#Through the Import/Export sidebar panel, the user can load brushes of some other painting software&#39;s file formats into Blender and extract their textures to create Grease Pencil materials/brushes. Currently, the following formats are supported:
 .abr brushes that are commonly used in Adobe Photoshop, GIMP and Krita. .gbr brushes of GIMP. .brush or .brushset files exported from Procreate. .sut brushes exported from Clip Studio Paint. Please be sure to follow the license and terms of service of the original brush, especially for those acquired from an asset store, which usually prohibits some behaviors such as redistribution.</description>
     </item>
     
@@ -43,7 +44,7 @@ Edit Mode Operators#There are multiple buttons in the Edit mode panel, which a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/animation/frame_animation/</guid>
-      <description>Frame Animations#Multiframe Operations#Grease Pencil has a Multiframe Tool allowing users to draw or edit on multiple frames at the same time. Some of NijiGPen&amp;rsquo;s operators in the Edit mode support this feature. With the Multiframe tool enabled, they are performed on all selected frames, instead of the active frame.
+      <description>Frame Animations#Multiframe Operations#Grease Pencil has a Multiframe Tool allowing users to draw or edit on multiple frames at the same time. Some of NijiGPen&#39;s operators in the Edit mode support this feature. With the Multiframe tool enabled, they are performed on all selected frames, instead of the active frame.
 In addition, new options will appear in the multiframe mode for some operators, which are designed for making animated effects, including:</description>
     </item>
     
@@ -63,7 +64,7 @@ Adding the 3D shading effect to a 2D painting. Quick modeling from sketches. A s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/get_started/installation/dependency/</guid>
-      <description>Python Packages#NijiGPen&amp;rsquo;s functionality relies on some third-party Python packages, which have to be separately downloaded and installed. If you have no experience with Blender add-ons that have similar requirements, it is strongly suggested to read this page before using the add-on.
+      <description>Python Packages#NijiGPen&#39;s functionality relies on some third-party Python packages, which have to be separately downloaded and installed. If you have no experience with Blender add-ons that have similar requirements, it is strongly suggested to read this page before using the add-on.
 Dependency Summary#The table below lists the packages required for each type of operation. Lacking a package will not affect operations that do not require it.</description>
     </item>
     
@@ -73,7 +74,7 @@ Dependency Summary#The table below lists the packages required for each type o
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/tips/scene_setup/</guid>
-      <description>Scene Setup#Blender comes with a template start file &amp;ldquo;2D Animation&amp;rdquo; that is convenient for painting. However, there are also some tricky parts in setting up the scene, especially when we put Grease Pencil and 3D objects in the same scene, including the meshes generated by this add-on. Here are some tips written in the form of FAQ.
+      <description>Scene Setup#Blender comes with a template start file &amp;quot;2D Animation&amp;quot; that is convenient for painting. However, there are also some tricky parts in setting up the scene, especially when we put Grease Pencil and 3D objects in the same scene, including the meshes generated by this add-on. Here are some tips written in the form of FAQ.
 Why cannot I see any shading effect when I generate meshes from Grease Pencil?</description>
     </item>
     
@@ -83,7 +84,7 @@ Why cannot I see any shading effect when I generate meshes from Grease Pencil?</
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</guid>
-      <description>Sketch Cleanup#NijiGPen&amp;rsquo;s line operators provide functionality that helps turn raw sketches into final line art. A raw sketch usually contains repeated strokes, line splits, and line gaps that require a lot of manual effort to clean up. The Line Fit operators can speed up this process by merging multiple strokes into a single, smooth stroke.
+      <description>Sketch Cleanup#NijiGPen&#39;s line operators provide functionality that helps turn raw sketches into final line art. A raw sketch usually contains repeated strokes, line splits, and line gaps that require a lot of manual effort to clean up. The Line Fit operators can speed up this process by merging multiple strokes into a single, smooth stroke.
 Fit Sketch to Single Line#The major way of using this function is from the sidebar panel in the Edit mode.</description>
     </item>
     
@@ -94,7 +95,7 @@ Fit Sketch to Single Line#The major way of using this function is from the sid
       
       <guid>https://chsh2.github.io/nijigp/docs/get_started/basic_usage/</guid>
       <description>Basic Usage#User Interface#NijiGPen creates new user interfaces to trigger its functions in the following places of Blender.
-Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&amp;rsquo;s functions.
+Sidebar Panels#A tab named NijiGP will appear in the sidebar of the 3D Viewport, if the active object is Grease Pencil and the mode is Draw, Edit or Weight Paint. This is the major way of calling NijiGPen&#39;s functions.
 NijiGPen operators are categorized in several panels. Depending on the current mode, different panels or operators may appear.</description>
     </item>
     
@@ -104,7 +105,7 @@ NijiGPen operators are categorized in several panels. Depending on the current m
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</guid>
-      <description>Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&amp;rsquo;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+      <description>Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
 Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator.</description>
     </item>
     
@@ -115,7 +116,7 @@ Add-On Registering#All add-on operators are registered under bpy.ops.gpencil w
       
       <guid>https://chsh2.github.io/nijigp/docs/tips/limitations/</guid>
       <description>Limitations#The add-on has a number of limitations in different aspects, including:
-Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&amp;rsquo;s own design, which may lead to different behaviors from common graphics software. This page lists limitations which are general to multiple operators. Besides it, the constraints of 2D space can be found in Basic Usage. The limitation of each single operator will be recorded in their own page.</description>
+Unfinished features of the add-on itself, which may be improved in future releases. Limitations due to Blender&#39;s own design, which may lead to different behaviors from common graphics software. This page lists limitations which are general to multiple operators. Besides it, the constraints of 2D space can be found in Basic Usage. The limitation of each single operator will be recorded in their own page.</description>
     </item>
     
     <item>
@@ -125,7 +126,7 @@ Unfinished features of the add-on itself, which may be improved in future releas
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/mesh/management/</guid>
       <description>Mesh Management#During the mesh generation, since each stroke will be converted to a separate mesh object, it is common to have many objects generated from the same Grease Pencil painting. This page will discuss the methods and options to handle multiple generated objects.
-Multi-Object Alignment#This section exists in each mesh generation operator&amp;rsquo;s option panel, defining how multiple generated meshes are aligned in the depth dimension.</description>
+Multi-Object Alignment#This section exists in each mesh generation operator&#39;s option panel, defining how multiple generated meshes are aligned in the depth dimension.</description>
     </item>
     
     <item>
@@ -135,7 +136,7 @@ Multi-Object Alignment#This section exists in each mesh generation operator&am
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/offset/</guid>
       <description>Offset#The 2D Offset operation is performed on the path of a stroke to achieve inflating/deflating/beveling of the shape.
-Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&amp;rsquo;s method, this add-on will not cause the self-intersection of the output shape.
+Although Blender has some inset/bevel operators/modifiers, they are not available for Grease Pencil. Besides, compared with Blender&#39;s method, this add-on will not cause the self-intersection of the output shape.
 These functions are realized by calling the Clipper library. Please check the link for more details.
 From Sidebar Panel#The Offset button in the sidebar panel will offset each selected stroke with a given length value.</description>
     </item>
@@ -189,7 +190,7 @@ The parsing of SVG codes is in the same way as the standard import function of B
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/line/smart_fill/</guid>
-      <description>Smart Fill#Smart Fill is an operator in the Draw mode. It fills an entire line art layer based on some color hints marked by the user. Compared with the Blender&amp;rsquo;s default Fill tool, it has the following advantages:
+      <description>Smart Fill#Smart Fill is an operator in the Draw mode. It fills an entire line art layer based on some color hints marked by the user. Compared with the Blender&#39;s default Fill tool, it has the following advantages:
 It handles the gaps in the line art automatically. It is less likely to leave seams near the contour, or be intersected. Although the algorithms are different, the concept of this operation is similar to the Colorize Mask tool in Krita.</description>
     </item>
     
@@ -212,8 +213,8 @@ Extrude: It turns the shapes into a pseudo-3D look.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</guid>
-      <description>Hole Holdout#To display holes inside a shape&amp;rsquo;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software. Users need to manually enable a Holdout option in the material setting to make a stroke transparent.
-To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&amp;rsquo;s path is completely inside another stroke&amp;rsquo;s fill:</description>
+      <description>Hole Holdout#To display holes inside a shape&#39;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software. Users need to manually enable a Holdout option in the material setting to make a stroke transparent.
+To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&#39;s path is completely inside another stroke&#39;s fill:</description>
     </item>
     
     <item>

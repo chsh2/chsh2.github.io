@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/line/fit/</guid>
-      <description>Sketch Cleanup#NijiGPen&amp;rsquo;s line operators provide functionality that helps turn raw sketches into final line art. A raw sketch usually contains repeated strokes, line splits, and line gaps that require a lot of manual effort to clean up. The Line Fit operators can speed up this process by merging multiple strokes into a single, smooth stroke.
+      <description>Sketch Cleanup#NijiGPen&#39;s line operators provide functionality that helps turn raw sketches into final line art. A raw sketch usually contains repeated strokes, line splits, and line gaps that require a lot of manual effort to clean up. The Line Fit operators can speed up this process by merging multiple strokes into a single, smooth stroke.
 Fit Sketch to Single Line#The major way of using this function is from the sidebar panel in the Edit mode.</description>
     </item>
     
@@ -33,7 +33,7 @@ The operation does not apply for the case where 3 or more strokes have their tip
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/line/smart_fill/</guid>
-      <description>Smart Fill#Smart Fill is an operator in the Draw mode. It fills an entire line art layer based on some color hints marked by the user. Compared with the Blender&amp;rsquo;s default Fill tool, it has the following advantages:
+      <description>Smart Fill#Smart Fill is an operator in the Draw mode. It fills an entire line art layer based on some color hints marked by the user. Compared with the Blender&#39;s default Fill tool, it has the following advantages:
 It handles the gaps in the line art automatically. It is less likely to leave seams near the contour, or be intersected. Although the algorithms are different, the concept of this operation is similar to the Colorize Mask tool in Krita.</description>
     </item>
     
