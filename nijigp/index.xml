@@ -248,5 +248,16 @@ Single-Line Doodle: In this mode, all points will be connected together to ensur
 Besides the Grease Pencil layers, there are two additional PSD layers rendered.</description>
     </item>
     
+    <item>
+      <title>Shading</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/polygon/shading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/shading/</guid>
+      <description>Shading#This Edit mode operator generates shadow and light areas of selected strokes given a light source in the scene. This function can be used to fit the Grease Pencil art better into the Blender&#39;s 3D environment.
+There are also some other functions related to 3D lighting and shading which belong to Mesh Generation operators.
+Light Source#There are several options to assign a light source for shading calculation:</description>
+    </item>
+    
   </channel>
 </rss>

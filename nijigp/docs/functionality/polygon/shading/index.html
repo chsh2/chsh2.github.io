@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
-The rigging-related operations will show up in a panel when the current mode is Weight Paint.
-It is recommended to add a Smooth modifier after the Armature modifier if the point movement looks unnatural.Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.">
+<meta name="description" content="Shading#This Edit mode operator generates shadow and light areas of selected strokes given a light source in the scene. This function can be used to fit the Grease Pencil art better into the Blender&#39;s 3D environment.
+There are also some other functions related to 3D lighting and shading which belong to Mesh Generation operators.
+Light Source#There are several options to assign a light source for shading calculation:">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Rigging Utilities" />
-<meta property="og:description" content="Rigging Utilities#Although Blender can automatically generate weights rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.
-The rigging-related operations will show up in a panel when the current mode is Weight Paint.
-It is recommended to add a Smooth modifier after the Armature modifier if the point movement looks unnatural.Transfer Weights from Meshes#The Weight From Meshes button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Shading" />
+<meta property="og:description" content="Shading#This Edit mode operator generates shadow and light areas of selected strokes given a light source in the scene. This function can be used to fit the Grease Pencil art better into the Blender&#39;s 3D environment.
+There are also some other functions related to 3D lighting and shading which belong to Mesh Generation operators.
+Light Source#There are several options to assign a light source for shading calculation:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/animation/rigging/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/polygon/shading/" /><meta property="article:section" content="docs" />
 
 
-<title>Rigging Utilities | NijiGPen Documentation</title>
+<title>Shading | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
@@ -258,7 +258,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/polygon/shading/" class="">Shading</a>
+    <a href="/nijigp/docs/functionality/polygon/shading/" class="active">Shading</a>
   
 
         </li>
@@ -403,7 +403,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/animation/rigging/" class="active">Rigging Utilities</a>
+    <a href="/nijigp/docs/functionality/animation/rigging/" class="">Rigging Utilities</a>
   
 
         </li>
@@ -626,7 +626,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Rigging Utilities</strong>
+  <strong>Shading</strong>
 
   <label for="toc-control">
     
@@ -642,18 +642,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#transfer-weights-from-meshes">Transfer Weights from Meshes</a>
+    <li><a href="#light-source">Light Source</a></li>
+    <li><a href="#shadow-and-lighting-styles">Shadow and Lighting Styles</a>
       <ul>
-        <li><a href="#source-objects">Source Objects</a></li>
+        <li><a href="#shadow-strokes">Shadow Strokes</a></li>
+        <li><a href="#rim-light-strokes">Rim Light Strokes</a></li>
       </ul>
     </li>
-    <li><a href="#use-hints-to-generate-pins">Use Hints to Generate Pins</a>
-      <ul>
-        <li><a href="#hint-strokes">Hint Strokes</a></li>
-        <li><a href="#bone-styles">Bone Styles</a></li>
-        <li><a href="#other-options">Other Options</a></li>
-      </ul>
-    </li>
+    <li><a href="#stroke-attributes">Stroke Attributes</a></li>
+    <li><a href="#comparison-with-mesh-generation">Comparison with Mesh Generation</a></li>
   </ul>
 </nav>
 
@@ -666,82 +663,83 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="rigging-utilities">
-  Rigging Utilities
-  <a class="anchor" href="#rigging-utilities">#</a>
+  <article class="markdown"><h1 id="shading">
+  Shading
+  <a class="anchor" href="#shading">#</a>
 </h1>
-<p>Although Blender can automatically <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/weight_paint/weights_menu.html">generate weights</a> rigging Grease Pencil strokes to an armature, the result often requires heavy manual adjustment. NijiGPen provides with several alternative methods generating bone weights.</p>
-<p><img src="../panel.png" alt="" /></p>
-<p>The rigging-related operations will show up in a panel when the current mode is <code>Weight Paint</code>.</p>
-<blockquote class="book-hint info">
-  It is recommended to add a <code>Smooth</code> modifier after the <code>Armature</code> modifier if the point movement looks unnatural.
-</blockquote>
-
-<h2 id="transfer-weights-from-meshes">
-  Transfer Weights from Meshes
-  <a class="anchor" href="#transfer-weights-from-meshes">#</a>
+<p>This <code>Edit</code> mode operator generates shadow and light areas of selected strokes given a light source in the scene. This function can be used to fit the Grease Pencil art better into the Blender's 3D environment.</p>
+<p><img src="../shading.png" alt="" /></p>
+<p>There are also some other functions related to 3D lighting and shading which belong to <a href="../../mesh/generation/">Mesh Generation</a> operators.</p>
+<h2 id="light-source">
+  Light Source
+  <a class="anchor" href="#light-source">#</a>
 </h2>
-<p><img src="../transfer.png" alt="" /></p>
-<p>The <code>Weight From Meshes</code> button is a tool transferring the weights from rigged mesh objects to the current Grease Pencil object.</p>
-<p>The operator requires an <strong>armature</strong> and one or more source <strong>mesh objects</strong> as the input. It sets the weights of the armature bones to stroke points according to the nearest vertex from the source mesh objects.</p>
-<p>If the source objects are not rigged, the operator can rig them first using the <a href="https://docs.blender.org/manual/en/latest/animation/armatures/skinning/parenting.html#with-automatic-weights">With Automatic Weights</a> parenting tool, and then perform the transfer, controlled by the option <code>Use Existing Weights</code>.</p>
-<h3 id="source-objects">
-  Source Objects
-  <a class="anchor" href="#source-objects">#</a>
-</h3>
-<p>For 2D animations, one recommended way is to use the other operators this add-on provides, <a href="../../line/smart_fill">Smart Fill</a> followed by <a href="../../mesh/generation">Mesh Generation</a>. The option <code>Quick New Mesh Using Smart Fill</code> does it automatically, using the bones as filling hints.</p>
-<blockquote class="book-hint warning">
-  Meshes generated by this option are relatively simple, taking only the <strong>active frame</strong> of the <strong>active layer</strong> into account. For more complex cases, it may be better to finish these operations manually.
-</blockquote>
-
-<p>Besides the method above, the following ways may also be used to generate a silhouette:</p>
+<p>There are several options to assign a light source for shading calculation:</p>
 <ul>
-<li>Blender's <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tools/fill.html">Fill</a> tool with the <strong>inverted</strong> direction.</li>
-<li>A hand-drawn contour is also likely to work, which does not need to be very precise.</li>
+<li><strong>Constant Vector</strong>: The user can type the direction (a 3D vector in the global space) and the power of a light source manually.</li>
+<li><strong>Reference Object</strong>: By selecting an object in the scene, the location of the object will be regarded as point light source.</li>
+<li><strong>Light Object</strong>: By selecting a light object in the scene, the add-on reads all necessary attributes (location, direction, power and type) of it to calculate shading. Please notice that only <code>Point</code> and <code>Sun</code> lights are supported.</li>
 </ul>
-<p>Besides using the generated mesh, you can also assign an arbitrary mesh object, or all mesh objects from a collection as the source. For example, this option may be useful when drawing strokes on the surface of a 3D object to keep their bone animation consistent. In that case, please make sure to change to mapping option to <code>3D Nearest Vertex</code>.</p>
-<h2 id="use-hints-to-generate-pins">
-  Use Hints to Generate Pins
-  <a class="anchor" href="#use-hints-to-generate-pins">#</a>
+<p>The reference object or the light object can have animation data. To generate animated shading, please refer to <a href="../../animation/frame_animation">Multiframe Operations</a>.</p>
+<h2 id="shadow-and-lighting-styles">
+  Shadow and Lighting Styles
+  <a class="anchor" href="#shadow-and-lighting-styles">#</a>
 </h2>
-<p><img src="../pins.png" alt="" /></p>
-<p>The <code>Pins from Hints</code> button is another rigging tool that can be used for rubber hose animations of limbs. It does not require an existing armature as the input. Instead, by drawing some hint strokes, the operator will generate bones at the same position, and then rig the Grease Pencil using these bones by setting weights to nearby points.</p>
-<h3 id="hint-strokes">
-  Hint Strokes
-  <a class="anchor" href="#hint-strokes">#</a>
+<p>The outputs of this operator are new strokes that depict the shadow terminator lines of the input shapes. There are several options for the generated shadow and light strokes separately.</p>
+<p><img src="../shading_path.png" alt="" /></p>
+<h3 id="shadow-strokes">
+  Shadow Strokes
+  <a class="anchor" href="#shadow-strokes">#</a>
 </h3>
-<p><img src="../pin_shapes.png" alt="" /></p>
-<p>The hint strokes should be drawn in a separate layer. Currently, two types of hints are available:</p>
 <ul>
-<li><strong>Stick Shape</strong>: Each hint should be a straight line, drawn at the middle of a limb and perpendicular to it. It should intersect with the limb's outlines at both ends.
+<li><strong>Threshold</strong>: The algorithm checks the amount of light hitting the surface of the input shapes, and uses a threshold value to determine if an area is in the shadow.
 <ul>
-<li>The hint's start and end position determine the placement of a bone. All other point/stroke attributes have no impact on the result.</li>
+<li>A higher value usually leads to larger shadow areas.</li>
+<li>The operator also allows an additional threshold value to generate 2-level shadows.</li>
 </ul>
 </li>
-<li><strong>Lasso Shape</strong>: This mode allows the user to precisely select which points to assign weights, by drawing a lasso surrounding them.
+<li><strong>Vertical Scale</strong>: This value determines how the algorithm assumes the 3D geometry of the input shapes.
 <ul>
-<li>The generated bone starts from the lasso's center, pointing to its start position.</li>
+<li>Taking a circle as an example, a large/medium/small vertical scale makes it shaded like a cone/sphere/disk.</li>
+<li>Negative values are supported for concave surfaces.</li>
+</ul>
+</li>
+<li><strong>Resolution</strong>: Higher resolution adds more details to the shadow but requires more time to calculate.
+<ul>
+<li>The user can also specify a minimum area value to ignore shadows that are too small.</li>
 </ul>
 </li>
 </ul>
-<h3 id="bone-styles">
-  Bone Styles
-  <a class="anchor" href="#bone-styles">#</a>
+<h3 id="rim-light-strokes">
+  Rim Light Strokes
+  <a class="anchor" href="#rim-light-strokes">#</a>
 </h3>
-<p>There are several options to transform the generated bones:</p>
+<p>The setting of generated rim light strokes is simpler. The user just need to set the <strong>Width</strong> of such strokes.</p>
+<h2 id="stroke-attributes">
+  Stroke Attributes
+  <a class="anchor" href="#stroke-attributes">#</a>
+</h2>
+<p>The following attributes determine the look of the generated strokes:</p>
 <ul>
-<li><code>Bone Style</code>: This determines whether the bone should start from the hint's center (<em>Half</em>) or cross the whole hint shape (<em>Full</em>).</li>
-<li><code>Bone Rotation</code>: Setting it to <code>+90</code> or <code>-90</code> degrees can make the bones parallel to the limb.</li>
-<li><code>Set Bone Parent</code>: This option sets the parent relationship between bones according to the drawn sequence of hints and the relative position. Please notice that the result sometimes needs manual adjustment.</li>
+<li><strong>Material</strong>: The user can assign materials for generated light and shadow strokes separately. If not assigned, the output strokes will use the same material as input ones.</li>
+<li><strong>Tint Color</strong>: By default, the vertex color of the generated strokes are the same as the input ones. The user can however apply a tint color to emphasize the shadows and lights.</li>
 </ul>
-<h3 id="other-options">
-  Other Options
-  <a class="anchor" href="#other-options">#</a>
-</h3>
-<p>There are some other options which may impact the result:</p>
+<h2 id="comparison-with-mesh-generation">
+  Comparison with Mesh Generation
+  <a class="anchor" href="#comparison-with-mesh-generation">#</a>
+</h2>
+<p><img src="../shading_comparison.png" alt="" /></p>
+<p>The visual effect made by this operator is often similar to the <a href="../../mesh/generation/">Mesh Generation</a> operator with a toon shader. For pure 2D illustration purpose, this method may be more convenient since:</p>
 <ul>
-<li><code>Ensure Non-Zero Weights</code>: Enabling this option will make sure that every stroke point gets at least one bone weight, no matter how far it is from the hints. Otherwise, only points close to a hint will be assigned weights.</li>
-<li><code>Bind Single Bone to Stroke</code>: In this mode, each stroke will be assigned to at most one bone. This prevents strokes from being distorted.</li>
+<li>The shadows and lights are generated as editable Grease Pencil strokes.</li>
+<li>The terminator lines are usually smoother with less artifacts compared with a 3D mesh.</li>
+</ul>
+<p>However, there are also some limitations compared with the 3D method:</p>
+<ul>
+<li>Only limited number of light sources and light types are supported. The lighting is also approximated.</li>
+<li>If changing the position/direction of the light source, the already generated strokes cannot correct themselves automatically. You may need to delete them and use this operator again.</li>
+<li>Only toon shading can be achieved.</li>
+<li>Cast shadows will not be generated.</li>
 </ul>
 </article>
  
@@ -784,18 +782,15 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#transfer-weights-from-meshes">Transfer Weights from Meshes</a>
+    <li><a href="#light-source">Light Source</a></li>
+    <li><a href="#shadow-and-lighting-styles">Shadow and Lighting Styles</a>
       <ul>
-        <li><a href="#source-objects">Source Objects</a></li>
+        <li><a href="#shadow-strokes">Shadow Strokes</a></li>
+        <li><a href="#rim-light-strokes">Rim Light Strokes</a></li>
       </ul>
     </li>
-    <li><a href="#use-hints-to-generate-pins">Use Hints to Generate Pins</a>
-      <ul>
-        <li><a href="#hint-strokes">Hint Strokes</a></li>
-        <li><a href="#bone-styles">Bone Styles</a></li>
-        <li><a href="#other-options">Other Options</a></li>
-      </ul>
-    </li>
+    <li><a href="#stroke-attributes">Stroke Attributes</a></li>
+    <li><a href="#comparison-with-mesh-generation">Comparison with Mesh Generation</a></li>
   </ul>
 </nav>
 

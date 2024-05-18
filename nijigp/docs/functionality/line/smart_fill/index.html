@@ -18,7 +18,7 @@ It handles the gaps in the line art automatically. It is less likely to leave se
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.f85c4f24bbfbad3dd5add8585120e6b155a64e0ba5b2ea784b2c5d7e1e8500a9.js" integrity="sha256-&#43;FxPJLv7rT3VrdhYUSDmsVWmTgulsup4Syxdfh6FAKk=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.fc89f62d1f56d98038beb556548036bbb81f48aeca045b037e0d80b9ca1e6fd5.js" integrity="sha256-/In2LR9W2YA4vrVWVIA2u7gfSK7KBFsDfg2Aucoeb9U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -244,6 +244,19 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/nijigp/docs/functionality/polygon/hatch/" class="">Hatch Fill</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/nijigp/docs/functionality/polygon/shading/" class="">Shading</a>
   
 
         </li>
@@ -627,9 +640,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#inputoutput-layers">Input/Output Layers</a></li>
-    <li><a href="#hint-strokes">Hint Strokes</a></li>
-    <li><a href="#output-materials">Output Materials</a></li>
+    <li><a href="#from-sidebar-panel">From Sidebar Panel</a>
+      <ul>
+        <li><a href="#inputoutput-layers">Input/Output Layers</a></li>
+        <li><a href="#hint-strokes">Hint Strokes</a></li>
+        <li><a href="#output-materials">Output Materials</a></li>
+      </ul>
+    </li>
+    <li><a href="#from-toolbar">From Toolbar</a></li>
   </ul>
 </nav>
 
@@ -653,16 +671,21 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <p><img src="../smart_fill.png" alt="Smart Fill" /></p>
 <p>Although the algorithms are different, the concept of this operation is similar to the <a href="https://docs.krita.org/en/reference_manual/tools/colorize_mask.html">Colorize Mask</a> tool in Krita.</p>
-<h2 id="inputoutput-layers">
+<h2 id="from-sidebar-panel">
+  From Sidebar Panel
+  <a class="anchor" href="#from-sidebar-panel">#</a>
+</h2>
+<p>Smart Fill can be accessed from the button in the sidebar panel. This method requires the user to draw color hints as strokes.</p>
+<h3 id="inputoutput-layers">
   Input/Output Layers
   <a class="anchor" href="#inputoutput-layers">#</a>
-</h2>
+</h3>
 <p>The operation takes two input layers, one containing the line art (<em>Line Layer</em>), and the other containing the color hint strokes (<em>Hint Layer</em>). They must be distinct layers.</p>
 <p>The operation then generates new strokes in an output layer (<em>Fill Layer</em>). It is possible, but not recommended to use the same layer as <em>Fill</em> and <em>Hint</em>, since it will be difficult to distinguish the output strokes from the input ones. To overcome it, there is an option specifying to use only <a href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tools/fill.html#boundary-strokes">Boundary Strokes</a> as hints.</p>
-<h2 id="hint-strokes">
+<h3 id="hint-strokes">
   Hint Strokes
   <a class="anchor" href="#hint-strokes">#</a>
-</h2>
+</h3>
 <p>Points in the hint strokes will force the nearby areas be filled with the same color. The color of a hint point is determined in the following way:</p>
 <ul>
 <li>If the stroke/point has a vertex color, use it as hint. Otherwise, use its material color.</li>
@@ -673,10 +696,10 @@ https://github.com/alex-shpak/hugo-book
   You can use fill materials for the hint strokes. But only its contour points will be taken into account. The inner part has no effect.
 </blockquote>
 
-<h2 id="output-materials">
+<h3 id="output-materials">
   Output Materials
   <a class="anchor" href="#output-materials">#</a>
-</h2>
+</h3>
 <p>There are different ways to assign materials to the newly generated fill strokes:</p>
 <ul>
 <li>Use the same materials (and vertex colors if exist) as hint strokes.</li>
@@ -684,6 +707,35 @@ https://github.com/alex-shpak/hugo-book
 <li>For each color used as hints, generate a new material.</li>
 </ul>
 <p>If you tend to use existing materials, please make sure they are not line-only ones.</p>
+<h2 id="from-toolbar">
+  From Toolbar
+  <a class="anchor" href="#from-toolbar">#</a>
+</h2>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <p>Smart Fill can also be used as a tool in the <code>Draw</code> mode, as an alternative of Blender's native Fill tool. It allows the user to fill an area will mouse clicks:</p>
+<ul>
+<li><strong>Left Click</strong>: Specifies an area to fill.</li>
+<li><strong>Right Click</strong>: Specifies an area not to fill.</li>
+<li><strong>Enter</strong>: Accepts the shown results and exits the tool.</li>
+<li><strong>ESC</strong>: Discards the results and exits the tool.</li>
+</ul>
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <img src="../smart_fill_tool.png" alt="" />
+  </div>
+
+</div>
+
+<p>The tool generates fill strokes in the active layer. By default, it also analyzes the line art in the same layer, while a more common way is to specify another layer as the line art in the topbar's option.</p>
+<p>Currently, the tool does not support multiframe fill. In order to fill multiple frames at the same time, please use the sidebar method with hint strokes.</p>
+<blockquote class="book-hint info">
+  Please notice that Smart Fill may react slowly when the line art contains a large number of points. In this case, it is recommended to save your file before using this tool.
+</blockquote>
+
 <hr>
 <p>(The example image used in this page is <em>Portrait of Olga</em> by Pablo Picasso in 1920.)</p>
 </article>
@@ -727,9 +779,14 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#inputoutput-layers">Input/Output Layers</a></li>
-    <li><a href="#hint-strokes">Hint Strokes</a></li>
-    <li><a href="#output-materials">Output Materials</a></li>
+    <li><a href="#from-sidebar-panel">From Sidebar Panel</a>
+      <ul>
+        <li><a href="#inputoutput-layers">Input/Output Layers</a></li>
+        <li><a href="#hint-strokes">Hint Strokes</a></li>
+        <li><a href="#output-materials">Output Materials</a></li>
+      </ul>
+    </li>
+    <li><a href="#from-toolbar">From Toolbar</a></li>
   </ul>
 </nav>
 
