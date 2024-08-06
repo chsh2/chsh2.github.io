@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Palette Import#Through the Import/Export sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:
-.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. In addition, color codes can also be directly pasted to Blender. Please refer to the clipboard utilities for more information.Recolor with a Palette#The add-on also provides with a utility to quickly color the drawing using the imported palette.">
+.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. .xml files used by some online color scheme services such as Adobe Color. Text that contains hex color codes. Hex codes separated by either space or any symbol can be recognized, such as: #FFEE93 #F5D782 #E97878 #9B5151 ffee93f5d782e978789b5151 f3c969,edff86,fff5b2,d4fcc3,362c28 [&quot;f3c969&quot;,&quot;edff86&quot;,&quot;fff5b2&quot;,&quot;d4fcc3&quot;,&quot;362c28&quot;] Import Options#Tints and Shades: This option generates multiple variants of each color imported, by changing the brightness of imported color.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Palette Import" />
 <meta property="og:description" content="Palette Import#Through the Import/Export sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:
-.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. In addition, color codes can also be directly pasted to Blender. Please refer to the clipboard utilities for more information.Recolor with a Palette#The add-on also provides with a utility to quickly color the drawing using the imported palette." />
+.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. .xml files used by some online color scheme services such as Adobe Color. Text that contains hex color codes. Hex codes separated by either space or any symbol can be recognized, such as: #FFEE93 #F5D782 #E97878 #9B5151 ffee93f5d782e978789b5151 f3c969,edff86,fff5b2,d4fcc3,362c28 [&quot;f3c969&quot;,&quot;edff86&quot;,&quot;fff5b2&quot;,&quot;d4fcc3&quot;,&quot;362c28&quot;] Import Options#Tints and Shades: This option generates multiple variants of each color imported, by changing the brightness of imported color." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/io/colors/" /><meta property="article:section" content="docs" />
 
@@ -18,7 +18,7 @@
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.fc89f62d1f56d98038beb556548036bbb81f48aeca045b037e0d80b9ca1e6fd5.js" integrity="sha256-/In2LR9W2YA4vrVWVIA2u7gfSK7KBFsDfg2Aucoeb9U=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.10f2ff012010b9d5fd9ec8e3d686d42766b4354ecbaf6f7e9f5d3ead83ca9019.js" integrity="sha256-EPL/ASAQudX9nsjj1obUJ2a0NU7Lr29&#43;n10&#43;rYPKkBk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -458,7 +458,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+    <a href="/nijigp/docs/functionality/io/svg/" class="">SVG Import</a>
   
 
         </li>
@@ -471,7 +471,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Image Import</a>
   
 
         </li>
@@ -640,6 +640,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#import-options">Import Options</a></li>
+    <li><a href="#clipboard-utility">Clipboard Utility</a></li>
     <li><a href="#recolor-with-a-palette">Recolor with a Palette</a></li>
   </ul>
 </nav>
@@ -661,11 +663,28 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><code>.aco</code> files used by Adobe Photoshop and Clip Studio Paint.</li>
 <li><code>.swatches</code> files used by Procreate.</li>
+<li><code>.xml</code> files used by some online color scheme services such as Adobe Color.</li>
+<li>Text that contains hex color codes. Hex codes separated by either space or any symbol can be recognized, such as:
+<ul>
+<li><code>#FFEE93 #F5D782 #E97878 #9B5151</code></li>
+<li><code>ffee93f5d782e978789b5151</code></li>
+<li><code>f3c969,edff86,fff5b2,d4fcc3,362c28</code></li>
+<li><code>[&quot;f3c969&quot;,&quot;edff86&quot;,&quot;fff5b2&quot;,&quot;d4fcc3&quot;,&quot;362c28&quot;]</code></li>
 </ul>
-<blockquote class="book-hint info">
-  In addition, color codes can also be directly pasted to Blender. Please refer to the <a href="../clipboard/#paste-palettes">clipboard utilities</a> for more information.
-</blockquote>
-
+</li>
+</ul>
+<h2 id="import-options">
+  Import Options
+  <a class="anchor" href="#import-options">#</a>
+</h2>
+<ul>
+<li><strong>Tints and Shades</strong>: This option generates multiple variants of each color imported, by changing the brightness of imported color.</li>
+</ul>
+<h2 id="clipboard-utility">
+  Clipboard Utility
+  <a class="anchor" href="#clipboard-utility">#</a>
+</h2>
+<p>It is a common function for color scheme services to export XML or hex codes directly into the system clipboard. This add-on provides with a separate button in the same panel to parse the colors from the clipboard and import them into Blender with one click.</p>
 <h2 id="recolor-with-a-palette">
   Recolor with a Palette
   <a class="anchor" href="#recolor-with-a-palette">#</a>
@@ -718,6 +737,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#import-options">Import Options</a></li>
+    <li><a href="#clipboard-utility">Clipboard Utility</a></li>
     <li><a href="#recolor-with-a-palette">Recolor with a Palette</a></li>
   </ul>
 </nav>

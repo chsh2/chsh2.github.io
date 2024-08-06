@@ -3,24 +3,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Clipboard Utilities#NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.
-Paste SVG Codes#It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.
-The parsing of SVG codes is in the same way as the standard import function of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent.">
+<meta name="description" content="SVG Import#Though Blender has its native function to import an SVG file as Grease Pencil, this add-on provides with another import operator extending the native one for more use scenarios. The operator has the following differences from the native one:
+SVG will be directly appended to the active Grease Pencil object, instead of creating a new one. The operator can be used in Draw and Edit mode, while the native one requires switching to Object mode.">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Clipboard Utilities" />
-<meta property="og:description" content="Clipboard Utilities#NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.
-Paste SVG Codes#It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.
-The parsing of SVG codes is in the same way as the standard import function of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent." />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="SVG Import" />
+<meta property="og:description" content="SVG Import#Though Blender has its native function to import an SVG file as Grease Pencil, this add-on provides with another import operator extending the native one for more use scenarios. The operator has the following differences from the native one:
+SVG will be directly appended to the active Grease Pencil object, instead of creating a new one. The operator can be used in Draw and Edit mode, while the native one requires switching to Object mode." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://chsh2.github.io/nijigp/docs/functionality/io/svg/" /><meta property="article:section" content="docs" />
 
 
-<title>Clipboard Utilities | NijiGPen Documentation</title>
+<title>SVG Import | NijiGPen Documentation</title>
 <link rel="manifest" href="/nijigp/manifest.json">
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.fc89f62d1f56d98038beb556548036bbb81f48aeca045b037e0d80b9ca1e6fd5.js" integrity="sha256-/In2LR9W2YA4vrVWVIA2u7gfSK7KBFsDfg2Aucoeb9U=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.10f2ff012010b9d5fd9ec8e3d686d42766b4354ecbaf6f7e9f5d3ead83ca9019.js" integrity="sha256-EPL/ASAQudX9nsjj1obUJ2a0NU7Lr29&#43;n10&#43;rYPKkBk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -460,7 +458,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/clipboard/" class="active">Clipboard Utilities</a>
+    <a href="/nijigp/docs/functionality/io/svg/" class="active">SVG Import</a>
   
 
         </li>
@@ -473,7 +471,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Image Import</a>
   
 
         </li>
@@ -626,7 +624,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/nijigp/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Clipboard Utilities</strong>
+  <strong>SVG Import</strong>
 
   <label for="toc-control">
     
@@ -642,12 +640,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#paste-svg-codes">Paste SVG Codes</a></li>
-    <li><a href="#paste-palettes">Paste Palettes</a>
-      <ul>
-        <li><a href="#tints-and-shades">Tints and Shades</a></li>
-      </ul>
-    </li>
+    <li><a href="#append-multiple-files">Append Multiple Files</a></li>
+    <li><a href="#clipboard-utility">Clipboard Utility</a></li>
   </ul>
 </nav>
 
@@ -660,40 +654,28 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="clipboard-utilities">
-  Clipboard Utilities
-  <a class="anchor" href="#clipboard-utilities">#</a>
+  <article class="markdown"><h1 id="svg-import">
+  SVG Import
+  <a class="anchor" href="#svg-import">#</a>
 </h1>
-<p>NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.</p>
-<p><img src="../clipboard.png" alt="" /></p>
-<h2 id="paste-svg-codes">
-  Paste SVG Codes
-  <a class="anchor" href="#paste-svg-codes">#</a>
-</h2>
-<p>It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.</p>
-<p>The parsing of SVG codes is in the same way as the standard <a href="https://docs.blender.org/manual/en/latest/files/import_export/grease_pencil_svg.html">import function</a> of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent.</p>
-<h2 id="paste-palettes">
-  Paste Palettes
-  <a class="anchor" href="#paste-palettes">#</a>
-</h2>
-<p>For online services that share or generate color palettes, the color data can also be imported in Blender through the clipboard.</p>
-<p>One supported format is XML, used by applications such as Adobe Color to store color data.</p>
-<p>Some other similar services just use an array of hex codes to represent colors. Hex codes separated by either space or any symbol can be recognized, such as:</p>
+<p>Though Blender has its native function to <a href="https://docs.blender.org/manual/en/latest/files/import_export/grease_pencil_svg.html">import an SVG file</a> as Grease Pencil, this add-on provides with another import operator extending the native one for more use scenarios. The operator has the following differences from the native one:</p>
 <ul>
-<li><code>#FFEE93 #F5D782 #E97878 #9B5151</code></li>
-<li><code>ffee93f5d782e978789b5151</code></li>
-<li><code>f3c969,edff86,fff5b2,d4fcc3,362c28</code></li>
-<li><code>[&quot;f3c969&quot;,&quot;edff86&quot;,&quot;fff5b2&quot;,&quot;d4fcc3&quot;,&quot;362c28&quot;]</code></li>
+<li>SVG will be directly appended to the active Grease Pencil object, instead of creating a new one.</li>
+<li>The operator can be used in <code>Draw</code> and <code>Edit</code> mode, while the native one requires switching to <code>Object</code> mode.</li>
 </ul>
-<blockquote class="book-hint info">
-  The add-on also has another operator to import palette/swatch files of several more complicated formats, which are usually exported by other graphics software. Please refer to <a href="../colors">this page</a>.
-</blockquote>
-
-<h3 id="tints-and-shades">
-  Tints and Shades
-  <a class="anchor" href="#tints-and-shades">#</a>
-</h3>
-<p>This option generates multiple variants of each color imported, by changing the brightness of imported color.</p>
+<p>The add-on's SVG importer also has more features, as described in the next sections.</p>
+<h2 id="append-multiple-files">
+  Append Multiple Files
+  <a class="anchor" href="#append-multiple-files">#</a>
+</h2>
+<p>The user can append multiple SVG files to the active Grease Pencil object in a single operation. By default, each SVG file is placed in a separate layer.</p>
+<p>If the <code>Image Sequence</code> option is enabled, the SVG files are treated as animation frames. Instead, they are placed in the same layer, each creating a new frame in the timeline.</p>
+<p>The <code>Reuse Materials</code> option determines whether new materials are created for each imported SVG file, or whether the same materials are applied to all imported SVG files.</p>
+<h2 id="clipboard-utility">
+  Clipboard Utility
+  <a class="anchor" href="#clipboard-utility">#</a>
+</h2>
+<p>Some graphic design software allow users to copy vector shapes as SVG code text, including a small amount of painting software such as Clip Studio Paint. This add-on provides with a separate button in the same panel to parse the SVG code from the system clipboard and append the image to the active Grease Pencil object.</p>
 </article>
  
       
@@ -735,12 +717,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#paste-svg-codes">Paste SVG Codes</a></li>
-    <li><a href="#paste-palettes">Paste Palettes</a>
-      <ul>
-        <li><a href="#tints-and-shades">Tints and Shades</a></li>
-      </ul>
-    </li>
+    <li><a href="#append-multiple-files">Append Multiple Files</a></li>
+    <li><a href="#clipboard-utility">Clipboard Utility</a></li>
   </ul>
 </nav>
 

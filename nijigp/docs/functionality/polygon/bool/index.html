@@ -20,7 +20,7 @@ Edit Mode Operators#There are multiple buttons in the Edit mode panel, which a
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.fc89f62d1f56d98038beb556548036bbb81f48aeca045b037e0d80b9ca1e6fd5.js" integrity="sha256-/In2LR9W2YA4vrVWVIA2u7gfSK7KBFsDfg2Aucoeb9U=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.10f2ff012010b9d5fd9ec8e3d686d42766b4354ecbaf6f7e9f5d3ead83ca9019.js" integrity="sha256-EPL/ASAQudX9nsjj1obUJ2a0NU7Lr29&#43;n10&#43;rYPKkBk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -460,7 +460,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+    <a href="/nijigp/docs/functionality/io/svg/" class="">SVG Import</a>
   
 
         </li>
@@ -473,7 +473,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Image Import</a>
   
 
         </li>
@@ -646,9 +646,14 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#stroke-attributes">Stroke Attributes</a></li>
         <li><a href="#cases-of-3-or-more-shapes">Cases of 3 or More Shapes</a></li>
+        <li><a href="#fracture">Fracture</a></li>
       </ul>
     </li>
-    <li><a href="#draw-mode-operators">Draw Mode Operators</a></li>
+    <li><a href="#draw-mode-operators">Draw Mode Operators</a>
+      <ul>
+        <li><a href="#boolean-eraser-tool">Boolean Eraser Tool</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -696,15 +701,36 @@ https://github.com/alex-shpak/hugo-book
 <p>The expected result of two input strokes is straightforward. However, with three or more input strokes, there may be multiple ways to finish the operation.</p>
 <p>The figure above is an example of performing the <code>Difference</code> operation on 3 shapes. The numbers of <em>Subjects</em> and <em>Clips</em> need to be specified in the options.</p>
 <p>Also, the <strong>sequence of stroke selection</strong> matters. The first selected strokes are regarded as <em>Subjects</em>, and the last selected strokes are <em>Clips</em>.</p>
+<h3 id="fracture">
+  Fracture
+  <a class="anchor" href="#fracture">#</a>
+</h3>
+<p><img src="../fracture.png" alt="" /></p>
+<p>Fracture is another boolean operation. It detects the overlapping area of selected shapes, and breaks the shapes into smaller parts. The output shapes will no longer overlap with each other.</p>
 <h2 id="draw-mode-operators">
   Draw Mode Operators
   <a class="anchor" href="#draw-mode-operators">#</a>
 </h2>
 <p><img src="../draw_boolean.png" alt="" /></p>
-<p>The boolean operators are also available in the <code>Draw</code> mode. In this mode, it will take the lastest drawn stroke as the <em>Clip</em>, and perform the operation on each stroke overlapping with it in the same layer.</p>
-<blockquote class="book-hint info">
-  There is an option to use the line radius as the <em>Clip</em> path. This resembles the experience of the erasor tool in raster painting software, as shown in the figure above.
-</blockquote>
+<p>The boolean operators are also available in the <code>Draw</code> mode. In this mode, it will take the latest drawn stroke as the <em>Clip</em>, and perform the operation on each stroke overlapping with it in the same layer.</p>
+<h3 id="boolean-eraser-tool">
+  Boolean Eraser Tool
+  <a class="anchor" href="#boolean-eraser-tool">#</a>
+</h3>
+<div class="book-columns flex flex-wrap">
+
+  <div class="flex-even markdown-inner">
+    <p>In addition to the panel button, a tool named <code>Boolean Eraser</code> is available in the viewport.</p>
+<p>Blender's native eraser tool removes vertices rather than area from a shape, and sometimes appears unintuitive. This add-on's eraser tool aims at resembling the experience of traditional painting software.</p>
+<p>The user can use mouse or stylus to remove areas from a shape. Several brush options are available to assist drawing, including <code>Brush Size</code>, <code>Smooth Level</code> and <code>Shape of Caps</code>.</p>
+
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <img src="../../../get_started/ui_tool.png" alt="Tools" />
+  </div>
+
+</div>
 
 </article>
  
@@ -751,9 +777,14 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#stroke-attributes">Stroke Attributes</a></li>
         <li><a href="#cases-of-3-or-more-shapes">Cases of 3 or More Shapes</a></li>
+        <li><a href="#fracture">Fracture</a></li>
       </ul>
     </li>
-    <li><a href="#draw-mode-operators">Draw Mode Operators</a></li>
+    <li><a href="#draw-mode-operators">Draw Mode Operators</a>
+      <ul>
+        <li><a href="#boolean-eraser-tool">Boolean Eraser Tool</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

@@ -13,7 +13,7 @@
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/animation/frame_animation/</guid>
       <description>Frame Animations#Multiframe Operations#Grease Pencil has a Multiframe Tool allowing users to draw or edit on multiple frames at the same time. Some of NijiGPen&#39;s operators in the Edit mode support this feature. With the Multiframe tool enabled, they are performed on all selected frames, instead of the active frame.
-In addition, new options will appear in the multiframe mode for some operators, which are designed for making animated effects, including:</description>
+Some operators have options that are only available in the multiframe mode, which are designed for making various animated effects.</description>
     </item>
     
     <item>

@@ -18,7 +18,7 @@ Fit Sketch to Single Line#The major way of using this function is from the sid
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.fc89f62d1f56d98038beb556548036bbb81f48aeca045b037e0d80b9ca1e6fd5.js" integrity="sha256-/In2LR9W2YA4vrVWVIA2u7gfSK7KBFsDfg2Aucoeb9U=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.10f2ff012010b9d5fd9ec8e3d686d42766b4354ecbaf6f7e9f5d3ead83ca9019.js" integrity="sha256-EPL/ASAQudX9nsjj1obUJ2a0NU7Lr29&#43;n10&#43;rYPKkBk=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -458,7 +458,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/clipboard/" class="">Clipboard Utilities</a>
+    <a href="/nijigp/docs/functionality/io/svg/" class="">SVG Import</a>
   
 
         </li>
@@ -471,7 +471,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Vectorizing Images</a>
+    <a href="/nijigp/docs/functionality/io/vectorizing_images/" class="">Image Import</a>
   
 
         </li>
@@ -643,6 +643,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#fit-sketch-to-single-line">Fit Sketch to Single Line</a>
       <ul>
         <li><a href="#inherit-point-attributes">Inherit Point Attributes</a></li>
+        <li><a href="#multiframe-fit-and-interpolation">Multiframe Fit and Interpolation</a></li>
       </ul>
     </li>
     <li><a href="#fit-sketch-to-multiple-lines">Fit Sketch to Multiple Lines</a>
@@ -688,7 +689,7 @@ https://github.com/alex-shpak/hugo-book
 <p>The process of merging multiple strokes is automatic. However, in order to get a smooth output, there are two options to configure:</p>
 <ul>
 <li><code>Line Spacing</code> determines a range, within which the lines drawn in parallel will be smoothed.</li>
-<li><code>Smoothness</code> uses either Bézier or resampling method to make the output stroke smoother.</li>
+<li><code>Smoothness</code> uses either Bézier or vertex-level method to make the output stroke smoother.</li>
 </ul>
 <p>Basically, they control the smooth level in two orthogonal directions, which is indicated in the following figure:</p>
 <p><img src="../fit_params.png" alt="" /></p>
@@ -698,6 +699,13 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>By default, the radius of the output stroke points is determined by whether the sketches are densely or sparsely drawn. The point strength/opacity will be set to 1. However, the user can also choose to use the strength/radius value from the input strokes.</p>
 <p>Vertex color and line UV can also be inherited from input to output.</p>
+<h3 id="multiframe-fit-and-interpolation">
+  Multiframe Fit and Interpolation
+  <a class="anchor" href="#multiframe-fit-and-interpolation">#</a>
+</h3>
+<p><img src="../fit_sequence.png" alt="" /></p>
+<p>When <a href="../../animation/frame_animation">Multiframe</a> mode is enabled, and input strokes are from more than one keyframe, the operator will generate a new stroke for each keyframe.</p>
+<p>The option <code>Animation Sequence</code> can perform a further optimization to the output strokes to ensure that more frames can be interpolated between the input keyframes smoothly.</p>
 <h2 id="fit-sketch-to-multiple-lines">
   Fit Sketch to Multiple Lines
   <a class="anchor" href="#fit-sketch-to-multiple-lines">#</a>
@@ -766,6 +774,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#fit-sketch-to-single-line">Fit Sketch to Single Line</a>
       <ul>
         <li><a href="#inherit-point-attributes">Inherit Point Attributes</a></li>
+        <li><a href="#multiframe-fit-and-interpolation">Multiframe Fit and Interpolation</a></li>
       </ul>
     </li>
     <li><a href="#fit-sketch-to-multiple-lines">Fit Sketch to Multiple Lines</a>

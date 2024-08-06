@@ -45,7 +45,7 @@ Edit Mode Operators#There are multiple buttons in the Edit mode panel, which a
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/animation/frame_animation/</guid>
       <description>Frame Animations#Multiframe Operations#Grease Pencil has a Multiframe Tool allowing users to draw or edit on multiple frames at the same time. Some of NijiGPen&#39;s operators in the Edit mode support this feature. With the Multiframe tool enabled, they are performed on all selected frames, instead of the active frame.
-In addition, new options will appear in the multiframe mode for some operators, which are designed for making animated effects, including:</description>
+Some operators have options that are only available in the multiframe mode, which are designed for making various animated effects.</description>
     </item>
     
     <item>
@@ -148,7 +148,7 @@ From Sidebar Panel#The Offset button in the sidebar panel will offset each sel
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/colors/</guid>
       <description>Palette Import#Through the Import/Export sidebar panel, the user can import some palette/swatch files which contain color information. The add-on will convert them to Blender palettes. Currently, the following file formats are supported:
-.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. In addition, color codes can also be directly pasted to Blender. Please refer to the clipboard utilities for more information.Recolor with a Palette#The add-on also provides with a utility to quickly color the drawing using the imported palette.</description>
+.aco files used by Adobe Photoshop and Clip Studio Paint. .swatches files used by Procreate. .xml files used by some online color scheme services such as Adobe Color. Text that contains hex color codes. Hex codes separated by either space or any symbol can be recognized, such as: #FFEE93 #F5D782 #E97878 #9B5151 ffee93f5d782e978789b5151 f3c969,edff86,fff5b2,d4fcc3,362c28 [&amp;quot;f3c969&amp;quot;,&amp;quot;edff86&amp;quot;,&amp;quot;fff5b2&amp;quot;,&amp;quot;d4fcc3&amp;quot;,&amp;quot;362c28&amp;quot;] Import Options#Tints and Shades: This option generates multiple variants of each color imported, by changing the brightness of imported color.</description>
     </item>
     
     <item>
@@ -174,17 +174,6 @@ The operation does not apply for the case where 3 or more strokes have their tip
     </item>
     
     <item>
-      <title>Clipboard Utilities</title>
-      <link>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/clipboard/</guid>
-      <description>Clipboard Utilities#NijiGPen provides with the clipboard enhancement that allows users to paste specific types of data produced by other graphic editing software.
-Paste SVG Codes#It is common for graphic design software to copy vector shapes as SVG code, including a small amount of painting software such as Clip Studio Paint. You can directly paste the shapes inside the current Grease Pencil object through NijiGPen.
-The parsing of SVG codes is in the same way as the standard import function of Blender, except for an additional option to automatically detect holes in imported shapes and make them transparent.</description>
-    </item>
-    
-    <item>
       <title>Smart Fill</title>
       <link>https://chsh2.github.io/nijigp/docs/functionality/line/smart_fill/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -192,6 +181,16 @@ The parsing of SVG codes is in the same way as the standard import function of B
       <guid>https://chsh2.github.io/nijigp/docs/functionality/line/smart_fill/</guid>
       <description>Smart Fill#Smart Fill is an operator in the Draw mode. It fills an entire line art layer based on some color hints marked by the user. Compared with the Blender&#39;s default Fill tool, it has the following advantages:
 It handles the gaps in the line art automatically. It is less likely to leave seams near the contour, or be intersected. Although the algorithms are different, the concept of this operation is similar to the Colorize Mask tool in Krita.</description>
+    </item>
+    
+    <item>
+      <title>SVG Import</title>
+      <link>https://chsh2.github.io/nijigp/docs/functionality/io/svg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chsh2.github.io/nijigp/docs/functionality/io/svg/</guid>
+      <description>SVG Import#Though Blender has its native function to import an SVG file as Grease Pencil, this add-on provides with another import operator extending the native one for more use scenarios. The operator has the following differences from the native one:
+SVG will be directly appended to the active Grease Pencil object, instead of creating a new one. The operator can be used in Draw and Edit mode, while the native one requires switching to Object mode.</description>
     </item>
     
     <item>
@@ -218,12 +217,12 @@ To simplify this process, NijiGPen provides with an operator to automatically de
     </item>
     
     <item>
-      <title>Vectorizing Images</title>
+      <title>Image Import</title>
       <link>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/io/vectorizing_images/</guid>
-      <description>Vectorizing Images#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
+      <description>Image Import#The Trace Image to Grease Pencil tool of Blender is limited to black and white input images. NijiGPen provides with operators vectorizing another two types of raster images.
 These operators take either a single image or an image sequence as the input, and generate new strokes in the current Grease Pencil layer. The direction of the generated strokes is parallel to the current 2D working plane.</description>
     </item>
     
