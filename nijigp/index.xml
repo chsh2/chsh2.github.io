@@ -105,7 +105,7 @@ NijiGPen operators are categorized in several panels. Depending on the current m
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/</guid>
-      <description>Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+      <description>Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, some operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
 Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator.</description>
     </item>
     

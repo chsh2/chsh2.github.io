@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+<meta name="description" content="Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, some operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
 Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Data Structures" />
-<meta property="og:description" content="Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
+<meta property="og:description" content="Data Structures#Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender&#39;s objects work. However, some operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.
 Add-On Registering#All add-on operators are registered under bpy.ops.gpencil with the name prefix nijigp_. The add-on chooses gpencil as the category instead of creating a new one, because this allows users to assign shortcut to each operator." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chsh2.github.io/nijigp/docs/developer_notes/data_structures/" /><meta property="article:section" content="docs" />
@@ -18,7 +18,7 @@ Add-On Registering#All add-on operators are registered under bpy.ops.gpencil w
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.e9a967899789535a3a31291ee88f49c42a89844a255c01e34eaacc93c7185f9d.js" integrity="sha256-6alniZeJU1o6MSke6I9JxCqJhEolXAHjTqrMk8cYX50=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.8e6b919e6f1a43cced41cd3de22ef6c1a22701ae37573e0298c33ea05c06e44a.js" integrity="sha256-jmuRnm8aQ8ztQc094i72waInAa43Vz4CmMM&#43;oFwG5Eo=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -600,6 +600,30 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+  
+<ul>
+  
+  <li>
+    <a href=""  target="_blank" rel="noopener">
+        ---
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.11.0/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
+        [EPUB Manual]
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.11.0/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
+        [PDF Manual]
+      </a>
+  </li>
+  
+</ul>
+
+
 
 
 
@@ -648,6 +672,7 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#mesh-attributes">Mesh Attributes</a></li>
+    <li><a href="#grease-pencil-30">Grease Pencil 3.0</a></li>
   </ul>
 </nav>
 
@@ -664,7 +689,7 @@ https://github.com/alex-shpak/hugo-book
   Data Structures
   <a class="anchor" href="#data-structures">#</a>
 </h1>
-<p>Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender's objects work. However, a small number of operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.</p>
+<p>Despite the new operators, this add-on prefers an unobtrusive style that does not change the original way that Blender's objects work. However, some operators must create new properties/attributes in an object to store additional information. This pages list all new data structures created by the add-on.</p>
 <h2 id="add-on-registering">
   Add-On Registering
   <a class="anchor" href="#add-on-registering">#</a>
@@ -719,6 +744,22 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <p>All of these new attributes are vertex attributes.</p>
+<h2 id="grease-pencil-30">
+  Grease Pencil 3.0
+  <a class="anchor" href="#grease-pencil-30">#</a>
+</h2>
+<p>This add-on was primarily developed for Blender 3.3 ~ 4.2 with Grease Pencil 2 (GPv2). In Blender 4.3 the Grease Pencil module is completely rewritten as 3.0 (GPv3), using a completely different set of Python APIs without backwards compatibility.</p>
+<p>To maintain the functionality of the add-on for both GPv2 and GPv3, a module <code>api_router.py</code> is used to provide a compatibility layer. It has two main tasks:</p>
+<ul>
+<li>Some keywords/attributes/operators have different names but similar functions in GPv2 and GPv3. The compatibility layer will choose the correct name to call depending on the version of Blender.</li>
+<li>Some important APIs, including <a href="https://docs.blender.org/api/4.2/bpy.types.GPencilStroke.html">Stroke</a> and its <a href="https://docs.blender.org/api/4.2/bpy.types.GPencilStrokes.html">collection</a>, as well as <a href="https://docs.blender.org/api/4.2/bpy.types.GPencilStrokePoint.html">StrokePoint</a> and its <a href="https://docs.blender.org/api/4.2/bpy.types.GPencilStrokePoints.html">collection</a> work in distinct ways in GPv3, which break the add-on operators. These GPv3 APIs are no longer used by the add-on. Instead, a set of equivalent APIs are developed that emulate the behavior of the GPv2 APIs using GPv3 data. This allows the other add-on modules to manipulate strokes and points without being aware of the Blender version most of the time.</li>
+</ul>
+<p>The emulation approach is possible because GPv3 supports defining custom attributes that can be used in Geometry Nodes. To make the emulated APIs as capable as GPv2, the add-on defines several new attributes named <code>.nijigp_*</code>:</p>
+<ul>
+<li><code>.nijigp_hash</code>: A random large integer assigned to each stroke as a unique identifier, making each stroke persistently traceable even if its index changes.</li>
+<li><code>.nijigp_new</code>: A boolean value indicating whether a newly created stroke has not been configured. In GPv2, a new stroke has no points. However, a GPv3 stroke comes with a point when created. This attribute works as a reminder that the first point has not been configured.</li>
+<li><code>.nijigp_weight_proxy_%d</code>: A number value for each point. Currently, GPv3 has difficulty accessing the vertex weights via Python. The emulator API accesses this attribute instead, and then copies the value to the actual weight via Geometry Nodes. This workflow may be improved in the future.</li>
+</ul>
 </article>
  
       
@@ -768,6 +809,7 @@ https://github.com/alex-shpak/hugo-book
       </ul>
     </li>
     <li><a href="#mesh-attributes">Mesh Attributes</a></li>
+    <li><a href="#grease-pencil-30">Grease Pencil 3.0</a></li>
   </ul>
 </nav>
 
