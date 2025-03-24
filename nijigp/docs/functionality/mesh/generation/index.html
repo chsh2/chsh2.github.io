@@ -18,7 +18,7 @@ Adding the 3D shading effect to a 2D painting. Quick modeling from sketches. A s
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.f558b015ccb5126a22704e826f669493ec59a00224e45771637edf7120e20cf5.js" integrity="sha256-9ViwFcy1EmoicE6Cb2aUk&#43;xZoAIk5FdxY37fcSDiDPU=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.44b0dbb8baa42f7169af727fcdedaceee35f825ed46b363240516cdb876dd4ee.js" integrity="sha256-RLDbuLqkL3Fpr3J/ze2s7uNfgl7UazYyQFFs24dt1O4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -610,13 +610,13 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.11.0/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.0/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
         [EPUB Manual]
       </a>
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.11.0/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.0/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
         [PDF Manual]
       </a>
   </li>
@@ -678,6 +678,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#open-areas">Open Areas</a></li>
       </ul>
     </li>
+    <li><a href="#mesh-with-holes">Mesh with Holes</a></li>
     <li><a href="#color-and-material">Color and Material</a>
       <ul>
         <li><a href="#vertex-colors">Vertex Colors</a></li>
@@ -776,7 +777,11 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <p>By default, all boundary vertices, which are the original points of the input stroke, have zero depth. By assigning a weight group in the <code>Open Area Group</code> option, points with non-zero weights are no longer pinned to the working plane and will leave some openings on the boundary. The option <code>Fading Out</code> can make such vertices transparent.</p>
 <p><img src="../mesh_open.png" alt="" /></p>
-<p>The user can also make holes inside a mesh. Input strokes with a holdout fill material are regarded as holes. Please refer to <a href="../../../tips/limitations/#holes">the following instructions</a>.</p>
+<h2 id="mesh-with-holes">
+  Mesh with Holes
+  <a class="anchor" href="#mesh-with-holes">#</a>
+</h2>
+<p>The user can make holes inside a mesh. If an input stroke has a holdout fill material and it is inside other input shapes, it will be treated as a hole when converted to meshes. Please refer to <a href="../../../tips/limitations/#holes">the following instructions</a>.</p>
 <h2 id="color-and-material">
   Color and Material
   <a class="anchor" href="#color-and-material">#</a>
@@ -861,6 +866,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#open-areas">Open Areas</a></li>
       </ul>
     </li>
+    <li><a href="#mesh-with-holes">Mesh with Holes</a></li>
     <li><a href="#color-and-material">Color and Material</a>
       <ul>
         <li><a href="#vertex-colors">Vertex Colors</a></li>
