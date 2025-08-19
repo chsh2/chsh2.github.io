@@ -18,7 +18,7 @@ Unfinished features of the add-on itself, which may be improved in future releas
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.44b0dbb8baa42f7169af727fcdedaceee35f825ed46b363240516cdb876dd4ee.js" integrity="sha256-RLDbuLqkL3Fpr3J/ze2s7uNfgl7UazYyQFFs24dt1O4=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.e982f7758ad8adc523f2318f88ce654161554bb816770fcc8b410fffdbc8630e.js" integrity="sha256-6YL3dYrYrcUj8jGPiM5lQWFVS7gWdw/Mi0EP/9vIYw4=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -610,13 +610,13 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.0/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.2/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
         [EPUB Manual]
       </a>
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.0/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.2/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
         [PDF Manual]
       </a>
   </li>
@@ -670,9 +670,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#vertex-groups">Vertex Groups</a></li>
     <li><a href="#grease-pencil-30">Grease Pencil 3.0</a>
       <ul>
-        <li><a href="#stroke-selection-order">Stroke Selection Order</a></li>
-        <li><a href="#missing-resample-operator">Missing Resample Operator</a></li>
-        <li><a href="#boundary-strokes">Boundary Strokes</a></li>
+        <li><a href="#issues-of-gpv3-missing-features">Issues of GPv3 Missing Features</a></li>
+        <li><a href="#issues-of-gpv3-new-features">Issues of GPv3 New Features</a></li>
+        <li><a href="#issues-of-interim-versions">Issues of Interim Versions</a></li>
       </ul>
     </li>
   </ul>
@@ -745,58 +745,43 @@ https://github.com/alex-shpak/hugo-book
   Grease Pencil 3.0
   <a class="anchor" href="#grease-pencil-30">#</a>
 </h2>
-<p>This add-on was primarily developed for Blender 3.3 ~ 4.2 with Grease Pencil 2 (GPv2). For Blender version 4.3 or higher, the Grease Pencil module is completely rewritten as GPv3. Most of the add-on operators are expected to work normally with GPv3. However, several issues exist.</p>
-<h3 id="stroke-selection-order">
-  Stroke Selection Order
-  <a class="anchor" href="#stroke-selection-order">#</a>
+<p>This add-on was primarily developed for Blender 3.3 ~ 4.2 with Grease Pencil 2 (GPv2). For Blender version 4.3 or higher, the Grease Pencil module is completely rewritten as GPv3. Most of the add-on operators continue to work in the same way for GPv3. However, the add-on's behaviors have some minor differences between GPv2 and GPv3.</p>
+<h3 id="issues-of-gpv3-missing-features">
+  Issues of GPv3 Missing Features
+  <a class="anchor" href="#issues-of-gpv3-missing-features">#</a>
 </h3>
+<p>The following GPv2 features are unavailable / not well supported in GPv3:</p>
 <ul>
-<li>
-<p><strong>Problem</strong>: In GPv2, Boolean operators in the <code>Edit</code> mode use the stroke selection order to determine the sequence of operations. In GPv3, it does not work.</p>
+<li><strong>Stroke Selection Order</strong>: When selecting multiple strokes, GPv3 no longer memorizes the selection order.
+<ul>
+<li>Impact: In GPv2, <code>Boolean</code> operators in the <code>Edit</code> mode use the stroke selection order to determine the roles of multiple shapes. In GPv3, the display order is used instead.</li>
+</ul>
 </li>
-<li>
-<p><strong>Reason</strong>: GPv3 currently does not record the selection order. It is uncertain whether this function will be added back.</p>
-</li>
-<li>
-<p><strong>Current Solution</strong>: The stroke display order is used in GPv3 instead.</p>
+<li><strong>Vertex Group Weights</strong>: The Python APIs to access vertex group weights have limited functionality in GPv3.
+<ul>
+<li>Impact: The rigging-related add-on operators are less efficient in GPv3.</li>
+</ul>
 </li>
 </ul>
-<h3 id="missing-resample-operator">
-  Missing Resample Operator
-  <a class="anchor" href="#missing-resample-operator">#</a>
+<h3 id="issues-of-gpv3-new-features">
+  Issues of GPv3 New Features
+  <a class="anchor" href="#issues-of-gpv3-new-features">#</a>
 </h3>
+<p>GPv3 also introduces some new features. Some of them are out of this add-on's scope.</p>
 <ul>
-<li>
-<p><strong>Problem</strong>: The <code>Resample</code> button in the add-on panel no longer exists in Blender 4.3.</p>
-</li>
-<li>
-<p><strong>Reason</strong>: The button is a shortcut of a Blender native operator. However, this operator is omitted in Blender 4.3.</p>
-</li>
-<li>
-<p><strong>Current Solution</strong>: This issue is expected to be fixed in Blender 4.4.</p>
-</li>
+<li><strong>Curve Type</strong>: In GPv3, a stroke can be set to a Bezier or NURBS curve. However, the add-on always interprets a stroke's shape as a polygon path. It is recommended to set the type to <code>Poly</code> before processing a stroke through this add-on.</li>
+<li><strong>Data Compression</strong>: GPv3 made some efforts to reduce the file size. However, in order to be consistent with GPv2, the add-on disables the compression and also adds some <a href="../../developer_notes/data_structures#grease-pencil-30">metadata</a> to each stroke. Therefore, using this add-on may increase the file size.</li>
 </ul>
-<h3 id="boundary-strokes">
-  Boundary Strokes
-  <a class="anchor" href="#boundary-strokes">#</a>
+<h3 id="issues-of-interim-versions">
+  Issues of Interim Versions
+  <a class="anchor" href="#issues-of-interim-versions">#</a>
 </h3>
+<p>GPv3 in Blender 4.3 and 4.4 is in an early stage with some unfinished features, which may cause the following additional problems:</p>
 <ul>
-<li>
-<p><strong>Problem</strong>: The option to use boundary strokes as hints of <code>Smart Fill</code> does not work.</p>
-</li>
-<li>
-<p><strong>Reason</strong>: There is no boundary stroke in GPv3. It is uncertain whether this function will be added back.</p>
-</li>
-<li>
-<p><strong>Current Solution</strong>: The <code>Smart Fill</code> operator is still functional. All other features are not affected.</p>
-</li>
+<li><strong>Resample</strong>: This operator was not available in Blender 4.3. The corresponding button will not appear in the add-on panel.</li>
+<li><strong>Boundary Strokes</strong>: This feature was not available in Blender 4.3 and 4.4. The corresponding option of <code>Smart Fill</code> is not functional in these versions.</li>
 </ul>
-<blockquote class="book-hint warning">
-  <p>Since Blender 4.3 is the first release with many breaking changes, some problems may persist until 4.4 or even later releases. It is recommended to use Blender 4.2 LTS if you prefer stable performance.</p>
-<p>If you want to experiment with GPv3 new features, please consider checking the <a href="https://projects.blender.org/blender/blender/issues">issue board</a> of Blender itself in addition to this add-on to track related issues.</p>
-
-</blockquote>
-
+<p>It is recommended to upgrade Blender to 4.5 which is an LTS version for better stability.</p>
 <hr>
 <p>(All emojis in this page are designed by <a href="https://openmoji.org/">OpenMoji</a> – the open-source emoji and icon project. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/#">CC BY-SA 4.0</a>)</p>
 </article>
@@ -846,9 +831,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#vertex-groups">Vertex Groups</a></li>
     <li><a href="#grease-pencil-30">Grease Pencil 3.0</a>
       <ul>
-        <li><a href="#stroke-selection-order">Stroke Selection Order</a></li>
-        <li><a href="#missing-resample-operator">Missing Resample Operator</a></li>
-        <li><a href="#boundary-strokes">Boundary Strokes</a></li>
+        <li><a href="#issues-of-gpv3-missing-features">Issues of GPv3 Missing Features</a></li>
+        <li><a href="#issues-of-gpv3-new-features">Issues of GPv3 New Features</a></li>
+        <li><a href="#issues-of-interim-versions">Issues of Interim Versions</a></li>
       </ul>
     </li>
   </ul>

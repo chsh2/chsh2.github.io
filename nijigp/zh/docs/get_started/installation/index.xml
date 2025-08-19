@@ -12,14 +12,21 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/zh/docs/get_started/installation/dependency/</guid>
-      <description>Python依赖项#NijiGPen的功能依赖于第三方的Python软件包，必须要单独地下载与安装它们。如果您没有使用过有类似需求的Blender插件，强烈建议首先阅读此页面。
-软件包依赖总结#下面的表格总结了插件的每一类功能所需要的软件包，您可据此判断要安装哪些软件包。（例如，如果您仅想使用插件来导入Photoshop笔刷和渲染PSD文件，它们都不需要软件包，那么就不用采取任何额外措施，可以忽略本页面的剩余部分。）
-插件功能 PyClipper Scipy &amp;amp; SkImage Triangle 多边形运算 必要 光影计算 必要 必要 线稿清理 必要 线条塑形 智能填充 必要 必要 3D网格生成 [注] 必要 可选 可选 基于网格的绑骨 基于提示的绑骨 [注] 可选 必要 导入线稿图片 必要 导入彩色图片 必要 必要 导入笔刷 剪贴板增强 渲染多图层PSD 3D网格生成: 唯一必要的包只有pyclipper，但安装其它包可以为法线插值生成网格的方法激活一些额外选项：
-scipy可以激活计算顶点高度的高级求解器。 triangle可以激活一种网格三角化的布线选项，它比Blender的自带方法有更高的布线质量。 基于提示的绑骨: 使用套索形状的提示线条需要安装pyclipper包，直线形状的提示线条则不需要。
-操作系统的影响#本插件经测试在Windows/Linux/MacOS下均可使用，但有以下注意事项：
-Windows根据Blender的安装来源，可能会需要采取额外步骤：
-便携版压缩包或Steam安装: 无需额外步骤。 官方安装程序: 如果Blender安装在系统文件夹，例如C:\Program Files\Blender Foundation\，推荐在安装Python软件包前以管理员身份运行Blender。 Microsoft Store: 所有Python软件包都会被安装到Blender以外的目录中，通常这个目录会在安装过程中被自动检测到。如果出现问题，请参阅备选方法1：自定义目录。 MacOSPython包triangle未在使用Apple Silicon (M1/M2/M3)芯片的设备中充分测试，如果安装时出现问题，可将其忽略（插件功能仅会受到轻微影响）。软件包安装#最直接的安装Python软件包的方法是使用设置面板中的依赖项管理器：
-点击&amp;quot;Check&amp;quot;按钮来确认某一Python包是否已被安装，如果未被安装，请点击&amp;quot;Install&amp;quot;（需要联网）。</description>
+      <description>Python依赖项#NijiGPen的多数功能依赖于第三方的Python软件包，需要在设置面板中手动下载与安装。如果您没有使用过有类似需求的Blender插件，强烈建议首先阅读此页面。
+是否需要安装软件包#本插件的部分功能不需要Python软件包，包括PSD多图层渲染、笔刷与调色板导入、画布旋转与图形重排。如果您仅需要这些功能，可以跳过此教程。
+其它大部分插件功能则需要手动安装软件包，其中PyClipper与SciPy &amp;amp; SkImage是必须的，Triangle是可选的。
+安装方法#安装操作在插件的设置面板中进行。表格中列出3个Python软件包，单击&amp;quot;Check&amp;quot;按钮可检查它们是否已被安装。在此面板中进行操作时，下方的&amp;quot;Logs&amp;quot;区域会显示一些有用的信息。
+如果您已经在Blender中使用了一些插件功能，建议先重启Blender，再进行软件包安装或卸载操作。
+默认方法: 安装到Blender目录#默认情况下，Package Folder选项为空，此时软件包会被下载到Blender的安装目录，只需点击&amp;quot;Install&amp;quot;按钮即可。由于后台下载和安装需要时间，Blender可能会停止响应一段时间，这是正常的。过后如果软件包的状态变为&amp;quot;OK&amp;quot;，则说明安装成功。
+如果没有显示任何错误信息，但状态也没有变为&amp;quot;OK&amp;quot;，请尝试重启Blender后再用&amp;quot;Check&amp;quot;按钮检查，若状态仍未改变，才说明安装未成功。如果安装失败，有可能是插件没有操作文件的权限，例如Windows系统下，当Blender安装在C:\Program Files文件夹时就会出现这种现象。有两种解决方法：
+尝试以管理员权限运行Blender，再进行软件包安装。 使用下一节介绍的自定义目录。 备选方法: 安装到自定义目录#另一种方式是新建一个空文件夹，并将其设置在Package Folder选项中。先勾选Install New Packages in Custom Path，再点击Install按钮，就可以将软件包安装到这个自定义的位置。
+也可以选择下拉列表中的路径，这是存放当前系统用户的Python软件包的通用目录。
+卸载方法#如果需要卸载已安装的软件包，请单击&amp;quot;Remove&amp;quot;按钮，过程与安装类似。
+如果安装时使用了备选方法，将软件包安装在自定义目录，请手动进入该目录，删除其中所有相关文件。
+问题排查#本插件追求较高的兼容性，同时支持Windows/macOS/Linux系统以及多种Blender版本。在这种情况下，安装软件包是一个较为复杂的问题，可能会出现预料之外的情况。如果您遇到此教程没有涉及的问题，请至GitHub询问。
+在安装软件包时，插件会将安装的全过程显示在下方的日志中。如果安装发生错误，原因可能可以在日志中找到。
+如果日志没有显示任何内容，且Blender停止响应，则可能是网络问题。请确认网络保持畅通，必要时可能需要设置VPN。
+附录#软件包安装位置的影响安装位置 优点 缺点 Blender目录 不会影响到其它Blender版本或其它软件 如果存在多个Blender版本，每个版本需要单独安装；可能需要更高的系统权限 系统用户目录 可被多个Blender版本共享，不需要重复安装 可能影响到系统中其它使用Python的软件 自定义目录 可被多个Blender版本共享；不影响其它软件 卸载时需要手动删除相关文件 软件包依赖总结插件功能 PyClipper SciPy &amp;amp; SkImage Triangle 多边形运算 必要 光影计算 必要 必要 线稿清理 必要 线条塑形 智能填充 必要 必要 3D网格生成 [注] 必要 可选 可选 基于网格的绑骨 基于提示的绑骨 [注] 可选 必要 导入线稿图片 必要 导入彩色图片 必要 必要 导入笔刷 剪贴板增强 渲染多图层PSD 注：</description>
     </item>
     
   </channel>

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="安装#不同于通常的Blender插件，NijiGPen的多数功能都依赖于一些第三方的Python软件包。推荐在安装插件时阅读Python依赖项页面以了解相关信息。
-需求#Blender 3.3 ~ 4.2 Blender 4.3 ~ 4.4 (实验性支持，尚未稳定) （推荐使用稳定版本，插件无法保证在beta或alpha版本中所有功能均可工作。）
+需求#Blender 3.3 ~ 4.2 (Grease Pencil 2.0)，或 Blender 4.3 ~ 4.5 (Grease Pencil 3.0) （推荐使用稳定版本，插件无法保证在beta或alpha版本中所有功能均可工作。）
 安装步骤#从GitHub Release中下载插件压缩包。请注意不要直接下载GitHub中的源代码，因为它可能包含一些尚未测试过的修改。
 在Blender的[编辑]-&gt;[偏好设置]-&gt;[插件]点击安装按钮选择下载的压缩包，勾选插件名称前的方框以启用。
-在Python依赖项页面中检查需要哪些第三方软件包，用设置面板中的按钮安装它们，本步骤需要保持联网状态。 升级步骤#升级Blender: 将Blender升级至新版本后，需要重新执行上述第三步（检查/安装Python依赖）。
-升级本插件: 安装新版本插件时，推荐首先卸载旧版本并重启Blender。
+参照Python依赖项页面，检查是否需要第三方软件包，并参考该页面的步骤安装它们。需要保持联网状态。 升级步骤#升级Blender: 将Blender升级至新版本后，需要重新执行上述第三步（检查/安装Python依赖）。
+升级本插件: 安装新版本插件后，可能需要重启Blender。
 卸载步骤#卸载插件并不会自动删除安装的Python软件包，若想释放硬盘空间，请使用设置面板中的按钮卸载它们。">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="安装" />
@@ -21,7 +21,7 @@
   <link rel="alternate" hreflang="en-us" href="https://chsh2.github.io/nijigp/docs/get_started/installation/" title="Installation">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/zh.search.min.474c0efc8c1af848634175e618ed13c5836c6e290ae9e311cadfd9ada05755a9.js" integrity="sha256-R0wO/Iwa&#43;EhjQXXmGO0TxYNsbikK6eMRyt/ZraBXVak=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/zh.search.min.310fed24e86e1a2e4ad72e3e39c82ddabb9f80031034c8e146069ce4414fc7db.js" integrity="sha256-MQ/tJOhuGi5K1y4&#43;Ocgt2rufgAMQNMjhRgac5EFPx9s=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://chsh2.github.io/nijigp/zh/docs/get_started/installation/index.xml" title="NijiGPen使用说明" />
 <!--
 Made with Book Theme
@@ -186,13 +186,13 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.0/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.2/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
         [EPUB Manual]
       </a>
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.0/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.2/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
         [PDF Manual]
       </a>
   </li>
@@ -266,8 +266,8 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e9%9c%80%e6%b1%82">#</a>
 </h2>
 <ul>
-<li>Blender 3.3 ~ 4.2</li>
-<li>Blender 4.3 ~ 4.4 (实验性支持，尚未稳定)</li>
+<li>Blender 3.3 ~ 4.2 (Grease Pencil 2.0)，或</li>
+<li>Blender 4.3 ~ 4.5 (Grease Pencil 3.0)</li>
 </ul>
 <p>（推荐使用稳定版本，插件无法保证在beta或alpha版本中所有功能均可工作。）</p>
 <h2 id="安装步骤">
@@ -284,9 +284,9 @@ https://github.com/alex-shpak/hugo-book
 </ol>
 <p><img src="./enable_addon.png" alt="" /></p>
 <ol start="3">
-<li>在<a href="./dependency">Python依赖项</a>页面中检查需要哪些第三方软件包，用设置面板中的按钮安装它们，本步骤需要保持联网状态。</li>
+<li>参照<a href="./dependency">Python依赖项</a>页面，检查是否需要第三方软件包，并参考该页面的步骤安装它们。需要保持联网状态。</li>
 </ol>
-<p><img src="./install_button.png" alt="" /></p>
+<p><img src="./package_panel.png" alt="" /></p>
 <h2 id="升级步骤">
   升级步骤
   <a class="anchor" href="#%e5%8d%87%e7%ba%a7%e6%ad%a5%e9%aa%a4">#</a>
@@ -296,7 +296,7 @@ https://github.com/alex-shpak/hugo-book
 <p><strong>升级Blender</strong>: 将Blender升级至新版本后，需要重新执行上述第三步（检查/安装Python依赖）。</p>
 </li>
 <li>
-<p><strong>升级本插件</strong>: 安装新版本插件时，推荐首先卸载旧版本并重启Blender。</p>
+<p><strong>升级本插件</strong>: 安装新版本插件后，可能需要重启Blender。</p>
 </li>
 </ul>
 <h2 id="卸载步骤">

@@ -13,7 +13,7 @@
       
       <guid>https://chsh2.github.io/nijigp/docs/get_started/installation/dependency/</guid>
       <description>Python Packages#NijiGPen&#39;s functionality relies on some third-party Python packages, which have to be separately downloaded and installed. If you have no experience with Blender add-ons that have similar requirements, it is strongly suggested to read this page before using the add-on.
-Dependency Summary#The table below lists the packages required for each type of operation. Lacking a package will not affect operations that do not require it.</description>
+Are Packages Required?#This add-on includes functionalities that do not require Python packages, such as PSD multi-layer rendering, brush/palette import, canvas tilting, and stroke rearrangement. Users who only use these features can skip this tutorial.</description>
     </item>
     
   </channel>
