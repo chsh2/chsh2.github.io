@@ -18,7 +18,7 @@ Unfinished features of the add-on itself, which may be improved in future releas
 <link rel="icon" href="/nijigp/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/nijigp/book.min.3bc88adb2893c54b24fa8617cb6dc6ca846aa5522c5275f3279db80d776e8d55.css" integrity="sha256-O8iK2yiTxUsk&#43;oYXy23GyoRqpVIsUnXzJ524DXdujVU=" crossorigin="anonymous">
   <script defer src="/nijigp/flexsearch.min.js"></script>
-  <script defer src="/nijigp/en.search.min.e982f7758ad8adc523f2318f88ce654161554bb816770fcc8b410fffdbc8630e.js" integrity="sha256-6YL3dYrYrcUj8jGPiM5lQWFVS7gWdw/Mi0EP/9vIYw4=" crossorigin="anonymous"></script>
+  <script defer src="/nijigp/en.search.min.880900644d5d9c1e15cf974c2b354098b6d2d39c17cd9611ad986deaf94dada4.js" integrity="sha256-iAkAZE1dnB4Vz5dMKzVAmLbS05wXzZYRrZht6vlNraQ=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -610,13 +610,13 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.2/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.13.0/NijiGPen_Manual.epub"  target="_blank" rel="noopener">
         [EPUB Manual]
       </a>
   </li>
   
   <li>
-    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.12.2/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
+    <a href="https://github.com/chsh2/nijiGPen/releases/download/v0.13.0/NijiGPen_Manual.pdf"  target="_blank" rel="noopener">
         [PDF Manual]
       </a>
   </li>
@@ -719,7 +719,7 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>Both this add-on and Blender itself have limitations supporting fill shapes will holes inside.</p>
 <ul>
-<li>Blender does not allow holes in a stroke, but some add-on operators like <a href="../../functionality/polygon/bool">Boolean</a>, <a href="../../functionality/polygon/offset">Offset</a> and <a href="../../functionality/io/clipboard/#paste-svg-codes">SVG Paste</a> can result in holes. In such cases, the corresponding geometry will be created, but will not be transparent.</li>
+<li>Blender does not allow holes in a stroke, but some add-on operators like <a href="../../functionality/polygon/bool">Boolean</a>, <a href="../../functionality/polygon/offset">Offset</a> and <a href="../../functionality/io/svg/">SVG Import</a> can result in holes. In such cases, the corresponding geometry will be created, but will not be transparent.</li>
 <li>To display holes in Grease Pencil, Blender provides with a <strong>Holdout</strong> property in its <a href="https://docs.blender.org/manual/en/latest/grease_pencil/materials/properties.html">material setting</a>. The add-on also has a Hole Holdout operator to automatically set this property for shapes inside other shapes.</li>
 </ul>
 <p><img src="../l2.png" alt="" /></p>
@@ -770,7 +770,7 @@ https://github.com/alex-shpak/hugo-book
 <p>GPv3 also introduces some new features. Some of them are out of this add-on's scope.</p>
 <ul>
 <li><strong>Curve Type</strong>: In GPv3, a stroke can be set to a Bezier or NURBS curve. However, the add-on always interprets a stroke's shape as a polygon path. It is recommended to set the type to <code>Poly</code> before processing a stroke through this add-on.</li>
-<li><strong>Data Compression</strong>: GPv3 made some efforts to reduce the file size. However, in order to be consistent with GPv2, the add-on disables the compression and also adds some <a href="../../developer_notes/data_structures#grease-pencil-30">metadata</a> to each stroke. Therefore, using this add-on may increase the file size.</li>
+<li><strong>Data Compression</strong>: GPv3 made some efforts to reduce the file size. However, in order to be consistent with GPv2, the add-on disables the compression and also adds some <a href="../../developer_notes/data_structures/#grease-pencil-30">metadata</a> to each stroke. Therefore, using this add-on may increase the file size.</li>
 </ul>
 <h3 id="issues-of-interim-versions">
   Issues of Interim Versions
