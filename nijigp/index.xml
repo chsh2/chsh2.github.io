@@ -212,8 +212,9 @@ Extrude: It turns the shapes into a pseudo-3D look.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chsh2.github.io/nijigp/docs/functionality/polygon/holdout/</guid>
-      <description>Hole Holdout#To display holes inside a shape&#39;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software. Users need to manually enable a Holdout option in the material setting to make a stroke transparent.
-To simplify this process, NijiGPen provides with an operator to automatically detect holes among selected strokes. If a stroke&#39;s path is completely inside another stroke&#39;s fill:</description>
+      <description>Hole Holdout#This operator and the following descriptions mostly apply to Blender 5.0 and earlier versions, as holes are not officially supported in Grease Pencil in these versions.
+Blender 5.1 introduces the new Join Fills operator, which can be used in many cases where this operator is currently used. This add-on operator is still available for users that prefer the old method.
+To display holes inside a shape&#39;s fill, Blender has a unique mechanism in Grease Pencil that is different from most vector graphic editing software.</description>
     </item>
     
     <item>
