@@ -1,0 +1,360 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Texture VFX Control: User Guide",
+    "section": "",
+    "text": "Introduction\nTexture VFX Control is a Blender add-on working on media (videos, images and image sequences) as material textures, enabling management of media playback progress and visual effects. The users can have the video editing/composition workflow in the 3D space, therefore facilitating the creation of motion graphics and reels.\nMain features:\nCurrent version: v1.1",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#requirements",
+    "href": "index.html#requirements",
+    "title": "Texture VFX Control: User Guide",
+    "section": "Requirements",
+    "text": "Requirements\nBlender 4.2 - 5.1",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Texture VFX Control: User Guide",
+    "section": "Credits",
+    "text": "Credits\nThe shader node groups in this add-on are inspired by the following references:\n\nhttps://github.com/obsproject/obs-studio/blob/master/plugins/obs-filters/data/chroma_key_filter.effect\nhttps://godotshaders.com/shader/green-screen-chromakey/\nhttps://www.shadertoy.com/view/7sscD4\nhttps://www.shadertoy.com/view/4s2GRR\nhttps://www.shadertoy.com/view/ls3cDB\n\nThe following assets are used for demonstration purposes in the documentation:\n\nAdrian Hoparda at pexels.com\nBoVibol, fawaz-qureshi at pixabay.com\nBig Buck Bunny from Blender Foundation",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "get_started.html",
+    "href": "get_started.html",
+    "title": "Get Started",
+    "section": "",
+    "text": "Installation\nTexture VFX Control is a legacy Blender add-on. Installation steps:",
+    "crumbs": [
+      "Get Started"
+    ]
+  },
+  {
+    "objectID": "get_started.html#installation",
+    "href": "get_started.html#installation",
+    "title": "Get Started",
+    "section": "",
+    "text": "Download the .zip archive from the Releases page.\nInstall and enable the add-on from [Preferences] &gt; [Add-ons] panel.",
+    "crumbs": [
+      "Get Started"
+    ]
+  },
+  {
+    "objectID": "get_started.html#basic-usage",
+    "href": "get_started.html#basic-usage",
+    "title": "Get Started",
+    "section": "Basic Usage",
+    "text": "Basic Usage\nThe add-on can be called from the sidebar of the 3D viewport. A tab named TexFX will appear in the sidebar when the active object material contains at least one Image Texture Node. The most common way to import media files as textures is through the menu item [Add] &gt; [Image] &gt; [Mesh Plane].\nTo enable the add-on, click the [Convert a Texture to FX Node] button and select the name of the media. After the operation is successful, more panels will appear in the sidebar for subsequent actions.",
+    "crumbs": [
+      "Get Started"
+    ]
+  },
+  {
+    "objectID": "fx.html",
+    "href": "fx.html",
+    "title": "Visual Effects Control",
+    "section": "",
+    "text": "Animation Drivers\nVisual effects can be added to both videos and still images. The button [Effects Chain] &gt; [New Effect] at the bottom of the sidebar inserts a new effect to the current media. All existing effects will be displayed in the panel as an effects chain. The user can tune the parameters of each effect, or enable/disable/delete/reorder any effect in the chain.\nCertain effect parameters have a  button on the side, which adds drivers to the parameter in order to create animations. There are different types of drivers:",
+    "crumbs": [
+      "Visual Effects Control"
+    ]
+  },
+  {
+    "objectID": "fx.html#animation-drivers",
+    "href": "fx.html#animation-drivers",
+    "title": "Visual Effects Control",
+    "section": "",
+    "text": "Location Driver: The parameter value is determined by the relative location to another object. For example, the user can assign an object as the light source to decide the angle of the drop shadow effect.\nTemporal Driver: The parameter value increases with the frame number, so that an animation will be created.\nTransition In/Out: For videos with the playback control set up, the transition effects can be bound to the playback control, so that the user does not need to create keyframes manually.",
+    "crumbs": [
+      "Visual Effects Control"
+    ]
+  },
+  {
+    "objectID": "fx.html#saveload-presets",
+    "href": "fx.html#saveload-presets",
+    "title": "Visual Effects Control",
+    "section": "Save/Load Presets",
+    "text": "Save/Load Presets\nThe buttons at the top of the Effects Chain panel allow the user to save the current effects chain as a preset, either to a JSON file or to the clipboard. This preset can then be loaded/pasted to apply the same effects to another object.",
+    "crumbs": [
+      "Visual Effects Control"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html",
+    "href": "fx_gallery.html",
+    "title": "Effects Gallery",
+    "section": "",
+    "text": "Color",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#color",
+    "href": "fx_gallery.html#color",
+    "title": "Effects Gallery",
+    "section": "",
+    "text": "Invert\nHSV\nBrightness/Contrast\nRGB Curve\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGradient Map\nLinear Gradient\nColor Quantization",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#alpha",
+    "href": "fx_gallery.html#alpha",
+    "title": "Effects Gallery",
+    "section": "Alpha",
+    "text": "Alpha\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlpha Choker\nChroma key\nAlpha Clip\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFill Transparency\nLuma Key",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#blurenhancement",
+    "href": "fx_gallery.html#blurenhancement",
+    "title": "Effects Gallery",
+    "section": "Blur/Enhancement",
+    "text": "Blur/Enhancement\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEdge Detection\nGrainy Blur\nOutline\nRadial Blur\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSharpen\nRim Light/Shadow",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#distortion",
+    "href": "fx_gallery.html#distortion",
+    "title": "Effects Gallery",
+    "section": "Distortion",
+    "text": "Distortion\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic Transform\nFisheye\nKaleidoscope\nShake\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSwirl\nTurbulence\nWave",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#stylization",
+    "href": "fx_gallery.html#stylization",
+    "title": "Effects Gallery",
+    "section": "Stylization",
+    "text": "Stylization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDither\nHalftone\nPixelate\nRGB Split\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStained Glass\nVignette",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#simulation",
+    "href": "fx_gallery.html#simulation",
+    "title": "Effects Gallery",
+    "section": "Simulation",
+    "text": "Simulation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFilm Grain\nGlitch\nLCD\nScanline",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "fx_gallery.html#transition",
+    "href": "fx_gallery.html#transition",
+    "title": "Effects Gallery",
+    "section": "Transition",
+    "text": "Transition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBurn\nClock Wipe\nFade\nLinear Slide\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Wipe\nPage Curl\nTile",
+    "crumbs": [
+      "Visual Effects Control",
+      "Effects Gallery"
+    ]
+  },
+  {
+    "objectID": "playback.html",
+    "href": "playback.html",
+    "title": "Playback Control",
+    "section": "",
+    "text": "Local Keyframes\nBlender natively supports using video files and image sequences as material textures. However, it is not intuitive to set up common playback modes, such as speed change or reversed playing, to the video. This add-on can generate a playback controller for the video/image sequence via the panel button [Add Playback Controller], making such manipulations easy.\nCurrently, the add-on provides two styles of playback controllers.\nSelecting Local Keyframes in the Controller option adds a new keyframe channel tfxPlayhead to the active material, which is also visible in the add-on panel. When this property value is 0, it corresponds to the start of video playback; when it is 1, it corresponds to the end of video playback. The user can make fine-grained control of the video playback through keyframes and F-Curves.",
+    "crumbs": [
+      "Playback Control"
+    ]
+  },
+  {
+    "objectID": "playback.html#local-keyframes",
+    "href": "playback.html#local-keyframes",
+    "title": "Playback Control",
+    "section": "",
+    "text": "Note\n\n\n\nIf the tfxPlayhead keyframe channel no longer affects the video playback, please use the [Refresh] button in the panel to reset the driver. When the object or the material of the video is appended to another Blender file as an asset, this process is also required.\n\n\n\nPresets of Playback Modes\n\nDuring adding the controller, the popup panel allows the user to select several options such as Playback Rate, Loop and Reverse. The add-on can automatically generate keyframes and F-Curves according to these options, which implement some common playback modes.\n\n\nVisibility\nThe option Hide the Video generates keyframes of the Alpha channel of the texture, setting the transparency to zero before the first frame and/or after the last frame. When this option is disabled, the video will be visible but static outside the playback range, displaying the first/last frame.",
+    "crumbs": [
+      "Playback Control"
+    ]
+  },
+  {
+    "objectID": "playback.html#global-manager",
+    "href": "playback.html#global-manager",
+    "title": "Playback Control",
+    "section": "Global Manager",
+    "text": "Global Manager\nTo orchestrate multiple video clips in the same 3D scene, it is recommended to select Global Manager in the Controller option. This option provides with a new workspace that allows a video editing workflow. The functionality and usage of the Global Manager will be described in the next chapter.",
+    "crumbs": [
+      "Playback Control"
+    ]
+  },
+  {
+    "objectID": "playback_global.html",
+    "href": "playback_global.html",
+    "title": "Global Manager",
+    "section": "",
+    "text": "Workspace\nGlobal Manager is designed for arranging multiple video clips used in the same 3D scene. It aims at providing a similar graphic interface with Blender’s Video Sequencer, where the user can switch among multiple video strips to move, trim, loop or change their speed in the timeline. It is also easier to insert new videos into the scene in this mode.\nWhen selecting Global Manager during adding the playback controller, the add-on panel no longer shows the playhead keyframe channel. Instead, a button Global Manager appears in the panel that creates and switches to a new workspace.\nAfter using Global Manager for the first time in a scene, the add-on will create a new empty object named TfxPlaybackManager that stores all the animation data related to video playback. Please do not delete this object.\nThe add-on introduces a new workspace named “Media Playback”. The workspace is based on Blender NLA Editor, with a new switch button named [Video Editor Mode] added at the left side, and a side panel named TexFX added at the right side.\nEach strip in the NLA Editor’s timeline represents a video. Initially, all tracks are locked. The user needs to click the [Video Editor Mode] button to unlock them. Entering this mode will change some behaviors of Blender, making them different from the normal NLA Editor. Please read the following instructions before using this mode.",
+    "crumbs": [
+      "Playback Control",
+      "Global Manager"
+    ]
+  },
+  {
+    "objectID": "playback_global.html#workspace",
+    "href": "playback_global.html#workspace",
+    "title": "Global Manager",
+    "section": "",
+    "text": "Note\n\n\n\nPlease perform all updates in the TexFX side panel. Avoid using the native Strip or Modifiers tabs. Please also do not unlock the NLA tracks manually when the Video Editor mode is not running.",
+    "crumbs": [
+      "Playback Control",
+      "Global Manager"
+    ]
+  },
+  {
+    "objectID": "playback_global.html#video-editor-mode",
+    "href": "playback_global.html#video-editor-mode",
+    "title": "Global Manager",
+    "section": "Video Editor Mode",
+    "text": "Video Editor Mode\nEntering the Video Editor mode unlocks all NLA tracks. The user can drag the strips to adjust its position in the timeline. Selecting a strip will also select the corresponding object in the 3D viewport.\nVarious playback patterns can be achieved by the mouse operations in the timeline region and the value setting in the TexFX panel.\n\n\n\n\n\n\nNote\n\n\n\nEither switching to another workspace/scene or undoing will exit the Video Editor mode, requiring the user to later start the mode again manually.\nAfter setting new property values in the side panel, sometimes the 3D viewport does not show the latest result, and it requires the user to click once more in the timeline region.\n\n\n\nSpeed Control\nThe video playback speed can be adjusted in the following ways:\n\nSet the Scale value in the side panel, e.g. 0.5 means 2x speed.\nSelect the strip and press [S] key.\n\n\n\nLooping\nSetting Repeat to a value greater than 1 in the side panel will loop the video. To cancel looping, set Repeat back to 1.\n\n\nFreeze Frame Extension\nFreeze frames can be added before or after the video to prolong it in the Extend subpanel.\n\nIncreasing the End value adds still images after the last frame of the video.\nDecreasing the Start value adds still images before the first frame of the video.\n\nTo cancel extension and remove freeze frames, click the Reset button.\n\n\nTrimming\nDragging the edge of a selected strip will turn the cursor into a knife shape. This will trim the video to change the portion played.\n\n\n\n\n\n\nNote\n\n\n\nTo trim a video, looping or extension must be cancelled at first. Otherwise, the trimming operation is equivalent of setting Repeat or Extend values.\n\n\n\n\nVisibility\nThe visibility of a video outside the strip region can be set in the [Hide the Video] subpanel. It can hide the video before the playing starts and/or after the playing ends.\n\n\nSynchronizing Keyframes\nBy default, after dragging or resizing a strip, if any effects on this video have keyframes, they will move with the strip to keep synchronized.\nIn addition, the user can also make the object and material keyframes follow the strip, by checking corresponding options in the [Editor Setting] &gt; [Synchronize Keyframes] subpanel. Please do not use these options if an object or a material contains multiple video strips. Otherwise, the keyframe movement result may be unexpected.\n\n\nBinding Transition Effects\nIf a video is controlled by Global Manager and has transition effects, clicking the  icon besides In and Out parameters will bind the transition to the strip. After that, the transition length can be adjusted in the TexFX panel, and the transition will synchronize with the strip movement.",
+    "crumbs": [
+      "Playback Control",
+      "Global Manager"
+    ]
+  },
+  {
+    "objectID": "playback_global.html#append-media",
+    "href": "playback_global.html#append-media",
+    "title": "Global Manager",
+    "section": "Append Media",
+    "text": "Append Media\nThe button Append Media in the side panel will open the file browser, allowing the user to select a new media file and insert it in the timeline, right after the selected strip. The object location, mesh and material data of the new media are all duplicated from the selected strip.\nPlease note that two completely overlapping faces usually lead to render artifacts. Therefore, the add-on sets a tiny delta location when adding a new object. The user can change this offset value.",
+    "crumbs": [
+      "Playback Control",
+      "Global Manager"
+    ]
+  },
+  {
+    "objectID": "blender_setting.html",
+    "href": "blender_setting.html",
+    "title": "Blender Settings",
+    "section": "",
+    "text": "Image Texture Node\nThis chapter explores the Blender settings that may have a significant impact on the add-on results.\nThe Image Texture Node which contains the media has the following settings relevant to some visual effects:\nThese options are also displayed in the add-on side panel to make modifications easier.",
+    "crumbs": [
+      "Blender Settings"
+    ]
+  },
+  {
+    "objectID": "blender_setting.html#image-texture-node",
+    "href": "blender_setting.html#image-texture-node",
+    "title": "Blender Settings",
+    "section": "",
+    "text": "Interpolation: When using effects of the pixelated style, it is recommended to set this option to Closest. Otherwise, using Smart or Cubic will make the image smoother.\nExtension: The Distortion effects may warp the image, leaving blank areas. This option determines whether the image is extended to fill these areas.",
+    "crumbs": [
+      "Blender Settings"
+    ]
+  },
+  {
+    "objectID": "blender_setting.html#material-settings",
+    "href": "blender_setting.html#material-settings",
+    "title": "Blender Settings",
+    "section": "Material Settings",
+    "text": "Material Settings\nThe EEVEE engine has two methods, Dithered and Blended, to handle transparency. Each method has its own benefits and drawbacks. Please refer to the official document.",
+    "crumbs": [
+      "Blender Settings"
+    ]
+  },
+  {
+    "objectID": "blender_setting.html#render-settings",
+    "href": "blender_setting.html#render-settings",
+    "title": "Blender Settings",
+    "section": "Render Settings",
+    "text": "Render Settings\nThe EEVEE engine has a sampling option named Temporal Reprojection to reduce noise during the preview. However, this can result in severe artifacts when previewing a video texture. It is recommended to disable this option.",
+    "crumbs": [
+      "Blender Settings"
+    ]
+  },
+  {
+    "objectID": "concept.html",
+    "href": "concept.html",
+    "title": "Concepts",
+    "section": "",
+    "text": "Effects Chain\nThis chapter briefly introduces how each module of this add-on works and the design decision behind them, as a development reference of customizations.\nEffects in this add-on are shader node groups. To reproduce common 2D visual effects and ensure the same result with both EEVEE and Cycles engines, the node group:\nAlthough the task of each node group is not complicated, the add-on still creates a new panel for users to operate with, rather than provide node groups directly as Blender assets. This is because of the difficulty stated in the following section.",
+    "crumbs": [
+      "Developer Notes",
+      "Concepts"
+    ]
+  },
+  {
+    "objectID": "concept.html#effects-chain",
+    "href": "concept.html#effects-chain",
+    "title": "Concepts",
+    "section": "",
+    "text": "Involves: Math operations on the UV, Color and Alpha values of the Image Texture Node that loads the media.\nDoes not involve: Accepting geometry and lighting information from the 3D scene; using BSDF and other built-in shaders.\n\n\n\nShader Node Hierarchy\nWhen a series of effects are added to the same media ([Media]-&gt;[FX1]-&gt;[FX2]), we expect the node structure to align with intuition, where the node groups of FX1 and FX2 are connected to the media in a cascade. However, many effects involving modifying the texture’s UV (an input socket) and color/alpha (output sockets) at the same time, requiring to place the texture node in the middle of the effect node group. Multiple such effects will lead to a nested structure as depicted in the following diagram:\n\nThis structure brings obstacles when the user wants to update the effects stack:\n\nWhen replacing the media, the user needs to click into the node group for multiple times.\nReordering the effects or inserting a new effect between two existing ones also require multiple steps of operations.\nEffects like Blur or Outline need multiple sets of UV, further increasing the complexity of manual operations.\n\nConsidering this, the add-on provides with functions to automate these processes, and defines a side panel to sort the effects visually in an intuitive way.\n\n\nMethods/Tools Not Adopted\n\nClosure: Blender 5.0 introduced the concept of closure. It may provide with a more reasonable abstract to the problem this add-on concerns, and replace the nested node groups with a cascade topology. However, the concept is relatively new in Blender, and this add-on aims at being compatible with both Blender 4.x and 5.x. Therefore, the closure nodes are not used.\nCompositor: Despite that the functionality of this add-on is more like compositing in the aspect of the video production workflow, it chooses to implement effects using shaders rather than the Blender Compositor. The concern here is the active updates and refactoring of compositor since Blender 5.0. It is currently uncertain whether this add-on’s concept will align well with the official roadmap of compositor. The feature this add-on concerns the most is setting up different effects stacks for each object in the scene, which cannot be done easily in the current compositor. Although it has been discussed in the official community, the way of implementation has not been settled down.",
+    "crumbs": [
+      "Developer Notes",
+      "Concepts"
+    ]
+  },
+  {
+    "objectID": "concept.html#playback-control",
+    "href": "concept.html#playback-control",
+    "title": "Concepts",
+    "section": "Playback Control",
+    "text": "Playback Control\nBlender supports using a video as an image texture and changing its start frame and offset. By increasing/decreasing the offset value during playing the video, the playback can be accelerated/decelerated. However, the offset attribute is not a socket and cannot interact with other nodes. Setting its value dynamically can only be done by inserting keyframes or drivers. It is also not straightforward to convert the playback rate to the offset value. Therefore, the add-on simplifies the process by generating driver expressions automatically and inserting it to the frame offset attribute.\n\nGlobal Manager\nThis component attempts resembling the popular NLE (Non-linear editing) tools of video production to manage multiple video textures in a 3D scene. Since Blender NLA Editor has many similar concepts with NLE tools, this component chooses it as the base of the implementation and wraps the playback keyframe channel of each video texture into an NLA track strip.\nHowever, different from NLE where the video strip is the main subject, in the 3D scene, a video texture is just a material node. Moving its keyframes will not affect the animation data of the object’s other properties (e.g. location, visibility and material parameters, including those of effects node groups created also by this add-on). This is counter-intuitive to the video production workflow. The solution of the add-on is to capture the user’s inputs. After each input event, the add-on checks whether any NLA strip is updated, locates the scene object of the updated NLA strip, and then remaps its keyframes. One drawback of this solution is the limited capability of an add-on to capture input events. Certain inputs will be omitted, requiring the user to click once more to ensure the keyframes synchronized.",
+    "crumbs": [
+      "Developer Notes",
+      "Concepts"
+    ]
+  },
+  {
+    "objectID": "data_structure.html",
+    "href": "data_structure.html",
+    "title": "Data Structure",
+    "section": "",
+    "text": "Effect Shader Node Groups\nThis chapter describes the metadata added to Blender’s standard object data blocks by this add-on in order to achieve its functionalities. The following sections are mainly for developers rather than general users.\nEach type of visual effect is a shader node group predefined in a .blend file. Each group contains several nodes with certain names for the add-on to identify and operate on them. The node group also has some custom properties.",
+    "crumbs": [
+      "Developer Notes",
+      "Data Structure"
+    ]
+  },
+  {
+    "objectID": "data_structure.html#effect-shader-node-groups",
+    "href": "data_structure.html#effect-shader-node-groups",
+    "title": "Data Structure",
+    "section": "",
+    "text": "Necessary Nodes\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nTfxRoot\nA pointer to the video/image media node group.\n\n\nTfxNext\nA pointer to the previous effect of the same media. Equal to TfxRoot if this is the first effect. For effects requiring multiple sets of UV, there are also TfxNext.001, TfxNext.002…\n\n\nTfxParam\nA pointer to another node group with a single output node defining the parameters of the effect, which is displayed in the UI panel for the user to modify.\n\n\nTfxDriverObjLec\nIndicates that this effect supports using the location of another object in the scene as a driver.\n\n\n\n\n\nCustom Properties\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ntfxName\nName of the effect shown in the UI panel\n\n\ntfxPromoted\nLists pairs of node&attribute names. These attributes will be displayed in the UI panel.",
+    "crumbs": [
+      "Developer Notes",
+      "Data Structure"
+    ]
+  },
+  {
+    "objectID": "data_structure.html#video-playback-control",
+    "href": "data_structure.html#video-playback-control",
+    "title": "Data Structure",
+    "section": "Video Playback Control",
+    "text": "Video Playback Control\nWhen adding a playback controller to a video/sequence, the add-on defines custom properties in the outermost effect node group, which are referred in the driver of the Image Texture Node’s frame offset value.\nIn case of the global manager mode, the add-on defines additional custom properties to the NLA track strip’s action data block.\n\nKeyframe Setup\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ntfxPlaybackControl\nWhether the video has a playback controller and its type.\n\n\ntfxFrameDuration\nThe number of frames to be played.\n\n\ntfxFirstFrame\nThe frame number of the original video to be played as the first frame.\n\n\ntfxPlayhead\nThe playback slider shown in the UI panel for the user to adjust or add keyframes to.\n\n\n\n\n\nGlobal Manager\n\n\n\n\n\n\n\nName\nDescription\n\n\n\n\ntfxStripStart\nCaches the start frame of the NLA strip to measure the change after a user input.\n\n\ntfxStripEnd\nCaches the end frame of the NLA strip to measure the change after a user input.\n\n\ntfxHideBefore\nWhether to hide the video before it starts to play.\n\n\ntfxHideAfter\nWhether to hide the video after it finishes playing.\n\n\ntfxInLength\nThe number of frames of fade-in transition effects.\n\n\ntfxOutLength\nThe number of frames of fade-out transition effects.",
+    "crumbs": [
+      "Developer Notes",
+      "Data Structure"
+    ]
+  }
+]

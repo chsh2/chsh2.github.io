@@ -1,0 +1,360 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Texture VFX Control: 使用说明",
+    "section": "",
+    "text": "简介\nTexture VFX Control是一个Blender插件，作用于媒体纹理（图片、图片序列和视频），利用节点组和驱动器来实现媒体的播放进度管理和特效管理。插件的目的是让用户在三维空间中仍可按照视频编辑/合成软件的习惯进行操作，从而提高动态图形与视频特效的制作效率。\n本插件的主要功能如下：\n当前插件版本： v1.1",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#系统需求",
+    "href": "index.html#系统需求",
+    "title": "Texture VFX Control: 使用说明",
+    "section": "系统需求",
+    "text": "系统需求\nBlender 4.2 ~ 5.1",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html#致谢",
+    "href": "index.html#致谢",
+    "title": "Texture VFX Control: 使用说明",
+    "section": "致谢",
+    "text": "致谢\n特效节点组的实现参考了以下代码：\n\nhttps://github.com/obsproject/obs-studio/blob/master/plugins/obs-filters/data/chroma_key_filter.effect\nhttps://godotshaders.com/shader/green-screen-chromakey/\nhttps://www.shadertoy.com/view/7sscD4\nhttps://www.shadertoy.com/view/4s2GRR\nhttps://www.shadertoy.com/view/ls3cDB\n\n功能演示中使用的示例素材来源：\n\nAdrian Hoparda at pexels.com\nBoVibol, fawaz-qureshi at pixabay.com\nBig Buck Bunny from Blender Foundation",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "get_started-zh.html",
+    "href": "get_started-zh.html",
+    "title": "基本操作",
+    "section": "",
+    "text": "插件安装\nTexture VFX Control采用旧式Blender插件的标准。安装步骤如下：",
+    "crumbs": [
+      "基本操作"
+    ]
+  },
+  {
+    "objectID": "get_started-zh.html#插件安装",
+    "href": "get_started-zh.html#插件安装",
+    "title": "基本操作",
+    "section": "",
+    "text": "下载.zip压缩包。\n在[偏好设置/Preferences] &gt; [插件/Add-ons]面板中载入该压缩包。",
+    "crumbs": [
+      "基本操作"
+    ]
+  },
+  {
+    "objectID": "get_started-zh.html#启动功能",
+    "href": "get_started-zh.html#启动功能",
+    "title": "基本操作",
+    "section": "启动功能",
+    "text": "启动功能\n插件要求当前物体存在材质，并且材质包含图像纹理节点。通常推荐使用Blender内置的[Add/添加] &gt; [Image/图像] &gt; [Mesh Plane/网格平面]菜单项来导入图片或视频。\n满足条件时，3D视图的侧边栏会出现TexFX标签，本插件的功能可在该标签页内使用。\n要启用插件功能，请点击侧边栏中[Convert a Texture to FX Node]按钮，并在下拉菜单中选择图像/视频的名称。操作成功后，侧边栏中将出现更多面板，以供进行后续的播放控制与特效控制等操作。",
+    "crumbs": [
+      "基本操作"
+    ]
+  },
+  {
+    "objectID": "fx-zh.html",
+    "href": "fx-zh.html",
+    "title": "特效控制",
+    "section": "",
+    "text": "动画驱动器\n特效管理功能既适用于视频，也适用于静态图片。使用侧边栏最下方[Effects Chain] &gt; [New Effect]按钮为媒体插入一个新特效。该面板将显示出目前已经应用在当前媒体上的所有特效，用户可以调节特效的参数，或者关闭/启用/删除任一特效。\n部分特效参数的数值旁边显示有图标，插件为这些参数设计了驱动器，以快速实现某些视觉效果。典型的驱动器包括：",
+    "crumbs": [
+      "特效控制"
+    ]
+  },
+  {
+    "objectID": "fx-zh.html#动画驱动器",
+    "href": "fx-zh.html#动画驱动器",
+    "title": "特效控制",
+    "section": "",
+    "text": "位置驱动: 与另一个指定物体的相对位置会影响该参数的值。例如投影效果可以通过指定作为光源的物体来自动决定阴影的方向。\n时间驱动: 对于动态的视觉效果，设置该驱动器可以让参数的值随视频的帧数自动增长，因此不需要手动设置关键帧即可实现动画。\n渐入/渐出: 对于过渡特效，如果媒体已经使用了上面介绍的播放管理功能，可以将特效的渐入/渐出属性绑定到控制视频播放的关键帧通道上，因此不需要再单独手动设置特效的关键帧。",
+    "crumbs": [
+      "特效控制"
+    ]
+  },
+  {
+    "objectID": "fx-zh.html#保存预置",
+    "href": "fx-zh.html#保存预置",
+    "title": "特效控制",
+    "section": "保存预置",
+    "text": "保存预置\n特效管理面板提供了一系列按钮用于特效的导入/导出。一个媒体的完整特效链可以作为JSON预置文件被保存到文件中，也可以直接复制到其它的媒体上。",
+    "crumbs": [
+      "特效控制"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html",
+    "href": "fx_gallery-zh.html",
+    "title": "特效一览",
+    "section": "",
+    "text": "色彩调节",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#色彩调节",
+    "href": "fx_gallery-zh.html#色彩调节",
+    "title": "特效一览",
+    "section": "",
+    "text": "Invert\nHSV\nBrightness/Contrast\nRGB Curve\n\n\n反相\n色相/饱和度/明度\n亮度/对比度\nRGB曲线\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGradient Map\nLinear Gradient\nColor Quantization\n\n\n\n渐变映射\n线性渐变\n色彩量化",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#透明度相关",
+    "href": "fx_gallery-zh.html#透明度相关",
+    "title": "特效一览",
+    "section": "透明度相关",
+    "text": "透明度相关\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlpha Choker\nChroma key\nAlpha Clip\n\n\n\n透明度收缩\n色键\n透明度裁剪\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFill Transparency\nLuma Key\n\n\n\n\n填充透明部分\n亮度键",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#模糊与增强",
+    "href": "fx_gallery-zh.html#模糊与增强",
+    "title": "特效一览",
+    "section": "模糊与增强",
+    "text": "模糊与增强\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEdge Detection\nGrainy Blur\nOutline\nRadial Blur\n\n\n边缘检测\n颗粒模糊\n描边\n径向模糊\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSharpen\nRim Light/Shadow\n\n\n\n\n锐化\n边缘光/投影",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#变形",
+    "href": "fx_gallery-zh.html#变形",
+    "title": "特效一览",
+    "section": "变形",
+    "text": "变形\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBasic Transform\nFisheye\nKaleidoscope\nShake\n\n\n基本变换\n鱼眼\n万花筒\n镜头晃动\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSwirl\nTurbulence\nWave\n\n\n\n旋涡\n湍流\n波浪",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#风格化",
+    "href": "fx_gallery-zh.html#风格化",
+    "title": "特效一览",
+    "section": "风格化",
+    "text": "风格化\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDither\nHalftone\nPixelate\nRGB Split\n\n\n抖动\n半色调\n像素化\nRGB分离\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStained Glass\nVignette\n\n\n\n\n彩色玻璃\n暗角",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#模拟",
+    "href": "fx_gallery-zh.html#模拟",
+    "title": "特效一览",
+    "section": "模拟",
+    "text": "模拟\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFilm Grain\nGlitch\nLCD\nScanline\n\n\n胶片颗粒\n故障\nLCD\n扫描线",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "fx_gallery-zh.html#转场",
+    "href": "fx_gallery-zh.html#转场",
+    "title": "特效一览",
+    "section": "转场",
+    "text": "转场\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBurn\nClock Wipe\nFade\nLinear Slide\n\n\n燃烧\n时钟擦除\n淡入淡出\n线性滑动\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Wipe\nPage Curl\nTile\n\n\n\n线性擦除\n翻页\n方格平铺",
+    "crumbs": [
+      "特效控制",
+      "特效一览"
+    ]
+  },
+  {
+    "objectID": "playback-zh.html",
+    "href": "playback-zh.html",
+    "title": "播放控制",
+    "section": "",
+    "text": "关键帧模式\nBlender原生支持将视频文件或图片序列作为材质贴图使用，然而控制播放进度的方式并不直观。使用插件面板中的[Add Playback Controller]按钮可以为视频或图片序列生成控制器，从而更加方便地管理视频的播放进度与模式。目前，插件提供两种控制器——关键帧与全局管理器。\n当“Controller”选项被设置为Local Keyframes时，材质将被添加名为tfxPlayhead的关键帧动画通道，该值为0时对应视频播放开始、为1时对应视频播放结束。用户可利用关键帧与曲线实现视频播放进度的精细控制。",
+    "crumbs": [
+      "播放控制"
+    ]
+  },
+  {
+    "objectID": "playback-zh.html#关键帧模式",
+    "href": "playback-zh.html#关键帧模式",
+    "title": "播放控制",
+    "section": "",
+    "text": "注记\n\n\n\n如果tfxPlayhead动画通道变得无法正常控制播放进度，请尝试使用面板中的[Refresh]按钮来重置驱动器。另外，如果将包含视频的物体或材质作为资产导入其它的Blender工程，也需要点击一次[Refresh]按钮才能正常控制其播放。\n\n\n\n预设播放模式\n\n在添加控制器的弹出窗口中，可以设置“Playback Rate”、“Loop”、“Reverse”等属性。插件将会自动生成关键帧和曲线，以实现一些常见的播放模式。\n\n\n可见性\n“Hide the Video”选项可以将视频在第一帧之前或最后一帧之后隐藏，插件会生成贴图透明度通道的关键帧。如果没有设置此选项，视频在播放范围以外仍然可见，持续显示静止的第一帧或最后一帧。",
+    "crumbs": [
+      "播放控制"
+    ]
+  },
+  {
+    "objectID": "playback-zh.html#全局管理器模式",
+    "href": "playback-zh.html#全局管理器模式",
+    "title": "播放控制",
+    "section": "全局管理器模式",
+    "text": "全局管理器模式\n如果需要协调同一场景中多个视频的播放进度，推荐将“Controller”选项设置为Global Manager来启动全局管理器模式，它会提供一个类似视频编辑器的全新面板。下一个章节将会详细介绍该面板的功能与操作方法。",
+    "crumbs": [
+      "播放控制"
+    ]
+  },
+  {
+    "objectID": "playback_global-zh.html",
+    "href": "playback_global-zh.html",
+    "title": "全局管理器",
+    "section": "",
+    "text": "工作区\n全局管理器模式的目的是方便在同一个3D场景中编排多个视频。它旨在提供一个与Blender VSE（视频序列编辑器）相似的界面，用户可以轻易在多个视频之间进行移动、剪辑、变速等操作，视频的可见性和特效关键帧都会随用户的操作自动同步。此模式下，添加新视频也更加方便。\n在为视频添加控制器时，如果选择了全局管理器模式，插件面板中就不再会显示出“Playhead”关键帧通道，代替它的是[Global Manager]按钮。点击该按钮后，Blender会自动切换到一个新的工作区。\n在一个Blender场景中第一次使用全局管理器后，插件会在场景中创建一个名为TfxPlaybackManager的新物体。该物体用于保存场景中有关视频播放的动画数据，请勿将其删除。\n插件引入了一个名为“Media Playback”的新工作区。该工作区基于Blender自带的NLA（非线性动画）编辑器，在左侧添加了一个名为[Video Editor Mode]的开关按钮，在右侧添加了名为TexFX的侧边栏面板。\n在NLA编辑器的时间线中可以看到视频片段。初始状态下所有轨道都是锁定的，不能进行更改，需要点击[Video Editor Mode]按钮进入视频编辑器模式后才能开始修改。该状态下，Blender的工作方式与正常的NLA编辑器并不完全相同，请务必阅读以下说明。",
+    "crumbs": [
+      "播放控制",
+      "全局管理器"
+    ]
+  },
+  {
+    "objectID": "playback_global-zh.html#工作区",
+    "href": "playback_global-zh.html#工作区",
+    "title": "全局管理器",
+    "section": "",
+    "text": "注记\n\n\n\n请在侧边栏的TexFX标签页中完成对视频片段的所有设置，不要使用原有的Strip和Modifiers页面。也请避免在没有运行视频编辑器模式的情况下，手动解锁NLA轨道。",
+    "crumbs": [
+      "播放控制",
+      "全局管理器"
+    ]
+  },
+  {
+    "objectID": "playback_global-zh.html#视频编辑器模式",
+    "href": "playback_global-zh.html#视频编辑器模式",
+    "title": "全局管理器",
+    "section": "视频编辑器模式",
+    "text": "视频编辑器模式\n启动视频编辑器模式后，相关的NLA轨道会自动解锁，可以拖动NLA片段来调整视频在时间轴中的位置。在时间轴中选择一个视频片段后，3D视图中对应的物体也会被选中，以便进行视频特效或其它属性的设置。\n结合TexFX侧边栏与NLA编辑器，可以对视频的各种播放属性进行调整。\n\n\n\n\n\n\n注记\n\n\n\n切换工作区、切换场景或执行撤销都会自动结束视频编辑器模式，如果想继续编辑视频，需要手动将该模式再次启动。\n另外，在侧边栏面板中修改了视频片段的属性后，有时3D视图中不会自动刷新，需要在NLA编辑器内单击一次鼠标以令修改生效。\n\n\n\n改变播放速度\n视频的播放速度可以用以下方式调整：\n\n调整侧边栏面板中的Scale属性，例如0.5即是二倍速播放。\n在时间轴上选中视频片段，然后使用键盘S键进行缩放。\n\n\n\n设置循环播放\n在侧边栏面板中更改Repeat的值即可让视频循环多次。将Repeat值改回1以取消循环模式。\n\n\n设置视频定格延长\n侧边栏面板中的Extend属性通过在视频前后添加静止帧的方式来延长视频。增大End的值可以向后延长视频，用最后一帧来填充；减小Start的值则是向前延长视频，以第一帧来填充。点击Reset按钮可以取消延长模式，消除掉所有的填充帧。\n\n\n裁剪视频\n选中一个视频片段后，可以用鼠标在视频片段的左右边缘处拖拽来更改视频的裁剪范围，此时光标将变为刻刀的形状。可以拖拽的范围受到视频原始长度的限制。\n\n\n\n\n\n\n注记\n\n\n\n如果已经对视频设置了循环或者延长，拖动该视频片段的边缘时不再会裁剪视频，而是变为修改循环次数/延长程度。必须先取消循环或延长的状态，才能进行裁剪操作。\n\n\n\n\n视频可见性\n使用侧边栏面板[Hide the Video]中的选项来设置视频的可见性，可以控制视频在播放前后是保持显示还是自动隐藏。\n\n\n同步关键帧\n默认情况下，当在时间轴上拖动或缩放视频片段时，如果本插件在视频上设置的特效含有关键帧，这些关键帧会随之移动，以与视频播放进度保持同步。\n在侧边栏面板[Editor Setting] &gt; [Synchronize Keyframes]中，可以设置让视频所属的物体与材质的其它关键帧也随视频拖放而同步移动。请注意，如果物体或材质含有多个视频片段，则不要开启该选项，否则会造成关键帧的混乱。\n\n\n绑定转场特效\n如果视频在全局管理器中，单击其转场特效In与Out属性旁边的图标可以将该特效绑定在视频片段上。之后，可以在侧边栏面板中设置渐入或渐出帧的长度。拖动视频片段时，转场特效也会自动同步到正确的位置。",
+    "crumbs": [
+      "播放控制",
+      "全局管理器"
+    ]
+  },
+  {
+    "objectID": "playback_global-zh.html#插入新视频",
+    "href": "playback_global-zh.html#插入新视频",
+    "title": "全局管理器",
+    "section": "插入新视频",
+    "text": "插入新视频\n全局管理器中，用户可以在时间线上快速插入新视频。首先选中一个视频片段，然后点击侧边栏面板中的[Append Media]按钮并选择一个视频文件，即可将新的视频插入到被选择的视频片段之后。新视频的物体、材质和空间位置都继承被选中的视频。\n需注意，如果两个物体的空间位置完全重合，通常会使渲染画面出现错误，因此，插件默认会为新插入的视频设置一个很小的位置偏移量，用户也可自行修改该偏移量的值。",
+    "crumbs": [
+      "播放控制",
+      "全局管理器"
+    ]
+  },
+  {
+    "objectID": "blender_setting-zh.html",
+    "href": "blender_setting-zh.html",
+    "title": "Blender设置",
+    "section": "",
+    "text": "图像纹理节点\n本章节列举一些对插件显示效果影响较大的Blender设置。\n图像/视频所在的图像纹理节点中的以下设置有可能会影响到部分特效：\n插件在侧边栏中显示了这些属性以方便修改。",
+    "crumbs": [
+      "Blender设置"
+    ]
+  },
+  {
+    "objectID": "blender_setting-zh.html#图像纹理节点",
+    "href": "blender_setting-zh.html#图像纹理节点",
+    "title": "Blender设置",
+    "section": "",
+    "text": "Interpolation: 图像的插值算法。如果使用像素风格的特效，建议设置为Closest；如果想让图像较为平滑，则建议使用Smart或Cubic。\nExtension: 主要影响“Distortion”类别的特效，当特效将画面扭曲从而产生空白时，根据该选项决定是否扩展纹理以补全空白区域。",
+    "crumbs": [
+      "Blender设置"
+    ]
+  },
+  {
+    "objectID": "blender_setting-zh.html#材质",
+    "href": "blender_setting-zh.html#材质",
+    "title": "Blender设置",
+    "section": "材质",
+    "text": "材质\nEEVEE引擎有Dithered和Blended两种方法来处理透明度，两者各有优缺点。请参照官方文档。",
+    "crumbs": [
+      "Blender设置"
+    ]
+  },
+  {
+    "objectID": "blender_setting-zh.html#渲染",
+    "href": "blender_setting-zh.html#渲染",
+    "title": "Blender设置",
+    "section": "渲染",
+    "text": "渲染\nEEVEE引擎的采样设置提供了Temporal Reprojection这个选项用来在预览时降噪。然而，在预览视频素材时，该选项有可能导致较严重的重影，此时可以将它关闭。",
+    "crumbs": [
+      "Blender设置"
+    ]
+  },
+  {
+    "objectID": "concept-zh.html",
+    "href": "concept-zh.html",
+    "title": "设计理念",
+    "section": "",
+    "text": "媒体特效链\n本章节简要介绍插件的工作原理以及实现方法的选择，以便作为定制化或者二次开发的参考。\n本插件附带的特效都是用着色器实现的，每个特效即是一个着色器节点组。为了实现传统的2D视觉特效，并在EEVEE与Cycles渲染下呈现相同的显示效果，节点组的功能：\n虽然节点组的功能较简单，但插件还是选择创建一个新的UI面板以供用户操作，而不是直接提供资产，原因在于下一节提到的节点结构的问题。",
+    "crumbs": [
+      "开发者笔记",
+      "设计理念"
+    ]
+  },
+  {
+    "objectID": "concept-zh.html#媒体特效链",
+    "href": "concept-zh.html#媒体特效链",
+    "title": "设计理念",
+    "section": "",
+    "text": "包括：对作为图像纹理节点的媒体的UV、颜色与透明度值进行数学运算。\n不包括：接受3D场景的几何与光照信息、使用BSDF等内置着色器。\n\n\n\n着色器节点结构\n假如为一个媒体插入一系列特效（[媒体]-&gt;[特效1]-&gt;[特效2]），最理想的情况是让节点的排列与该心智模型一致，也就是在图像纹理节点后串联插入代表特效1与特效2的节点组。然而，许多特效涉及同时修改图像纹理节点的UV（属于节点输入）与颜色/透明度（属于节点输出），因此必须将图像纹理节点放在特效节点组的中间位置。当插入多个特效时，实际上形成的是如下图所示的嵌套结构：\n\n此结构除了让用户不易辨识外，也有操作上的难点——\n\n如果用户想要更换媒体，需要手动一层层进入多个节点组。\n想要重排特效的顺序，或在已有的两个特效中间加入另一个特效，都会涉及繁琐且易出错的手动操作。\n模糊与描边等特效需要多套UV值，这会进一步增加手动操作的难度。\n\n因此，插件提供功能来自动化此类替换操作，并用自定义面板用直观的方式将多个插件的排列呈现给用户。\n\n\n暂未使用的工具/方法\n\n闭包：Blender自5.0版本起引入了闭包节点。使用闭包可以对贴图与特效节点进行更好的抽象，有可能做到将多个特效节点组串联排列，从而避免嵌套结构以及大量手动修改的问题。不过由于该概念在Blender中相对较新，且插件需要兼容4.x版本，因此暂不考虑使用闭包来实现特效链。\n合成器：虽然本插件的功能从影视制作流程来看更像是后期合成，但却使用了Blender的着色器而不是合成器。这是因为目前Blender的合成器还没有很简单的方法来为场景中的每个物体提供不同的特效链。虽然相关功能已在官方的计划当中，但其实现形式尚不能确定。除此之外，Blender自5.0版本以来活跃地对合成器进行修改，目前不能确定本插件的想法是否与官方思路一致，因此暂时不会涉及合成器。",
+    "crumbs": [
+      "开发者笔记",
+      "设计理念"
+    ]
+  },
+  {
+    "objectID": "concept-zh.html#视频播放控制",
+    "href": "concept-zh.html#视频播放控制",
+    "title": "设计理念",
+    "section": "视频播放控制",
+    "text": "视频播放控制\nBlender的图像纹理节点在载入视频时支持设置起始帧与偏移量，在视频播放过程中不断增大/减小偏移量的值就可以实现视频加速/减速。然而，该偏移量属性无法与其它节点互动，只能通过插入关键帧或驱动器的方式来实现动态赋值。另外，把期望的播放速率换算成偏移量也需要进行一定计算。为了简化这个过程，插件自动推算所需的表达式，并将它作为驱动器插入到偏移量属性上，实现直观的播放控制。\n\n全局管理器\n该组件希望将视频创作中流行的非线性编辑（NLE, Non-linear editing）工作流程引入到同一3D场景的多个视频纹理素材中。对于动画数据，Blender有NLA编辑器，其理念与NLE很相似，因此插件提供了全局管理器来将视频纹理的关键帧数据转换为NLA轨道片段。\n然而，与NLE视频编辑不同，在3D场景中，视频素材只是材质中的一个节点，移动它播放进度的关键帧后，物体其它属性的关键帧（如位置、材质属性、可见性，包括特效节点组中的属性）都不会受到影响，这不符合用户直觉。插件的解决方法是捕捉用户的输入，在每次输入后检查是否有NLA轨道片段的位置发生变化，若发生变化则找到NLA片段对应的物体，重新放置它的关键帧。Blender向插件开放的能力有限，并不能捕获全部的用户输入，因此有时会出现需要用户额外点击鼠标才能同步关键帧的情况，此问题目前暂时没有更好的解决方法。",
+    "crumbs": [
+      "开发者笔记",
+      "设计理念"
+    ]
+  },
+  {
+    "objectID": "data_structure-zh.html",
+    "href": "data_structure-zh.html",
+    "title": "数据结构",
+    "section": "",
+    "text": "特效节点组\n本章节介绍插件为了实现功能，在Blender标准的对象上附加的各种元数据。这些描述主要针对开发者而非一般用户。\n每个视觉特效是预先定义在一个.blend文件中的一个着色器节点组。为了让插件能够识别和操作它们，每个节点组都有一些必须包含的节点，并且节点组设置有一些自定义属性。",
+    "crumbs": [
+      "开发者笔记",
+      "数据结构"
+    ]
+  },
+  {
+    "objectID": "data_structure-zh.html#特效节点组",
+    "href": "data_structure-zh.html#特效节点组",
+    "title": "数据结构",
+    "section": "",
+    "text": "必要节点\n\n\n\n\n\n\n\n名称\n描述\n\n\n\n\nTfxRoot\n指向该特效作用的视频/图片媒体。\n\n\nTfxNext\n指向作用于同一媒体的上一个特效；如果是第一个特效，同TfxRoot。假如特效需要多套UV，可能存在TfxNext.001, TfxNext.002……\n\n\nTfxParam\n指向另一个节点组，该节点组中只有一个输出节点，其中定义了特效参数，会被插件显示在UI中供用户调节。\n\n\nTfxDriverObjLec\n表明该特效支持将场景中另一个物体的空间位置作为驱动器。\n\n\n\n\n\n自定义属性\n\n\n\n\n\n\n\n名称\n描述\n\n\n\n\ntfxName\n显示在UI中的特效名称。\n\n\ntfxPromoted\n指定节点组中特定节点的特定属性，将它们显示在UI中供用户修改。",
+    "crumbs": [
+      "开发者笔记",
+      "数据结构"
+    ]
+  },
+  {
+    "objectID": "data_structure-zh.html#视频播放控制",
+    "href": "data_structure-zh.html#视频播放控制",
+    "title": "数据结构",
+    "section": "视频播放控制",
+    "text": "视频播放控制\n视频播放控制器在最外层的特效节点组中添加自定义属性，利用它们构建表达式，作为驱动器插入到视频纹理节点的偏移量属性上。\n此外，如果使用了全局管理器，插件也会对NLA轨道片段所绑定的动作数据块添加自定义属性。\n\n关键帧控制\n\n\n\n名称\n描述\n\n\n\n\ntfxPlaybackControl\n该视频是否有视频控制器及其种类。\n\n\ntfxFrameDuration\n需要播放的视频的总帧数。\n\n\ntfxFirstFrame\n将原视频的哪一帧作为待播放的第一帧。\n\n\ntfxPlayhead\n显示在UI中的可供用户操作的播放进度。\n\n\n\n\n\n全局管理器\n\n\n\n\n\n\n\n名称\n描述\n\n\n\n\ntfxStripStart\n缓存NLA片段在时间轴上的起始位置，以便在用户操作后进行对比。\n\n\ntfxStripEnd\n缓存NLA片段在时间轴上的结束位置，以便在用户操作后进行对比。\n\n\ntfxHideBefore\n是否在播放开始前隐藏视频。\n\n\ntfxHideAfter\n是否在播放完毕后隐藏视频。\n\n\ntfxInLength\n渐入特效的过渡帧数。\n\n\ntfxOutLength\n渐出特效的过渡帧数。",
+    "crumbs": [
+      "开发者笔记",
+      "数据结构"
+    ]
+  }
+]
