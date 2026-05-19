@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+@keyframes banner-hide-frame-1 {
+    0% {
+    visibility: visible;
+    }
+    10% {
+    visibility: hidden;
+    }
+    20% {
+    visibility: hidden;
+    }
+    30% {
+    visibility: visible;
+    }
+    40% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: hidden;
+    }
+    60% {
+    visibility: hidden;
+    }
+    70% {
+    visibility: hidden;
+    }
+    80% {
+    visibility: hidden;
+    }
+    90% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes banner-hide-frame-2 {
+    0% {
+    visibility: hidden;
+    }
+    10% {
+    visibility: visible;
+    }
+    20% {
+    visibility: hidden;
+    }
+    30% {
+    visibility: hidden;
+    }
+    40% {
+    visibility: visible;
+    }
+    50% {
+    visibility: hidden;
+    }
+    60% {
+    visibility: hidden;
+    }
+    70% {
+    visibility: hidden;
+    }
+    80% {
+    visibility: hidden;
+    }
+    90% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes banner-hide-frame-3 {
+    0% {
+    visibility: hidden;
+    }
+    10% {
+    visibility: hidden;
+    }
+    20% {
+    visibility: visible;
+    }
+    30% {
+    visibility: hidden;
+    }
+    40% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: visible;
+    }
+    60% {
+    visibility: hidden;
+    }
+    70% {
+    visibility: hidden;
+    }
+    80% {
+    visibility: hidden;
+    }
+    90% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes banner-hide-frame-4 {
+    0% {
+    visibility: hidden;
+    }
+    10% {
+    visibility: hidden;
+    }
+    20% {
+    visibility: hidden;
+    }
+    30% {
+    visibility: hidden;
+    }
+    40% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: hidden;
+    }
+    60% {
+    visibility: visible;
+    }
+    70% {
+    visibility: hidden;
+    }
+    80% {
+    visibility: visible;
+    }
+    90% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes banner-hide-frame-5 {
+    0% {
+    visibility: hidden;
+    }
+    10% {
+    visibility: hidden;
+    }
+    20% {
+    visibility: hidden;
+    }
+    30% {
+    visibility: hidden;
+    }
+    40% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: hidden;
+    }
+    60% {
+    visibility: hidden;
+    }
+    70% {
+    visibility: visible;
+    }
+    80% {
+    visibility: hidden;
+    }
+    90% {
+    visibility: visible;
+    }
+    100% {
+    visibility: visible;
+    }
+}
+
+@keyframes banner-alt-frame-1 {
+    0% {
+    visibility: visible;
+    }
+    33% {
+    visibility: hidden;
+    }
+    67% {
+    visibility: hidden;
+    }
+}
+
+@keyframes banner-alt-frame-2 {
+    0% {
+    visibility: hidden;
+    }
+    33% {
+    visibility: visible;
+    }
+    67% {
+    visibility: hidden;
+    }
+}
+
+@keyframes banner-alt-frame-3 {
+    0% {
+    visibility: hidden;
+    }
+    33% {
+    visibility: hidden;
+    }
+    67% {
+    visibility: visible;
+    }
+}
+
+@keyframes banner-alt-frame-4 {
+    0% {
+    visibility: hidden;
+    }
+}
+
+.banner-svg .frame-1 {
+    animation: banner-hide-frame-1 5s step-end infinite;
+}
+.banner-svg .frame-2 {
+    animation: banner-hide-frame-2 5s step-end infinite;
+}
+.banner-svg .frame-3 {
+    animation: banner-hide-frame-3 5s step-end infinite;
+}
+.banner-svg .frame-4 {
+    animation: banner-hide-frame-4 5s step-end infinite;
+}
+.banner-svg .frame-5 {
+    animation: banner-hide-frame-5 5s step-end infinite;
+}
+
+.banner-svg:hover .frame-1 {
+    animation: banner-alt-frame-1 0.3s step-end infinite;
+}
+.banner-svg:hover .frame-2 {
+    animation: banner-alt-frame-2 0.3s step-end infinite;
+}
+.banner-svg:hover .frame-3 {
+    animation: banner-alt-frame-3 0.3s step-end infinite;
+}
+.banner-svg:hover .frame-4 {
+    animation: banner-alt-frame-4 0.3s step-end infinite;
+}
+.banner-svg:hover .frame-5 {
+    animation: banner-alt-frame-4 0.3s step-end infinite;
+}
