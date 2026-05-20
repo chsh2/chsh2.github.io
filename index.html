@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
             <article>
                 <div class="bio">
                     <p>I am <abbr title="Another ID: chaosinism">chsh2</abbr>. I develop media creation tools in my spare time. My interests include <u>vector art</u>, <u>anime-style art</u>, <u>motion graphics</u> and <u>sampling-based music</u>.</p>
-                    <figure class="svg-container banner-svg" style="justify-self: end;">
+                    <figure class="svg-container banner-svg">
                         <svg class="frame-1" viewBox="0.00 0.00 400.00 400.00" ><use href="assets/banner_1.svg#frame"></use></svg>
                         <svg class="frame-2" viewBox="0.00 0.00 400.00 400.00" ><use href="assets/banner_2.svg#frame"></use></svg>
                         <svg class="frame-3" viewBox="0.00 0.00 400.00 400.00" ><use href="assets/banner_3.svg#frame"></use></svg>
@@ -31,8 +31,15 @@
             <h3>Activities</h3>
             <article class="activity">
                 <div class="activity-text">
+                    <figure class="svg-container activity-svg">
+                        <svg class="frame-1" viewBox="0.00 0.00 400.00 400.00" style="animation: syamu-hide-frame-1 1s step-end infinite;"><use href="assets/syamu_1.svg#frame"></use></svg>
+                        <svg class="frame-2" viewBox="0.00 0.00 400.00 400.00" style="animation: syamu-hide-frame-2 1s step-end infinite;"><use href="assets/syamu_2.svg#frame"></use></svg>
+                        <svg class="frame-3" viewBox="0.00 0.00 400.00 400.00" style="animation: syamu-hide-frame-3 1s step-end infinite;"><use href="assets/syamu_3.svg#frame"></use></svg>
+                    </figure>
+                    <div>
                     <h4>News / Demo</h4>
                     <small>Updates and videos of my projects.</small>
+                    </div>
                 </div>
 
                 <div class="link-icons">
@@ -61,8 +68,16 @@
 
             <article class="activity">
                 <div class="activity-text">
-                    <h4>Product / Store</h4>
-                    <small>Project releasing & sponsorship platforms.</small>
+                    <figure class="svg-container activity-svg">
+                        <svg class="frame-1" viewBox="0.00 0.00 400.00 400.00" style="animation: nyn-hide-frame-1 1.5s step-end infinite;"><use href="assets/nyn_1.svg#frame"></use></svg>
+                        <svg class="frame-2" viewBox="0.00 0.00 400.00 400.00" style="animation: nyn-hide-frame-2 1.5s step-end infinite;"><use href="assets/nyn_2.svg#frame"></use></svg>
+                        <svg class="frame-3" viewBox="0.00 0.00 400.00 400.00" style="animation: nyn-hide-frame-3 1.5s step-end infinite;"><use href="assets/nyn_3.svg#frame"></use></svg>
+                        <svg class="frame-4" viewBox="0.00 0.00 400.00 400.00" style="animation: nyn-hide-frame-4 1.5s step-end infinite;"><use href="assets/nyn_4.svg#frame"></use></svg>
+                    </figure>
+                    <div>
+                        <h4>Product / Store</h4>
+                        <small>Project releasing & sponsorship platforms.</small>
+                    </div>
                 </div>
 
                 <div class="link-icons">
@@ -93,8 +108,15 @@
 
             <article class="activity">
                 <div class="activity-text">
-                    <h4>Doujin / OtoMAD</h4>
-                    <small>Fanart of anime and manga.</small>
+                    <figure class="svg-container activity-svg">
+                        <svg class="frame-1" viewBox="0.00 0.00 400.00 400.00" style="animation: udk-hide-frame-1 1s step-end infinite;"><use href="assets/udk_1.svg#frame"></use></svg>
+                        <svg class="frame-2" viewBox="0.00 0.00 400.00 400.00" style="animation: udk-hide-frame-2 1s step-end infinite;"><use href="assets/udk_2.svg#frame"></use></svg>
+                        <svg class="frame-3" viewBox="0.00 0.00 400.00 400.00" style="animation: udk-hide-frame-3 1s step-end infinite;"><use href="assets/udk_3.svg#frame"></use></svg>
+                    </figure>
+                    <div>
+                        <h4>Doujin / OtoMAD</h4>
+                        <small>Fanart of anime and manga.</small>
+                    </div>
                 </div>
 
                 <div class="link-icons">
@@ -256,6 +278,11 @@
         display: grid;
         justify-items: center;
     }
+    .activity-text {
+        display: grid;
+        grid-template-columns: 100px minmax(0, 1fr);
+        gap: 16px;
+    }
     .icon {
         margin-right: 8px;
     }
@@ -293,7 +320,12 @@
       position: relative;
       width: 100%;
       height: 100%;
+    }
+    .banner-svg {
       min-height: 160px;
+    }
+    .activity-svg {
+      min-height: 120px;
     }
 </style>
 

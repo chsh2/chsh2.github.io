@@ -249,3 +249,167 @@
 .banner-svg:hover .frame-5 {
     animation: banner-alt-frame-4 0.3s step-end infinite;
 }
+
+@keyframes nyn-hide-frame-1 {
+    0% {
+    visibility: visible;
+    }
+    25% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: hidden;
+    }
+    75% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes nyn-hide-frame-2 {
+    0% {
+    visibility: hidden;
+    }
+    25% {
+    visibility: visible;
+    }
+    50% {
+    visibility: hidden;
+    }
+    75% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes nyn-hide-frame-3 {
+    0% {
+    visibility: hidden;
+    }
+    25% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: visible;
+    }
+    75% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes nyn-hide-frame-4 {
+    0% {
+    visibility: hidden;
+    }
+    25% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: hidden;
+    }
+    75% {
+    visibility: visible;
+    }
+    100% {
+    visibility: visible;
+    }
+}
+
+@keyframes udk-hide-frame-1 {
+    0% {
+    visibility: visible;
+    }
+    25% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: hidden;
+    }
+    75% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes udk-hide-frame-2 {
+    0% {
+    visibility: hidden;
+    }
+    25% {
+    visibility: visible;
+    }
+    50% {
+    visibility: hidden;
+    }
+    75% {
+    visibility: visible;
+    }
+    100% {
+    visibility: visible;
+    }
+}
+@keyframes udk-hide-frame-3 {
+    0% {
+    visibility: hidden;
+    }
+    25% {
+    visibility: hidden;
+    }
+    50% {
+    visibility: visible;
+    }
+    75% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+
+@keyframes syamu-hide-frame-1 {
+    0% {
+    visibility: visible;
+    }
+    33.3333% {
+    visibility: hidden;
+    }
+    66.6667% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes syamu-hide-frame-2 {
+    0% {
+    visibility: hidden;
+    }
+    33.3333% {
+    visibility: visible;
+    }
+    66.6667% {
+    visibility: hidden;
+    }
+    100% {
+    visibility: hidden;
+    }
+}
+@keyframes syamu-hide-frame-3 {
+    0% {
+    visibility: hidden;
+    }
+    33.3333% {
+    visibility: hidden;
+    }
+    66.6667% {
+    visibility: visible;
+    }
+    100% {
+    visibility: visible;
+    }
+}
